@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.com/feschmidt/stanalysis.svg?branch=ci)](https://travis-ci.com/feschmidt/stanalysis)
 [![GitHub Issues](https://img.shields.io/github/issues/feschmidt/stanalysis.svg)](https://github.com/feschmidt/stanalysis/issues)
 [![DOCS](https://img.shields.io/badge/read%20-thedocs-ff66b4.svg)](https://steelelab-delft.github.io/stlab/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
