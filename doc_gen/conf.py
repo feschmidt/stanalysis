@@ -18,8 +18,8 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'STLab'
-copyright = '2019, GPL3'
+project = 'STLabutils'
+copyright = '2019, GNU GPLv3'
 author = 'Mark Jenkins, Felix Schmidt, Mario Gely'
 
 # The short X.Y version

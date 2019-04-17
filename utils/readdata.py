@@ -5,7 +5,7 @@
 
 import numpy as np
 import pandas as pd
-from stlab.utils.stlabdict import stlabdict
+from stlabutils.utils.stlabdict import stlabdict
 
 
 def readdat(filename, delim=', ', nlines=None):

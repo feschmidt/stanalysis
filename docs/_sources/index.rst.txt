@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation for STLab
+Documentation for STLabutils
 =======================
 
 .. toctree::
@@ -12,21 +12,15 @@ Documentation for STLab
    :glob:
 
    utils/*
-   drivers/*
 
 Introduction
 ============
 
-STLab is a collection of drivers and scripts used for equipment control and measurement
-automation.  For the most part it is built upon pyvisa and is inteded to avoid the complications
-of low level communication with measurement instruments without including an inconvenient level
-of additional complexity (see `KISS principle <https://en.wikipedia.org/wiki/KISS_principle>`_).
-
-The instrument drivers should in general only contain basic commonly used commands and not
-sophisticated setup and measurement schemes.  While things like "Get power" or "Get Trace" are
-acceptable, methods like "Perform 2 tone measurement" should not be included in basic device drivers.
-The latter kind of method should reside on a higher level of abstration since its use is likely
-to be very specific and would only clutter the driver for others.
+STLabutils is a collection of tool scripts used for file creation, reading and equipment control and analysis.
+It is used together with STLab for measurements performed in the `SteeleLab at TU Delft <http://steelelab.tudelft.nl>`_.
+While STLab is necessary for performing measurements and communication with instruments, STLabutils is a standalone
+library which can be used by itself to read and analyse datafiles, and perform certain simulations.
+STLabutils were formerly contained within :code:`stlab.utils`.
 
 The basic structure of the package is as follows:
 
@@ -34,10 +28,6 @@ The basic structure of the package is as follows:
 | ├── __init__.py
 | ├── LICENCE.md
 | ├── README.md
-| ├── devices
-| │   ├── instrument.py
-| │   └── instrument drivers
-| │   ├── 
 | ├── utils
 | │   ├── 
 | │   └── ...
@@ -51,13 +41,13 @@ The basic structure of the package is as follows:
 | │   ├── ...
 | │   └── ...
 
-* The "devices" folder contains all the implemented drivers as well as the basic instrument class.
-* The "utils" folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).  Basically, everything not directly related to instrument communication.
-* "examples" contains a collection of basic script examples suchs as VNA power sweeps or quick Q factor measurements and fits.
+* The "utils" folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).
+  These packages were formely contained within :code:`stlab.utils`.
+* "examples" contains a collection of basic examples such as example data and Q factor fits.
 * "docs" contains this documentation and "doc_gen" contains the sphynx scripts for generating it.
-* The __init__.py file contains the modules and names imported when running "import stlab".  Note that some modules and functions are renamed for (in?)convenience.
+* The __init__.py file contains the modules and names imported when running "import stlabutils".  Note that some modules and functions are renamed for (in?)convenience.
 
-The imports done when doing :code:`import stlab` are:
+The imports done when doing :code:`import stlabutils` are:
 
 .. literalinclude:: ../__init__.py
   :language: python
@@ -72,5 +62,5 @@ Indices and tables
 License
 =======
 
-stlab is licensed under the `GNU General Public License v3.0 
+stlabutils is licensed under the `GNU General Public License v3.0 
 <https://www.gnu.org/licenses/gpl-3.0.en.html>`_.
