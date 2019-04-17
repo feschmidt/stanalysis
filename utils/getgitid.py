@@ -15,7 +15,7 @@ import subprocess
 def get_gitid(measfile):
     """Saves the gitid.
 
-    Will query the gitid of stlab and save the id into a textfile in
+    Will query the gitid of stlabutils and save the id into a textfile in
     the same directory as the measurement data.
 
     Parameters
@@ -32,16 +32,16 @@ def get_gitid(measfile):
     theOS = platform.system()
 
     if theOS == 'Windows':
-        cmd = 'git -C C:\\libs\\stlab rev-parse HEAD'
+        cmd = 'git -C C:\\libs\\stlabutils rev-parse HEAD'
     elif theOS == 'Linux':
-        cmd = 'git -C ~/git/stlab rev-parse HEAD'
+        cmd = 'git -C ~/git/stlabutils rev-parse HEAD'
 
     gitid = subprocess.check_output(cmd.split(' ')).decode("utf-8").strip('\n')
 
-    dirname = os.path.dirname(measfile.name)
-    dirname = dirname + '\\' + dirname
-    with open(dirname + '.stlab_id.txt', 'a') as myfile:
-        myfile.write('# Current stlab gitid\n')
+    filename = os.path.realpath(measfile.name)
+    # dirname = dirname + '\\' + dirname
+    with open(filename + '.stlabutils_id.txt', 'a') as myfile:
+        myfile.write('# Current stlabutils gitid\n')
         myfile.write(gitid)
-    print('Stlab git id:', gitid)
+    print('Stlabutils git id:', gitid)
     return gitid
