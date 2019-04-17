@@ -32,20 +32,22 @@ def get_gitid(measfile):
     theOS = platform.system()
 
     theids = []
-    for repo in ['stlab', 'stlabutils']:
-        if theOS == 'Windows':
-            cmd = 'git -C C:\\libs\\' + repo + ' rev-parse HEAD'
-        elif theOS == 'Linux':
-            cmd = 'git -C ~/git/' + repo + ' rev-parse HEAD'
 
-        gitid = subprocess.check_output(
-            cmd.split(' ')).decode("utf-8").strip('\n')
+    filename = os.path.realpath(measfile.name)
+    with open(filename + '.gitids.txt', 'a') as myfile:
+        for repo in ['stlab', 'stlabutils']:
+            if theOS == 'Windows':
+                cmd = 'git -C C:\\libs\\' + repo + ' rev-parse HEAD'
+            elif theOS == 'Linux':
+                cmd = 'git -C ~/git/' + repo + ' rev-parse HEAD'
 
-        filename = os.path.realpath(measfile.name)
-        # dirname = dirname + '\\' + dirname
-        with open(filename + '.' + repo + '_id.txt', 'a') as myfile:
+            gitid = subprocess.check_output(
+                cmd.split(' ')).decode("utf-8").strip('\n')
+
             myfile.write('# Current ' + repo + ' gitid\n')
-            myfile.write(gitid)
-        print(repo, 'git id:', gitid)
-        theids.append(gitid)
+            myfile.write(gitid + '\n')
+
+            print(repo, 'git id:', gitid)
+            theids.append(gitid)
+
     return theids

@@ -5,7 +5,7 @@ Function definition for simple plotting routine to be run at end of mesurement
 """
 
 import matplotlib.pyplot as plt
-import stlab
+import stlabutils
 import os
 import traceback
 import logging
@@ -70,8 +70,8 @@ def autoplot(
     dpi : int, optional
         dpi for matplotlib savefig function
     pl : list of str, optional
-        If provided, is an stlabmtx process list (in case processing is required on a 2d color plot).
-        See :class:`stlabmtx <stlab.utils.stlabdict.stlabmtx>` for details
+        If provided, is an stlabutilsmtx process list (in case processing is required on a 2d color plot).
+        See :class:`stlabutilsmtx <stlabutils.utils.stlabdict.stlabmtx>` for details
     cmap : str
         Matplotlib colormap string for 2D plots. By default 'RdBu_r'.
         See https://matplotlib.org/tutorials/colors/colormaps.html for details
@@ -94,7 +94,7 @@ def autoplot(
         fname = datafile
     except ValueError:
         fname = datafile.name
-    data = stlab.readdata.readdat_pd(fname)
+    data = stlabutils.readdata.readdat_pd(fname)
     basename = os.path.splitext(fname)[0]
 
     fig = plt.figure(figsize=(10, 8))
@@ -104,7 +104,7 @@ def autoplot(
         for line in data:
             plt.plot(line[xlab], line[ylab], **kwargs)
     else:
-        mymtx = stlab.framearr_to_mtx(data, zlab, xkey=xlab, ykey=ylab)
+        mymtx = stlabutils.framearr_to_mtx(data, zlab, xkey=xlab, ykey=ylab)
         if pl is not None:
             mymtx.applyprocesslist(pl)
             zlab = zlab + '    (' + ', '.join(pl) + ')'
