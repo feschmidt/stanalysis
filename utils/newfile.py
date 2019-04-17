@@ -9,7 +9,7 @@ import datetime
 import os
 import shutil
 import re
-from stlabutils.utils.getgitid import get_gitid
+from stlabutils.utils import getgitid
 
 # Creates new measurement folder using prefix + datetime + idstring.
 # If colnames (array of column names) is included, the title line is written
