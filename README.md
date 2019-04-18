@@ -17,7 +17,7 @@ Example data can be found in `examples/data`:
 
 Clone the repository to your computer using, for example, the GitHub desktop client. 
 
-Then add the directory (or the folder tree it is stored in) to your python path. On Gary's mac, my GitHub desktop client stores my local repositories in:
+Then add the directory you cloned it to (or any upper folder in the folder tree it is stored in) to your python path. On Gary's mac, my GitHub desktop client stores my local repositories in:
 
 `/Users/gsteele/Documents/GitHub`
 
