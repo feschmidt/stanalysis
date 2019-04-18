@@ -7,7 +7,7 @@
 
 Utilities for analysis scripts developed in the [SteeleLab at TU Delft](http://steelelab.tudelft.nl).
 
-Due to regular changes of the code (stanalysis is work in progress), it is recommended to git clone this repository to your local working directory (preferably `C:\libs\stlab` on windows) and add a link to the `PYTHONPATH` instead of directly placing it in `\site-packages`.
+Due to regular changes of the code (stanalysis is work in progress), it is recommended to git clone this repository to your local computer. See instructions below.
 
 Example data can be found in `examples/data`:
 
