@@ -1,3 +1,12 @@
+"""Example for loading and saving data
+
+There are various options available for dataprocessing for mymtx.
+The advantage over autoplot doing it this way is that you have the actual data at your hands,
+if you wish to do data processing. For only displaying the data, stlabutils.autoplot is the
+preferred option.
+
+"""
+
 import stlabutils
 import matplotlib.pyplot as plt
 

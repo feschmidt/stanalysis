@@ -1,3 +1,9 @@
+"""Example for quickly displaying and saving a 2D map of data
+
+There are various options available for autoplot. This only returns the figure, not the data itself.
+
+"""
+
 import stlabutils
 
 # Import data
