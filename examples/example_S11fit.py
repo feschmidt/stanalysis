@@ -2,6 +2,10 @@
 
 There are various options available for S11fit.
 
+.. figure::  ../../examples/example_S11fit.png
+   :align:   center
+
+   Data and fit for Circuit model used for :code:`M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat`.
 """
 
 import stlabutils
@@ -32,5 +36,6 @@ plt.xlabel('Frequency (Hz)')
 plt.ylabel('S21dB (dB)')
 plt.title('Linecut at {} dBm'.format(rfpow))
 plt.legend(loc='best')
+plt.savefig('example_S11fit.png')
 plt.show()
 plt.close()

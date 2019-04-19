@@ -1,6 +1,6 @@
 newfile -- New measurement folder creation
 ==========================================
 
-.. automodule:: stlab.utils.newfile
+.. automodule:: stlabutils.utils.newfile
   :members:
 

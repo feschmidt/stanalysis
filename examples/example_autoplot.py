@@ -15,4 +15,5 @@ stlabutils.autoplot(
     xlab='Frequency (Hz)',
     ylab='Power (dBm)',
     zlab='S21dB (dB)',
-    show=True)
+    show=True,
+    save=True)

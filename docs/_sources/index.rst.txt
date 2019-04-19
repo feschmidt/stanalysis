@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Documentation for STLabutils
-=======================
+============================
 
 .. toctree::
    :maxdepth: 2
@@ -12,6 +12,7 @@ Documentation for STLabutils
    :glob:
 
    utils/*
+   examples/*
 
 Introduction
 ============
@@ -24,7 +25,7 @@ STLabutils were formerly contained within :code:`stlab.utils`.
 
 The basic structure of the package is as follows:
 
-| stlab
+| stlabutils
 | ├── __init__.py
 | ├── LICENCE.md
 | ├── README.md
@@ -43,7 +44,7 @@ The basic structure of the package is as follows:
 
 * The "utils" folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).
   These packages were formely contained within :code:`stlab.utils`.
-* "examples" contains a collection of basic examples such as example data and Q factor fits.
+* "examples" contains a collection of basic examples such as loading and plotting example data and Q factor fits.
 * "docs" contains this documentation and "doc_gen" contains the sphynx scripts for generating it.
 * The __init__.py file contains the modules and names imported when running "import stlabutils".  Note that some modules and functions are renamed for (in?)convenience.
 
