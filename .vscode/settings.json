@@ -9,4 +9,5 @@
         "-p",
         "test_*.py"
     ],
+    "restructuredtext.confPath": "${workspaceFolder}/doc_gen",
 }

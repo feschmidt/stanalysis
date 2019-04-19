@@ -1,11 +1,10 @@
 import unittest
-import stanalysis
+import stlabutils
 
 
 class TestTesting(unittest.TestCase):
-
     def test_testing(self):
-        # Do some stuff (with stanalysis)
+        # Do some stuff (with stlabutils)
         self.assertEqual(1, 1)
 
 
