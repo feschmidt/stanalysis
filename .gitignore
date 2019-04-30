@@ -1,4 +1,4 @@
 .vscode
 .pyc
-__pycache__
-/doc_gen/_build
+__pycache__/
+/doc_gen/_build/
