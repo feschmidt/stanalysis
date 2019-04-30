@@ -16,6 +16,9 @@ from scipy.ndimage.filters import gaussian_filter
 import pandas as pd
 from scipy.interpolate import interp1d
 
+# TODO: add filter highpass
+# TODO: add filter power
+# TODO: add filter log
 
 class stlabdict(OrderedDict):
     """Class to hold a data table with multiple lines and columns
@@ -390,7 +393,7 @@ class stlabmtx():
             New first row of the cropped array.  If None, is assumed to be the last line of the whole set (no crop)
 
         """
-        #TODO check
+        # TODO: check for functionality
         valdict={'left':left,'right':right,'up':up,'low':low}
         for key,val in valdict.items():
             if val==0:
@@ -441,7 +444,7 @@ class stlabmtx():
             Width of the filter in the x and y direction
 
         """
-        # TODO implement different filter types
+        # TODO: implement different filter types
         self.pmtx.loc[:,:] = gaussian_filter( self.pmtx, sigma=[int(y),int(x)])
         self.processlist.append('lowpass {},{}'.format(x,y))
     def neg(self):
@@ -1082,7 +1085,7 @@ class stlabmtx():
         self.pmtx = abs(self.pmtx)
         self.processlist.append('abs')
     def crop(data,left=None,right=None,up=None,low=None):
-        #TODO check
+        # TODO: check for funtionality
         valdict={'left':left,'right':right,'up':up,'low':low}
         for key,val in valdict.items():
             if val==0:
@@ -1110,7 +1113,7 @@ class stlabmtx():
         self.pmtx = np.log10(self.pmtx)
         self.processlist.append('log10')
     def lowpass(self,x=0,y=0):
-        # TODO implement different filter types
+        # TODO: implement different filter types
         self.pmtx = np.matrix(gaussian_filter(np.squeeze(np.asarray(self.pmtx)),sigma=[int(y),int(x)]))
         self.processlist.append('lowpass {},{}'.format(x,y))
     def neg(self):
