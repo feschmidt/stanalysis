@@ -33,14 +33,19 @@ def get_gitid(measfile):
 
     theids = []
 
-    filename = os.path.realpath(measfile.name)
+    try:
+        filename = os.path.realpath(measfile.name)
+    except AttributeError:
+        filename = measfile
     with open(filename + '.gitids.txt', 'a') as myfile:
         for repo in ['stlab', 'stlabutils']:
             if theOS == 'Windows':
                 cmd = 'git -C C:\\libs\\' + repo + ' rev-parse HEAD'
-            elif theOS == 'Linux':
+            elif theOS == 'Linux':  #or theOS == 'Darwin': # does not currently work for MacOS
                 cmd = 'git -C ~/git/' + repo + ' rev-parse HEAD'
-
+            else:
+                print('Unknown platform detected:', theOS)
+                break
             gitid = subprocess.check_output(
                 cmd.split(' ')).decode("utf-8").strip('\n')
 
@@ -51,3 +56,7 @@ def get_gitid(measfile):
             theids.append(gitid)
 
     return theids
+
+
+if __name__ == '__main__':
+    get_gitid('.')

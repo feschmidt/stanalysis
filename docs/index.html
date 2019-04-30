@@ -1,13 +1,16 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
     <title>Documentation for STLabutils &#8212; STLabutils  documentation</title>
+    
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -25,7 +28,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="S11fit – Resonance fitting routines and utilities" href="utils/S11fit.html" /> 
   </head>
-  <body>
+  <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -53,7 +56,7 @@
 
   <h4>Next topic</h4>
   <p class="topless"><a href="utils/S11fit.html"
-                        title="next chapter">S11fit – Resonance fitting routines and utilities</a></p>
+                        title="next chapter">S11fit &#8211; Resonance fitting routines and utilities</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -84,16 +87,19 @@
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="utils/S11fit.html">S11fit – Resonance fitting routines and utilities</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils/TLmodel.html">TLmodel – Model for transmission line resonator</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="utils/S11fit.html">S11fit &#8211; Resonance fitting routines and utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/TLmodel.html">TLmodel &#8211; Model for transmission line resonator</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="utils/TLmodel.html#functions">Functions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="utils/autoplotter.html">Autoplot – Quick plots for measurement reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils/metagen.html">Metagen – Spyview metafile generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils/newfile.html">newfile – New measurement folder creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils/stlabdict.html">stlabdict – Data structures and matrices</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils/writematrix.html">writematrix – Data file writing methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/autoplotter.html">Autoplot &#8211; Quick plots for measurement reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/metagen.html">Metagen &#8211; Spyview metafile generation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/newfile.html">newfile &#8211; New measurement folder creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/stlabdict.html">stlabdict &#8211; Data structures and matrices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils/writematrix.html">writematrix &#8211; Data file writing methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/example_S11fit.html">Example for S11fit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/example_autoplot.html">Example for autoplot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples/example_readdata.html">Example for readdata</a></li>
 </ul>
 </div>
 </div>
@@ -106,29 +112,29 @@ library which can be used by itself to read and analyse datafiles, and perform c
 STLabutils were formerly contained within <code class="code docutils literal"><span class="pre">stlab.utils</span></code>.</p>
 <p>The basic structure of the package is as follows:</p>
 <div class="line-block">
-<div class="line">stlab</div>
+<div class="line">stlabutils</div>
 <div class="line">├── __init__.py</div>
 <div class="line">├── LICENCE.md</div>
 <div class="line">├── README.md</div>
 <div class="line">├── utils</div>
 <div class="line">│   ├──</div>
-<div class="line">│   └── …</div>
+<div class="line">│   └── ...</div>
 <div class="line">├── examples</div>
-<div class="line">│   ├── …</div>
-<div class="line">│   └── …</div>
+<div class="line">│   ├── ...</div>
+<div class="line">│   └── ...</div>
 <div class="line">├── docs</div>
-<div class="line">│   ├── …</div>
-<div class="line">│   └── …</div>
+<div class="line">│   ├── ...</div>
+<div class="line">│   └── ...</div>
 <div class="line">├── doc_gen</div>
-<div class="line">│   ├── …</div>
-<div class="line">│   └── …</div>
+<div class="line">│   ├── ...</div>
+<div class="line">│   └── ...</div>
 </div>
 <ul class="simple">
-<li>The “utils” folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).
+<li>The &#8220;utils&#8221; folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).
 These packages were formely contained within <code class="code docutils literal"><span class="pre">stlab.utils</span></code>.</li>
-<li>“examples” contains a collection of basic examples such as example data and Q factor fits.</li>
-<li>“docs” contains this documentation and “doc_gen” contains the sphynx scripts for generating it.</li>
-<li>The __init__.py file contains the modules and names imported when running “import stlabutils”.  Note that some modules and functions are renamed for (in?)convenience.</li>
+<li>&#8220;examples&#8221; contains a collection of basic examples such as loading and plotting example data and Q factor fits.</li>
+<li>&#8220;docs&#8221; contains this documentation and &#8220;doc_gen&#8221; contains the sphynx scripts for generating it.</li>
+<li>The __init__.py file contains the modules and names imported when running &#8220;import stlabutils&#8221;.  Note that some modules and functions are renamed for (in?)convenience.</li>
 </ul>
 <p>The imports done when doing <code class="code docutils literal"><span class="pre">import</span> <span class="pre">stlabutils</span></code> are:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># __all__ = [&quot;metagen&quot;, &quot;readdata&quot;, &quot;S11fit&quot;, &quot;newfile&quot;]</span>
@@ -207,7 +213,7 @@ These packages were formely contained within <code class="code docutils literal"
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
     </div>
   </body>
 </html>

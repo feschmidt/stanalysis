@@ -41,6 +41,7 @@ def autoplot(
         cmap='RdBu_r',
         wbval=(0.1, 0.1),  #percent
         figdir=None,
+        save=False,
         **kwargs):
     """Autoplot function
 
@@ -134,7 +135,7 @@ def autoplot(
         fontsize=10)
     if figdir:
         plt.savefig(figdir + basename + '.png', dpi=dpi)
-    else:
+    elif save:
         if os.path.isfile(basename + '.png'):
             i = 0
             while True:
