@@ -278,6 +278,16 @@ def dictarr_to_mtx(data, key, rangex=None, rangey=None, xkey=None, ykey=None, xt
         return stlabmtx(zz, xtitle=xtitle, ytitle=ytitle, ztitle=ztitle)
     return 
 
+
+def norm_cbc(data):
+    result = data.copy()
+    for col in data.columns:
+        max_value = data[col].max()
+        min_value = data[col].min()
+        result[col] = (
+            data[col] - min_value) / (max_value - min_value)
+    return result
+
 def sub_lbl(data, lowp=40, highp=40, low_limit=-1e99, high_limit=1e99):
     new_mtx = []
     mtx=data.copy() # for some reason this makes it faster
@@ -455,6 +465,23 @@ class stlabmtx():
         """
         self.pmtx = -self.pmtx
         self.processlist.append('neg')
+
+    def norm_cbc(self):
+        """Stretch the contrast of each column to full scale
+
+        Each column gets normalized.  Process string :code:`norm_cbc`
+
+        """
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.values)
+        self.processlist.append('norm_cbc')
+    def norm_lbl(self):
+        """Stretch the contrast of each line to full scale
+
+        Each line gets normalized.  Process string :code:`norm_lbl`
+
+        """
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.values.T).T
+        self.processlist.append('norm_lbl')
     def offset(self,x=0):
         """Offset filter
 
