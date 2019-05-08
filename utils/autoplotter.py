@@ -14,10 +14,10 @@ import numpy as np
 
 
 # TODO: check that it still works...
-def catchexception(func):  #Decorator function
+def catchexception(func):  # Decorator function
     @wraps(
         func
-    )  #So that docstrings of the original function are conserved and sphynx works properly
+    )  # So that docstrings of the original function are conserved and sphynx works properly
     def overfunc(*args, **kwargs):
         try:
             func(*args, **kwargs)
@@ -40,7 +40,7 @@ def autoplot(
         dpi=400,
         pl=None,
         cmap='RdBu_r',
-        wbval=(0.1, 0.1),  #percent
+        wbval=(0.1, 0.1),  # percent
         figdir=None,
         save=False,
         **kwargs):
@@ -96,7 +96,7 @@ def autoplot(
         fname = datafile
     except ValueError:
         fname = datafile.name
-    data = stlabutils.readdata.readdat_pd(fname)
+    data = stlabutils.readdat_pd(fname)
     basename = os.path.splitext(fname)[0]
 
     fig = plt.figure(figsize=(10, 8))
