@@ -17,8 +17,6 @@ import pandas as pd
 from scipy.interpolate import interp1d
 
 # TODO: add filter highpass
-# TODO: add filter power
-# TODO: add filter log
 
 class stlabdict(OrderedDict):
     """Class to hold a data table with multiple lines and columns
@@ -434,14 +432,31 @@ class stlabmtx():
         if y:
             self.pmtx = self.pmtx.iloc[::-1,:]
         self.processlist.append('flip {:d},{:d}'.format(x,y))
+    def log(self):
+        """Natural log filter
+
+        Applies log_e to all elements in the matrix.  Process string :code:`log`
+
+        """
+        self.pmtx = np.log(self.pmtx)
+        self.processlist.append('log')
     def log10(self):
         """Log10 filter
 
-        Applies np.log10 to all elements in the matrix.  Process string :code:`log10`
+        Applies log_10 to all elements in the matrix.  Process string :code:`log10`
 
         """
         self.pmtx = np.log10(self.pmtx)
         self.processlist.append('log10')
+
+    def logx(self,x):
+        """Logx filter
+
+        Applies log_n to all elements in the matrix.  Process string :code:`logx x`
+
+        """
+        self.pmtx = np.log(self.pmtx)/np.log(x)
+        self.processlist.append('logx {}'.format(x))
     def lowpass(self,x=0,y=0):
         """Low Pass filter
 
@@ -460,7 +475,7 @@ class stlabmtx():
     def nan_greater(self,thres):
         """NaN for values greater than
 
-        Changes all values greater than thres to np.nan
+        Changes all values greater than thres to np.nan. Process string :code:`nan_greater thres`.
 
         Parameters
         ----------
@@ -477,7 +492,7 @@ class stlabmtx():
     def nan_smaller(self, thres):
         """NaN for values smaller than
 
-        Changes all values smaller than thres to np.nan
+        Changes all values smaller than thres to np.nan. Process string :code:`nan_smaller thres`.
 
         Parameters
         ----------
@@ -581,6 +596,19 @@ class stlabmtx():
             mask[int(nx/2), int(ny/2)] = 0
             self.pmtx.loc[:,:] = ndimage.generic_filter(self.pmtx, np.nanmean, footprint=mask, mode='constant', cval=np.NaN)
         self.processlist.append('pixel_avg {},{},{}'.format(nx,ny,center))
+
+    def power(self, x=1):
+        """Power filter
+
+        Applies np.power to all elements in the matrix.  Process string :code:`power x`
+
+        Parameters
+        ----------
+        x : float,optional
+
+        """
+        self.pmtx = np.float_power(10,self.pmtx)
+        self.processlist.append('power {}'.format(x))
     def rotate_ccw(self):
         """Rotate counter-clockwise filter
 
