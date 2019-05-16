@@ -457,6 +457,40 @@ class stlabmtx():
         # TODO: implement different filter types
         self.pmtx.loc[:,:] = gaussian_filter( self.pmtx, sigma=[int(y),int(x)])
         self.processlist.append('lowpass {},{}'.format(x,y))
+    def nan_greater(self,thres):
+        """NaN for values greater than
+
+        Changes all values greater than thres to np.nan
+
+        Parameters
+        ----------
+        thres: float, optional
+            Threshold value
+        
+        """
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.where(oldvals>thres,np.nan,oldvals)
+        self.pmtx = pd.DataFrame(newvals,index=olddf.index,columns=olddf.columns)
+        self.processlist.append('nan_greater {}'.format(thres))
+
+    def nan_smaller(self, thres):
+        """NaN for values smaller than
+
+        Changes all values smaller than thres to np.nan
+
+        Parameters
+        ----------
+        thres: float, optional
+            Threshold value
+        
+        """
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.where(oldvals < thres, np.nan, oldvals)
+        self.pmtx = pd.DataFrame(
+            newvals, index=olddf.index, columns=olddf.columns)
+        self.processlist.append('nan_smaller {}'.format(thres))
     def neg(self):
         """Negative filter
 
