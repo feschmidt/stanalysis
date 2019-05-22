@@ -13,6 +13,7 @@ from functools import wraps
 import numpy as np
 
 
+# TODO: check that it still works...
 def catchexception(func):  #Decorator function
     @wraps(
         func

@@ -11,7 +11,7 @@ Due to regular changes of the code (stanalysis is work in progress), it is recom
 
 Example data can be found in `examples/data`:
 
-- `M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat` is a microwave reflection measurement using a vector network analyzer, published in [Schmidt and Jenkins _et al., Nature Communications **9**, 4069 (2018)](https://www.nature.com/articles/s41467-018-06595-2)
+- `M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat` is a microwave reflection measurement using a vector network analyzer, published in [Schmidt and Jenkins _et al._, _Nature Communications_ **9**, 4069 (2018)](https://www.nature.com/articles/s41467-018-06595-2)
 
 ## Requirements
 

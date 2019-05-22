@@ -1,3 +1,5 @@
-*.vscode
+.vscode
 *.pyc
-/doc_gen/_build
+__pycache__/
+*/__pycache__/
+/doc_gen/_build/

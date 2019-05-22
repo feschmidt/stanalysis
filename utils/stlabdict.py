@@ -16,6 +16,7 @@ from scipy.ndimage.filters import gaussian_filter
 import pandas as pd
 from scipy.interpolate import interp1d
 
+# TODO: add filter highpass
 
 class stlabdict(OrderedDict):
     """Class to hold a data table with multiple lines and columns
@@ -275,6 +276,16 @@ def dictarr_to_mtx(data, key, rangex=None, rangey=None, xkey=None, ykey=None, xt
         return stlabmtx(zz, xtitle=xtitle, ytitle=ytitle, ztitle=ztitle)
     return 
 
+
+def norm_cbc(data):
+    result = data.copy()
+    for col in data.columns:
+        max_value = data[col].max()
+        min_value = data[col].min()
+        result[col] = (
+            data[col] - min_value) / (max_value - min_value)
+    return result
+
 def sub_lbl(data, lowp=40, highp=40, low_limit=-1e99, high_limit=1e99):
     new_mtx = []
     mtx=data.copy() # for some reason this makes it faster
@@ -390,7 +401,7 @@ class stlabmtx():
             New first row of the cropped array.  If None, is assumed to be the last line of the whole set (no crop)
 
         """
-        #TODO check
+        # TODO: check for functionality
         valdict={'left':left,'right':right,'up':up,'low':low}
         for key,val in valdict.items():
             if val==0:
@@ -421,14 +432,31 @@ class stlabmtx():
         if y:
             self.pmtx = self.pmtx.iloc[::-1,:]
         self.processlist.append('flip {:d},{:d}'.format(x,y))
+    def log(self):
+        """Natural log filter
+
+        Applies log_e to all elements in the matrix.  Process string :code:`log`
+
+        """
+        self.pmtx = np.log(self.pmtx)
+        self.processlist.append('log')
     def log10(self):
         """Log10 filter
 
-        Applies np.log10 to all elements in the matrix.  Process string :code:`log10`
+        Applies log_10 to all elements in the matrix.  Process string :code:`log10`
 
         """
         self.pmtx = np.log10(self.pmtx)
         self.processlist.append('log10')
+
+    def logx(self,x):
+        """Logx filter
+
+        Applies log_n to all elements in the matrix.  Process string :code:`logx x`
+
+        """
+        self.pmtx = np.log(self.pmtx)/np.log(x)
+        self.processlist.append('logx {}'.format(x))
     def lowpass(self,x=0,y=0):
         """Low Pass filter
 
@@ -441,9 +469,43 @@ class stlabmtx():
             Width of the filter in the x and y direction
 
         """
-        # TODO implement different filter types
+        # TODO: implement different filter types
         self.pmtx.loc[:,:] = gaussian_filter( self.pmtx, sigma=[int(y),int(x)])
         self.processlist.append('lowpass {},{}'.format(x,y))
+    def nan_greater(self,thres):
+        """NaN for values greater than
+
+        Changes all values greater than thres to np.nan. Process string :code:`nan_greater thres`.
+
+        Parameters
+        ----------
+        thres: float, optional
+            Threshold value
+        
+        """
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.where(oldvals>thres,np.nan,oldvals)
+        self.pmtx = pd.DataFrame(newvals,index=olddf.index,columns=olddf.columns)
+        self.processlist.append('nan_greater {}'.format(thres))
+
+    def nan_smaller(self, thres):
+        """NaN for values smaller than
+
+        Changes all values smaller than thres to np.nan. Process string :code:`nan_smaller thres`.
+
+        Parameters
+        ----------
+        thres: float, optional
+            Threshold value
+        
+        """
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.where(oldvals < thres, np.nan, oldvals)
+        self.pmtx = pd.DataFrame(
+            newvals, index=olddf.index, columns=olddf.columns)
+        self.processlist.append('nan_smaller {}'.format(thres))
     def neg(self):
         """Negative filter
 
@@ -452,6 +514,23 @@ class stlabmtx():
         """
         self.pmtx = -self.pmtx
         self.processlist.append('neg')
+
+    def norm_cbc(self):
+        """Stretch the contrast of each column to full scale
+
+        Each column gets normalized.  Process string :code:`norm_cbc`
+
+        """
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.values)
+        self.processlist.append('norm_cbc')
+    def norm_lbl(self):
+        """Stretch the contrast of each line to full scale
+
+        Each line gets normalized.  Process string :code:`norm_lbl`
+
+        """
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.values.T).T
+        self.processlist.append('norm_lbl')
     def offset(self,x=0):
         """Offset filter
 
@@ -517,6 +596,19 @@ class stlabmtx():
             mask[int(nx/2), int(ny/2)] = 0
             self.pmtx.loc[:,:] = ndimage.generic_filter(self.pmtx, np.nanmean, footprint=mask, mode='constant', cval=np.NaN)
         self.processlist.append('pixel_avg {},{},{}'.format(nx,ny,center))
+
+    def power(self, x=1):
+        """Power filter
+
+        Applies np.power to all elements in the matrix.  Process string :code:`power x`
+
+        Parameters
+        ----------
+        x : float,optional
+
+        """
+        self.pmtx = np.float_power(10,self.pmtx)
+        self.processlist.append('power {}'.format(x))
     def rotate_ccw(self):
         """Rotate counter-clockwise filter
 
@@ -1082,7 +1174,7 @@ class stlabmtx():
         self.pmtx = abs(self.pmtx)
         self.processlist.append('abs')
     def crop(data,left=None,right=None,up=None,low=None):
-        #TODO check
+        # TODO: check for funtionality
         valdict={'left':left,'right':right,'up':up,'low':low}
         for key,val in valdict.items():
             if val==0:
@@ -1110,7 +1202,7 @@ class stlabmtx():
         self.pmtx = np.log10(self.pmtx)
         self.processlist.append('log10')
     def lowpass(self,x=0,y=0):
-        # TODO implement different filter types
+        # TODO: implement different filter types
         self.pmtx = np.matrix(gaussian_filter(np.squeeze(np.asarray(self.pmtx)),sigma=[int(y),int(x)]))
         self.processlist.append('lowpass {},{}'.format(x,y))
     def neg(self):
