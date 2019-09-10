@@ -12,14 +12,14 @@ import numpy as np
 import os
 
 
-def writematrix(myfile, mat, f='%.10e', delim=', ', blocksep='\n'):
+def savetxt(myfile, mat, f='%.10e', delim=', ', blocksep='\n'):
     """Write a matrix to a given file
 
     Writes a matrix to a file with a given format specifier and a delimiter.  Adds a block
     separator at the end.  This is very similar to np.savetxt.  However, since python3
     np.savetxt requires the file to be open in binary write mode.
 
-    This function is used internally by both :any:`writedict` and :any:`writeframe`
+    This function is used internally by both :any:`savedict` and :any:`saveframe`
 
     Parameters
     ----------
@@ -43,7 +43,7 @@ def writematrix(myfile, mat, f='%.10e', delim=', ', blocksep='\n'):
     myfile.write(blocksep)
 
 
-def writedict(myfile, mydict, f='%.10e', delim=', ', blocksep='\n'):
+def savedict(myfile, mydict, f='%.10e', delim=', ', blocksep='\n'):
     """Write a data dictionary to a file as a matrix block
 
     Writes a given dictionary where each element is a list of numbers, i.e., each element in
@@ -51,7 +51,7 @@ def writedict(myfile, mydict, f='%.10e', delim=', ', blocksep='\n'):
     Also, if the file is empty (no writes have been yet performed on it), it will use the 
     dictionary keys to write the title line.
 
-    Internally this function converts the dict to a matrix and uses :py:func:`stlab.utils.writematrix.writematrix` to save
+    Internally this function converts the dict to a matrix and uses :py:func:`stlab.utils.writematrix.savetxt` to save
     to the file.
 
     The main stlab import renames this function to :code:`stlab.savedict`
@@ -78,7 +78,7 @@ def writedict(myfile, mydict, f='%.10e', delim=', ', blocksep='\n'):
         mat.append(mydict[nn])
     mat = np.asarray(mat)
     mat = mat.T
-    writematrix(myfile, mat, f, delim, blocksep)
+    savetxt(myfile, mat, f, delim, blocksep)
 
 
 def writeparnames(myfile, params, delim=', '):
@@ -143,11 +143,11 @@ def params_to_str(params, f='%.10e', delim=', '):
     return delim.join(line)
 
 
-def writedictarray(myfile, mydictarray, f='%.10e', delim=', ', blocksep='\n'):
+def savedictarray(myfile, mydictarray, f='%.10e', delim=', ', blocksep='\n'):
     """Writes an array of data dictionaries to a file
 
     Intended for writing a list of dictionaries containing the data columns as elements to a file.
-    Essentially just repeats :any:`writedict` on every element of the list making sure to include the
+    Essentially just repeats :any:`savedict` on every element of the list making sure to include the
     title line (derived from the first dictionarly key values) if the file is new.
 
     Parameters
@@ -168,11 +168,11 @@ def writedictarray(myfile, mydictarray, f='%.10e', delim=', ', blocksep='\n'):
     vv = list(mydictarray[0].keys())
     writetitle(myfile, vv, delim)
     for block in mydictarray:
-        writedict(myfile, block, f, delim, blocksep)
+        savedict(myfile, block, f, delim, blocksep)
     return
 
 
-#???
+# ???
 def writeline(myfile, line, f='.10e', delim=', '):
     """Writes a list of numbers as a single line to a file
 
@@ -195,17 +195,17 @@ def writeline(myfile, line, f='.10e', delim=', '):
     return
 
 
-#???
+# ???
 
 
-def writeframe(myfile, myframe, f='%.10e', delim=', ', blocksep='\n'):
+def saveframe(myfile, myframe, f='%.10e', delim=', ', blocksep='\n'):
     """Write a pandas Dataframe to a file as a matrix block
 
-    Writes a given pandas.DataFrame to a file.  Is analogous to :any:`writedict`
+    Writes a given pandas.DataFrame to a file.  Is analogous to :any:`savedict`
     Also, if the file is empty (no writes have been yet performed on it), it will use the 
     dataframe column indexes to write the title line.
 
-    Internally this function converts just writes the matrix using :py:func:`stlab.utils.writematrix.writematrix`
+    Internally this function converts just writes the matrix using :py:func:`stlab.utils.writematrix.savetxt`
 
     The main stlab import renames this function to :code:`stlab.saveframe`
 
@@ -227,14 +227,14 @@ def writeframe(myfile, myframe, f='%.10e', delim=', ', blocksep='\n'):
     vv = list(myframe)
     writetitle(myfile, vv, delim)
     mat = myframe.values
-    writematrix(myfile, mat, f, delim, blocksep)
+    savetxt(myfile, mat, f, delim, blocksep)
 
 
-def writeframearray(myfile, myframearray, f='%.10e', delim=', ',
-                    blocksep='\n'):
+def saveframearray(myfile, myframearray, f='%.10e', delim=', ',
+                   blocksep='\n'):
     """Writes an array of pandas DataFrame to a file
 
-    Analogous to :any:`writedictarray` but using pd.Dataframe instead of dicts.  Expects a list of
+    Analogous to :any:`savedictarray` but using pd.Dataframe instead of dicts.  Expects a list of
     pd.DataFrames to be written to the file.  Also handles writing the title line if the file is
     new.
 
@@ -256,7 +256,7 @@ def writeframearray(myfile, myframearray, f='%.10e', delim=', ',
     vv = list(myframearray[0])
     writetitle(myfile, vv, delim)
     for block in myframearray:
-        writeframe(myfile, block, f, delim, blocksep)
+        saveframe(myfile, block, f, delim, blocksep)
     return
 
 
@@ -264,7 +264,7 @@ def writetitle(myfile, vv, delim):
     """Given a list of strings writes the file title line
 
     Does not do anything if the file already has contents.  Includes a '#' as first character for
-    gnuplot.  Is used by :any:`writedict` and :any:`writeframe`.
+    gnuplot.  Is used by :any:`savedict` and :any:`saveframe`.
 
     Parameters
     ----------
@@ -276,8 +276,8 @@ def writetitle(myfile, vv, delim):
         Field delimiter (separation character)
 
     """
-    #myfile.flush()
+    # myfile.flush()
     if myfile.tell(
-    ) == 0:  #Is the file new?  If so, write title line from provided data
+    ) == 0:  # Is the file new?  If so, write title line from provided data
         varline = '#' + delim.join(vv) + '\n'
         myfile.write(varline)
