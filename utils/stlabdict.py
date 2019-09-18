@@ -985,7 +985,7 @@ def yderiv_pd(data,direction=1):
     data = data.diff(axis=0,periods=direction)
     data = data.dropna(axis=0)
     if direction==-1:
-        dy = -dy
+        dy = -1*dy
     data = data.divide(dy,axis='rows')
     return data
 
