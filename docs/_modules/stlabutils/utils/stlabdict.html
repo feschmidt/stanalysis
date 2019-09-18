@@ -1,33 +1,21 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>stlabutils.utils.stlabdict &#8212; STLabutils  documentation</title>
-    
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    '../../../',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../../../_static/jquery.js"></script>
     <script type="text/javascript" src="../../../_static/underscore.js"></script>
     <script type="text/javascript" src="../../../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -45,12 +33,14 @@
         <div class="sphinxsidebarwrapper">
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="../../../search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -80,6 +70,7 @@
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="k">import</span> <span class="n">interp1d</span>
 
+<span class="c1"># TODO: add filter highpass</span>
 
 <div class="viewcode-block" id="stlabdict"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabdict">[docs]</a><span class="k">class</span> <span class="nc">stlabdict</span><span class="p">(</span><span class="n">OrderedDict</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Class to hold a data table with multiple lines and columns</span>
@@ -339,6 +330,16 @@
         <span class="k">return</span> <span class="n">stlabmtx</span><span class="p">(</span><span class="n">zz</span><span class="p">,</span> <span class="n">xtitle</span><span class="o">=</span><span class="n">xtitle</span><span class="p">,</span> <span class="n">ytitle</span><span class="o">=</span><span class="n">ytitle</span><span class="p">,</span> <span class="n">ztitle</span><span class="o">=</span><span class="n">ztitle</span><span class="p">)</span>
     <span class="k">return</span> </div>
 
+
+<span class="k">def</span> <span class="nf">norm_cbc</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">max_value</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+        <span class="n">min_value</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+        <span class="n">result</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">data</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">-</span> <span class="n">min_value</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">max_value</span> <span class="o">-</span> <span class="n">min_value</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
 <span class="k">def</span> <span class="nf">sub_lbl</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lowp</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">highp</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">low_limit</span><span class="o">=-</span><span class="mf">1e99</span><span class="p">,</span> <span class="n">high_limit</span><span class="o">=</span><span class="mf">1e99</span><span class="p">):</span>
     <span class="n">new_mtx</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">mtx</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="c1"># for some reason this makes it faster</span>
@@ -454,7 +455,7 @@
 <span class="sd">            New first row of the cropped array.  If None, is assumed to be the last line of the whole set (no crop)</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1">#TODO check</span>
+        <span class="c1"># TODO: check for functionality</span>
         <span class="n">valdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;left&#39;</span><span class="p">:</span><span class="n">left</span><span class="p">,</span><span class="s1">&#39;right&#39;</span><span class="p">:</span><span class="n">right</span><span class="p">,</span><span class="s1">&#39;up&#39;</span><span class="p">:</span><span class="n">up</span><span class="p">,</span><span class="s1">&#39;low&#39;</span><span class="p">:</span><span class="n">low</span><span class="p">}</span>
         <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">val</span> <span class="ow">in</span> <span class="n">valdict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
             <span class="k">if</span> <span class="n">val</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
@@ -485,14 +486,31 @@
         <span class="k">if</span> <span class="n">y</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">iloc</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;flip </span><span class="si">{:d}</span><span class="s1">,</span><span class="si">{:d}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span></div>
+<div class="viewcode-block" id="stlabmtx.log"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.log">[docs]</a>    <span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Natural log filter</span>
+
+<span class="sd">        Applies log_e to all elements in the matrix.  Process string :code:`log`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span></div>
 <div class="viewcode-block" id="stlabmtx.log10"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.log10">[docs]</a>    <span class="k">def</span> <span class="nf">log10</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Log10 filter</span>
 
-<span class="sd">        Applies np.log10 to all elements in the matrix.  Process string :code:`log10`</span>
+<span class="sd">        Applies log_10 to all elements in the matrix.  Process string :code:`log10`</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;log10&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="stlabmtx.logx"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.logx">[docs]</a>    <span class="k">def</span> <span class="nf">logx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Logx filter</span>
+
+<span class="sd">        Applies log_n to all elements in the matrix.  Process string :code:`logx x`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;logx </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></div>
 <div class="viewcode-block" id="stlabmtx.lowpass"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.lowpass">[docs]</a>    <span class="k">def</span> <span class="nf">lowpass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Low Pass filter</span>
 
@@ -505,9 +523,43 @@
 <span class="sd">            Width of the filter in the x and y direction</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="c1"># TODO implement different filter types</span>
+        <span class="c1"># TODO: implement different filter types</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;lowpass </span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span></div>
+<div class="viewcode-block" id="stlabmtx.nan_greater"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.nan_greater">[docs]</a>    <span class="k">def</span> <span class="nf">nan_greater</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">thres</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;NaN for values greater than</span>
+
+<span class="sd">        Changes all values greater than thres to np.nan. Process string :code:`nan_greater thres`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        thres: float, optional</span>
+<span class="sd">            Threshold value</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oldvals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">olddf</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">)</span>
+        <span class="n">newvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">oldvals</span><span class="o">&gt;</span><span class="n">thres</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">oldvals</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">newvals</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="n">olddf</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">columns</span><span class="o">=</span><span class="n">olddf</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;nan_greater </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">thres</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="stlabmtx.nan_smaller"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.nan_smaller">[docs]</a>    <span class="k">def</span> <span class="nf">nan_smaller</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thres</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;NaN for values smaller than</span>
+
+<span class="sd">        Changes all values smaller than thres to np.nan. Process string :code:`nan_smaller thres`.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        thres: float, optional</span>
+<span class="sd">            Threshold value</span>
+<span class="sd">        </span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">oldvals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">olddf</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">)</span>
+        <span class="n">newvals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">oldvals</span> <span class="o">&lt;</span> <span class="n">thres</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">oldvals</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+            <span class="n">newvals</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">olddf</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">olddf</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;nan_smaller </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">thres</span><span class="p">))</span></div>
 <div class="viewcode-block" id="stlabmtx.neg"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.neg">[docs]</a>    <span class="k">def</span> <span class="nf">neg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Negative filter</span>
 
@@ -516,6 +568,23 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;neg&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="stlabmtx.norm_cbc"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.norm_cbc">[docs]</a>    <span class="k">def</span> <span class="nf">norm_cbc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Stretch the contrast of each column to full scale</span>
+
+<span class="sd">        Each column gets normalized.  Process string :code:`norm_cbc`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">norm_cbc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;norm_cbc&#39;</span><span class="p">)</span></div>
+<div class="viewcode-block" id="stlabmtx.norm_lbl"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.norm_lbl">[docs]</a>    <span class="k">def</span> <span class="nf">norm_lbl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Stretch the contrast of each line to full scale</span>
+
+<span class="sd">        Each line gets normalized.  Process string :code:`norm_lbl`</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">norm_cbc</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;norm_lbl&#39;</span><span class="p">)</span></div>
 <div class="viewcode-block" id="stlabmtx.offset"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.offset">[docs]</a>    <span class="k">def</span> <span class="nf">offset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Offset filter</span>
 
@@ -581,6 +650,19 @@
             <span class="n">mask</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">nx</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">ny</span><span class="o">/</span><span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,:]</span> <span class="o">=</span> <span class="n">ndimage</span><span class="o">.</span><span class="n">generic_filter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">,</span> <span class="n">footprint</span><span class="o">=</span><span class="n">mask</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="n">cval</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">NaN</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;pixel_avg </span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">,</span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span><span class="p">,</span><span class="n">center</span><span class="p">))</span></div>
+
+<div class="viewcode-block" id="stlabmtx.power"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.power">[docs]</a>    <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Power filter</span>
+
+<span class="sd">        Applies np.power to all elements in the matrix.  Process string :code:`power x`</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x : float,optional</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float_power</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">pmtx</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;power </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span></div>
 <div class="viewcode-block" id="stlabmtx.rotate_ccw"><a class="viewcode-back" href="../../../utils/stlabdict.html#stlabutils.utils.stlabdict.stlabmtx.rotate_ccw">[docs]</a>    <span class="k">def</span> <span class="nf">rotate_ccw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Rotate counter-clockwise filter</span>
 
@@ -957,7 +1039,7 @@
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">periods</span><span class="o">=</span><span class="n">direction</span><span class="p">)</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">direction</span><span class="o">==-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">dy</span> <span class="o">=</span> <span class="o">-</span><span class="n">dy</span>
+        <span class="n">dy</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">*</span><span class="n">dy</span>
     <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">dy</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;rows&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">data</span>
 
@@ -1146,7 +1228,7 @@
 <span class="sd">        self.pmtx = abs(self.pmtx)</span>
 <span class="sd">        self.processlist.append(&#39;abs&#39;)</span>
 <span class="sd">    def crop(data,left=None,right=None,up=None,low=None):</span>
-<span class="sd">        #TODO check</span>
+<span class="sd">        # TODO: check for funtionality</span>
 <span class="sd">        valdict={&#39;left&#39;:left,&#39;right&#39;:right,&#39;up&#39;:up,&#39;low&#39;:low}</span>
 <span class="sd">        for key,val in valdict.items():</span>
 <span class="sd">            if val==0:</span>
@@ -1174,7 +1256,7 @@
 <span class="sd">        self.pmtx = np.log10(self.pmtx)</span>
 <span class="sd">        self.processlist.append(&#39;log10&#39;)</span>
 <span class="sd">    def lowpass(self,x=0,y=0):</span>
-<span class="sd">        # TODO implement different filter types</span>
+<span class="sd">        # TODO: implement different filter types</span>
 <span class="sd">        self.pmtx = np.matrix(gaussian_filter(np.squeeze(np.asarray(self.pmtx)),sigma=[int(y),int(x)]))</span>
 <span class="sd">        self.processlist.append(&#39;lowpass {},{}&#39;.format(x,y))</span>
 <span class="sd">    def neg(self):</span>
@@ -1406,7 +1488,7 @@
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
     </div>
   </body>
 </html>
