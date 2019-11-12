@@ -571,8 +571,11 @@ class stlabmtx():
             If 1, drops a column.  If 0, drops a line
 
         """
-        axis = 1-vertical #swap 1 and 0 since vertical axis is 0 and horizontal is 1
-        self.pmtx = self.pmtx.drop(line,axis = axis)
+        line=int(line)
+        if vertical==1:
+            self.pmtx = self.pmtx.drop(self.pmtx.columns[line], axis=1)
+        else:
+            self.pmtx = self.pmtx.drop(self.pmtx.index[line], axis=0)
         self.processlist.append('outlier {},{}'.format(line,vertical))
     def pixel_avg(self,nx=0,ny=0,center=0):
         """Pixel average filter
