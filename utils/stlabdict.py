@@ -521,7 +521,7 @@ class stlabmtx():
         Each column gets normalized.  Process string :code:`norm_cbc`
 
         """
-        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.values)
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx)
         self.processlist.append('norm_cbc')
     def norm_lbl(self):
         """Stretch the contrast of each line to full scale
@@ -529,7 +529,7 @@ class stlabmtx():
         Each line gets normalized.  Process string :code:`norm_lbl`
 
         """
-        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.values.T).T
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.T).T
         self.processlist.append('norm_lbl')
     def offset(self,x=0):
         """Offset filter
