@@ -232,11 +232,7 @@ def trim(x, y, imin, imax):
     return (xnew, ynew)
 
 
-<<<<<<< HEAD
-def backmodel(x, params):
-=======
 def S11back(x, params):
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     """Function for background model.
 
     Returns the background model values for a given set of parameters and
@@ -296,11 +292,7 @@ def background2min(params, x, data):
         Alternates real and imaginary values
 
     """
-<<<<<<< HEAD
-    model = backmodel(x, params)
-=======
     model = S11back(x, params)
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     res = model - data
     return realimag(res)
 
@@ -383,51 +375,33 @@ def S11residual(params, frec, data, ftype='A'):
         Alternates real and imaginary values
 
     """
-<<<<<<< HEAD
-    model = S11full(frec, params, ftype)
-=======
-    model = S11func(frec,params,ftype)
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+    model = S11func(frec, params, ftype)
     residual = model - data
     return realimag(residual)
 
 
-<<<<<<< HEAD
-def S11full(frec, params, ftype='A'):
-=======
 def S11func(frec, params, ftype='A'):
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     """
     Function for total response from background model and resonator response
     """
     if ftype == 'A' or ftype == 'B':
-<<<<<<< HEAD
-        model = -S11theo(frec, params, ftype) * backmodel(frec, params)
+        model = -S11theo(frec, params, ftype) * S11back(frec, params)
     elif ftype == '-A' or ftype == '-B' or ftype == 'X':
-        model = S11theo(frec, params, ftype) * backmodel(frec, params)
+        model = S11theo(frec, params, ftype) * S11back(frec, params)
     return model
 
 
-def fit(frec,
-        S11,
-        ftype='A',
-        fitbackground=True,
-        trimwidth=5.,
-        doplots=False,
-        margin=51,
-        oldpars=None,
-        refitback=True,
-        reusefitpars=False,
-        fitwidth=None):
-=======
-        model = -S11theo(frec,params,ftype)*S11back(frec,params)
-    elif ftype == '-A' or ftype == '-B' or ftype == 'X':
-        model = S11theo(frec, params, ftype)*S11back(frec, params)
-    return model
-
-
-def S11fit(frec,S11,ftype='A',fitbackground=True,trimwidth=5.,doplots=False,margin = 51, oldpars=None, refitback = True, reusefitpars = False, fitwidth=None):
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+def S11fit(frec,
+           S11,
+           ftype='A',
+           fitbackground=True,
+           trimwidth=5.,
+           doplots=False,
+           margin=51,
+           oldpars=None,
+           refitback=True,
+           reusefitpars=False,
+           fitwidth=None):
     """**MAIN FIT ROUTINE**
 
     Fits complex data S11 vs frecuency to one of 4 models adjusting for a multiplicative complex background
@@ -669,11 +643,7 @@ def S11fit(frec,S11,ftype='A',fitbackground=True,trimwidth=5.,doplots=False,marg
     #calculate final background and remove background from original data
     complexresidual = un_realimag(result.residual)
     # backgroundfit = backsig + complexresidual
-<<<<<<< HEAD
-    fullbackground = np.array([backmodel(xx, result.params) for xx in frec])
-=======
     fullbackground = np.array([S11back(xx, result.params) for xx in frec])
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     S11corr = -S11 / fullbackground
     if ftype == '-A' or ftype == '-B':
         S11corr = -S11corr
@@ -777,15 +747,10 @@ def S11fit(frec,S11,ftype='A',fitbackground=True,trimwidth=5.,doplots=False,marg
         plt.show()
 
         plt.title('Pre-Final signal and fit (Polar)')
-<<<<<<< HEAD
         plt.plot(S11.real, S11.imag)
         plt.plot(
-            S11full(frec, params, ftype).real,
-            S11full(frec, params, ftype).imag)
-=======
-        plt.plot(S11.real,S11.imag)
-        plt.plot(S11func(frec,params,ftype).real,S11func(frec,params,ftype).imag)
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+            S11func(frec, params, ftype).real,
+            S11func(frec, params, ftype).imag)
         plt.axes().set_aspect('equal', 'datalim')
         plt.show()
 
