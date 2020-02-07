@@ -4,3 +4,5 @@ __pycache__/
 */__pycache__/
 /doc_gen/_build/
 .ipynb_checkpoints/
+*.js
+docs/_images/math/
