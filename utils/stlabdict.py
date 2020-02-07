@@ -299,15 +299,14 @@ def dictarr_to_mtx(data,
     return
 
 
-
 def norm_cbc(data):
     result = data.copy()
     for col in data.columns:
         max_value = data[col].max()
         min_value = data[col].min()
-        result[col] = (
-            data[col] - min_value) / (max_value - min_value)
+        result[col] = (data[col] - min_value) / (max_value - min_value)
     return result
+
 
 def sub_lbl(data, lowp=40, highp=40, low_limit=-1e99, high_limit=1e99):
     new_mtx = []
@@ -473,13 +472,9 @@ class stlabmtx():
         if x:
             self.pmtx = self.pmtx.iloc[:, ::-1]
         if y:
-<<<<<<< HEAD
             self.pmtx = self.pmtx.iloc[::-1, :]
         self.processlist.append('flip {:d},{:d}'.format(x, y))
 
-=======
-            self.pmtx = self.pmtx.iloc[::-1,:]
-        self.processlist.append('flip {:d},{:d}'.format(x,y))
     def log(self):
         """Natural log filter
 
@@ -488,7 +483,7 @@ class stlabmtx():
         """
         self.pmtx = np.log(self.pmtx)
         self.processlist.append('log')
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+
     def log10(self):
         """Log10 filter
 
@@ -498,19 +493,16 @@ class stlabmtx():
         self.pmtx = np.log10(self.pmtx)
         self.processlist.append('log10')
 
-<<<<<<< HEAD
-    def lowpass(self, x=0, y=0):
-=======
-    def logx(self,x):
+    def logx(self, x):
         """Logx filter
 
         Applies log_n to all elements in the matrix.  Process string :code:`logx x`
 
         """
-        self.pmtx = np.log(self.pmtx)/np.log(x)
+        self.pmtx = np.log(self.pmtx) / np.log(x)
         self.processlist.append('logx {}'.format(x))
-    def lowpass(self,x=0,y=0):
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+
+    def lowpass(self, x=0, y=0):
         """Low Pass filter
 
         Applies a gaussian filter to the data with given pixel widths.  Other filters are yet to be implemented.
@@ -523,15 +515,12 @@ class stlabmtx():
 
         """
         # TODO: implement different filter types
-<<<<<<< HEAD
+
         self.pmtx.loc[:, :] = gaussian_filter(self.pmtx,
                                               sigma=[int(y), int(x)])
         self.processlist.append('lowpass {},{}'.format(x, y))
 
-=======
-        self.pmtx.loc[:,:] = gaussian_filter( self.pmtx, sigma=[int(y),int(x)])
-        self.processlist.append('lowpass {},{}'.format(x,y))
-    def nan_greater(self,thres):
+    def nan_greater(self, thres):
         """NaN for values greater than
 
         Changes all values greater than thres to np.nan. Process string :code:`nan_greater thres`.
@@ -544,8 +533,10 @@ class stlabmtx():
         """
         oldvals = self.pmtx.values
         olddf = copy.deepcopy(self.pmtx)
-        newvals = np.where(oldvals>thres,np.nan,oldvals)
-        self.pmtx = pd.DataFrame(newvals,index=olddf.index,columns=olddf.columns)
+        newvals = np.where(oldvals > thres, np.nan, oldvals)
+        self.pmtx = pd.DataFrame(newvals,
+                                 index=olddf.index,
+                                 columns=olddf.columns)
         self.processlist.append('nan_greater {}'.format(thres))
 
     def nan_smaller(self, thres):
@@ -562,10 +553,11 @@ class stlabmtx():
         oldvals = self.pmtx.values
         olddf = copy.deepcopy(self.pmtx)
         newvals = np.where(oldvals < thres, np.nan, oldvals)
-        self.pmtx = pd.DataFrame(
-            newvals, index=olddf.index, columns=olddf.columns)
+        self.pmtx = pd.DataFrame(newvals,
+                                 index=olddf.index,
+                                 columns=olddf.columns)
         self.processlist.append('nan_smaller {}'.format(thres))
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+
     def neg(self):
         """Negative filter
 
@@ -575,9 +567,6 @@ class stlabmtx():
         self.pmtx = -self.pmtx
         self.processlist.append('neg')
 
-<<<<<<< HEAD
-    def offset(self, x=0):
-=======
     def norm_cbc(self):
         """Stretch the contrast of each column to full scale
 
@@ -586,6 +575,7 @@ class stlabmtx():
         """
         self.pmtx.loc[:, :] = norm_cbc(self.pmtx)
         self.processlist.append('norm_cbc')
+
     def norm_lbl(self):
         """Stretch the contrast of each line to full scale
 
@@ -594,8 +584,8 @@ class stlabmtx():
         """
         self.pmtx.loc[:, :] = norm_cbc(self.pmtx.T).T
         self.processlist.append('norm_lbl')
-    def offset(self,x=0):
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+
+    def offset(self, x=0):
         """Offset filter
 
         Offsets data values by adding given value.  Process string :code:`offset x`
@@ -637,21 +627,14 @@ class stlabmtx():
             If 1, drops a column.  If 0, drops a line
 
         """
-<<<<<<< HEAD
-        axis = 1 - vertical  #swap 1 and 0 since vertical axis is 0 and horizontal is 1
-        self.pmtx = self.pmtx.drop(line, axis=axis)
-        self.processlist.append('outlier {},{}'.format(line, vertical))
-
-    def pixel_avg(self, nx=0, ny=0, center=0):
-=======
-        line=int(line)
-        if vertical==1:
+        line = int(line)
+        if vertical == 1:
             self.pmtx = self.pmtx.drop(self.pmtx.columns[line], axis=1)
         else:
             self.pmtx = self.pmtx.drop(self.pmtx.index[line], axis=0)
-        self.processlist.append('outlier {},{}'.format(line,vertical))
-    def pixel_avg(self,nx=0,ny=0,center=0):
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+        self.processlist.append('outlier {},{}'.format(line, vertical))
+
+    def pixel_avg(self, nx=0, ny=0, center=0):
         """Pixel average filter
         
         Performs pixel averaging on matrix.  Process string :code:`pixel_avg nx,ny,center`
@@ -675,7 +658,7 @@ class stlabmtx():
                                                          cval=np.NaN)
         else:
             mask = np.ones((nx, ny))
-<<<<<<< HEAD
+
             mask[int(nx / 2), int(ny / 2)] = 0
             self.pmtx.loc[:, :] = ndimage.generic_filter(self.pmtx,
                                                          np.nanmean,
@@ -683,11 +666,6 @@ class stlabmtx():
                                                          mode='constant',
                                                          cval=np.NaN)
         self.processlist.append('pixel_avg {},{},{}'.format(nx, ny, center))
-
-=======
-            mask[int(nx/2), int(ny/2)] = 0
-            self.pmtx.loc[:,:] = ndimage.generic_filter(self.pmtx, np.nanmean, footprint=mask, mode='constant', cval=np.NaN)
-        self.processlist.append('pixel_avg {},{},{}'.format(nx,ny,center))
 
     def power(self, x=1):
         """Power filter
@@ -699,9 +677,9 @@ class stlabmtx():
         x : float,optional
 
         """
-        self.pmtx = np.float_power(10,self.pmtx)
+        self.pmtx = np.float_power(10, self.pmtx)
         self.processlist.append('power {}'.format(x))
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+
     def rotate_ccw(self):
         """Rotate counter-clockwise filter
 
@@ -1123,15 +1101,10 @@ def yderiv_pd(data, direction=1):
     dy = np.diff(data.index)
     data = data.diff(axis=0, periods=direction)
     data = data.dropna(axis=0)
-<<<<<<< HEAD
     if direction == -1:
-        dy = -dy
+        dy = -1 * dy
     data = data.divide(dy, axis='rows')
-=======
-    if direction==-1:
-        dy = -1*dy
-    data = data.divide(dy,axis='rows')
->>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+
     return data
 
 
@@ -1269,301 +1242,3 @@ def framearr_to_mtx(data,
         zz = pd.DataFrame(np.matrix(zz))
         return stlabmtx(zz, xtitle=xtitle, ytitle=ytitle, ztitle=ztitle)
     return
-
-
-'''
-def xderiv(data,rangex,direction=1,axis=1):
-    dx = np.abs(rangex[0]-rangex[1])
-    if direction==-1:
-        dx = -dx
-    z = np.squeeze(np.array(data))
-    dz = np.gradient(z, dx, axis=axis)    
-    return np.matrix(np.squeeze(dz))
-'''
-
-# Use slow if spacing is non-uniform
-'''
-def xderiv_slow(data,rangex,direction=1):
-    mtx = data
-    new_mtx = []
-    if direction==-1:
-        x = rangex[::-1]
-    else:
-        x = rangex
-    for line in data:
-        z = np.squeeze(np.array(line))
-        dz = np.zeros(x.shape,np.float)
-        dz[0:-1] = np.diff(z)/np.diff(x)
-        dz[-1] = (z[-1] - z[-2])/(x[-1] - x[-2])
-        new_mtx.append(dz)
-    return np.matrix(new_mtx)
-'''
-#Main stlabmtx class
-'''
-class stlabmtx():
-    def __init__(self, mtx=np.zeros([0,0]), rangex=None, rangey=None, xtitle='xtitle', ytitle='ytitle', ztitle = 'ztitle'):
-        self.mtx = np.matrix(copy.deepcopy(mtx))
-        print(self.mtx.shape)
-        self.processlist = []
-        self.pmtx = self.mtx
-        if rangex is None:
-            self.rangex = np.arange(self.mtx.shape[1])
-        else:
-            self.rangex = np.asarray(rangex)
-        if rangey is None:
-            self.rangey = np.arange(self.mtx.shape[0])
-        else:
-            self.rangey = np.asarray(rangey)
-        self.xtitle=str(xtitle)
-        self.ytitle=str(ytitle)
-        self.ztitle = str(ztitle)
-        self.xtitle0=self.xtitle
-        self.ytitle0=self.ytitle
-        self.ztitle0=self.ztitle
-        self.rangex0 = self.rangex
-        self.rangey0 = self.rangey
-    def getextents(self):
-        return (self.rangex[0],self.rangex[-1],self.rangey[-1],self.rangey[0])
-    # Functions from spyview
-    def absolute(self):
-        self.pmtx = abs(self.pmtx)
-        self.processlist.append('abs')
-    def crop(data,left=None,right=None,up=None,low=None):
-        # TODO: check for funtionality
-        valdict={'left':left,'right':right,'up':up,'low':low}
-        for key,val in valdict.items():
-            if val==0:
-                valdict[key] = None
-            else:
-                valdict[key] = int(val)
-        data.pmtx = data.pmtx[valdict['left']:valdict['right'],valdict['up']:valdict['low']]
-        data.rangex = data.rangex[valdict['up']:valdict['low']]
-        data.rangey = data.rangey[valdict['left']:valdict['right']]
-        for key,val in valdict.items():
-            if val==None:
-                valdict[key] = 0
-        data.processlist.append('crop {},{},{},{}'.format(valdict['left'],valdict['right'],valdict['up'],valdict['low']))
-    def flip(self,x=False,y=False):
-        x=bool(x)
-        y=bool(y)
-        if x:
-            self.pmtx = np.fliplr(self.pmtx)
-            self.rangex = self.rangex[::-1]
-        if y:
-            self.pmtx = np.flipud(self.pmtx)
-            self.rangey = self.rangey[::-1]
-        self.processlist.append('flip {:d},{:d}'.format(x,y))
-    def log10(self):
-        self.pmtx = np.log10(self.pmtx)
-        self.processlist.append('log10')
-    def lowpass(self,x=0,y=0):
-        # TODO: implement different filter types
-        self.pmtx = np.matrix(gaussian_filter(np.squeeze(np.asarray(self.pmtx)),sigma=[int(y),int(x)]))
-        self.processlist.append('lowpass {},{}'.format(x,y))
-    def neg(self):
-        self.pmtx = -self.pmtx
-        self.processlist.append('neg')
-    def offset(self,x=0):
-        self.pmtx = self.pmtx + x
-        self.processlist.append('offset {}'.format(x))
-    def offset_axes(self,x=0,y=0):
-        self.rangex+=x
-        self.rangey+=y
-        self.processlist.append('offset_axes {},{}'.format(x,y))
-    def outlier(self,line,vertical=1):
-        self.pmtx = np.delete(self.pmtx,line,axis=int(vertical))
-        if bool(vertical):
-            self.rangex = np.delete(self.rangex, line)
-        else:
-            self.rangey = np.delete(self.rangey, line)
-        self.processlist.append('outlier {},{}'.format(line,vertical))
-    def pixel_avg(self,nx=0,ny=0,center=0):
-        nx=int(nx); ny=int(ny)
-        if bool(center):
-            self.pmtx = ndimage.generic_filter(self.pmtx, np.nanmean, size=(nx,ny), mode='constant',cval=np.NaN)
-        else:
-            mask = np.ones((nx, ny))
-            mask[int(nx/2), int(ny/2)] = 0
-            self.pmtx = ndimage.generic_filter(self.pmtx, np.nanmean, footprint=mask, mode='constant', cval=np.NaN)
-        self.processlist.append('pixel_avg {},{},{}'.format(nx,ny,center))
-    def rotate_ccw(self):
-        # still lacking the switching of the axes
-        self.pmtx = np.rot90(self.pmtx)
-        self.processlist.append('rotate_ccw')
-        self.xtitle, self.ytitle = self.ytitle, self.xtitle
-        self.rangex , self.rangey = self.rangey, self.rangex[::-1]
-    def rotate_cw(self):
-        # still lacking the switching of the axes
-        self.pmtx = np.rot90(self.pmtx,3)
-        self.processlist.append('rotate_cw')
-        self.xtitle, self.ytitle = self.ytitle, self.xtitle
-        self.rangex , self.rangey = self.rangey[::-1], self.rangex
-    def scale_data(self,factor=1.):
-        self.pmtx = factor*self.pmtx
-        self.processlist.append('scale {}'.format(factor))
-    def sub_lbl(self,lowp=40, highp=40, low_limit=-1e99, high_limit=1e99):
-        self.pmtx = sub_lbl(self.pmtx,lowp,highp,low_limit,high_limit)
-        self.processlist.append('sub_lbl {},{},{},{}'.format(lowp,highp,low_limit,high_limit))
-    def sub_cbc(self,lowp=40, highp=40, low_limit=-1e99, high_limit=1e99):
-        self.pmtx = sub_lbl(self.pmtx.T,lowp,highp,low_limit,high_limit).T
-        self.processlist.append('sub_cbc {},{},{},{}'.format(lowp,highp,low_limit,high_limit))
-    def sub_linecut(self, pos, horizontal=1):
-        pos = int(pos)
-        if bool(horizontal):
-            v = self.pmtx[pos,:]
-            self.pmtx-=v
-        else:
-            v = self.pmtx[:,pos].T
-            mtx = self.pmtx.T - v
-            self.pmtx = mtx.T
-        self.processlist.append('sub_linecut {},{}'.format(pos,horizontal))
-    def xderiv(self,direction=1):
-        mtx = self.pmtx.copy()
-        self.pmtx = xderiv(mtx,self.rangex,direction)
-        self.processlist.append('xderiv {}'.format(direction))
-    def yderiv(self,direction=1):
-        mtx = self.pmtx.copy()
-        self.pmtx = xderiv(mtx,self.rangey,direction,axis=0)
-        self.processlist.append('yderiv {}'.format(direction))
-    #Use slow versions for unequally spaced ranges
-    def xderiv_slow(self,direction=1):
-        mtx = self.pmtx.copy()
-        self.pmtx = xderiv(mtx,self.rangex,direction)
-        self.processlist.append('xderiv_slow {}'.format(direction))
-    def yderiv_slow(self,direction=1):
-        mtx = self.pmtx.copy().T
-        self.pmtx = xderiv(mtx,self.rangey,direction).T
-        self.processlist.append('yderiv_slow {}'.format(direction))
-    def transpose(self):
-        self.pmtx = self.pmtx.T
-        self.xtitle, self.ytitle = self.ytitle, self.xtitle
-        self.rangex, self.rangey = self.rangey, self.rangex
-        self.processlist.append('transpose')
-    
-    # Processlist
-    def saveprocesslist(self,filename = './process.pl'):
-        myfile = open(filename,'w')
-        for line in self.processlist:
-            myfile.write(line + '\n')
-        myfile.close()
-    def applystep(self,line):
-            sline = line.split(' ')
-            if len(sline) == 1:
-                func = sline[0]
-                pars = []
-            else:
-                pars = sline[1].split(',')
-                func = sline[0].strip()
-            if func is '':
-                return
-            else:
-                pars = [float(x) for x in pars]
-            method = getattr(self, func)
-            print(func,pars)
-            method(*pars)
-    def applyprocesslist(self,pl):
-        for line in pl:
-            self.applystep(line)
-    def applyprocessfile(self,filename):
-        with open(filename,'r') as myfile:
-            for line in myfile:
-                if '#' == line[0]:
-                    continue
-                self.applystep(line)
-    def reset(self):
-        self.processlist = []
-        self.pmtx = self.mtx
-        self.xtitle = self.xtitle0
-        self.ytitle = self.ytitle0
-        self.rangex = self.rangex0
-        self.rangey = self.rangey0
-    def delstep(self,ii):
-        newpl = copy.deepcopy(self.processlist)
-        del newpl[ii]
-        self.reset()
-        self.applyprocesslist(newpl)
-    def insertstep(self,ii,line):
-        newpl = copy.deepcopy(self.processlist)
-        newpl.insert(ii,line)
-        self.reset()
-        self.applyprocesslist(newpl)
-
-    #Uses pickle to save to file
-    def save(self,name = 'output'):
-        filename = name + '.mtx.pkl'
-        with open(filename, 'wb') as outfile:
-            pickle.dump(self,outfile, pickle.HIGHEST_PROTOCOL)
-    #To load:
-    #import pickle
-    #with open(filename, 'rb') as input:
-    #   mtx1 = pickle.load(input)
-
-    def savemtx(self,filename = './output'):
-        filename = filename + '.mtx'
-        with open(filename, 'wb') as outfile:
-            ztitle = self.ztitle
-            xx = self.rangex
-            yy = self.rangey
-            line = ['Units',ztitle, self.xtitle,'{:e}'.format(xx[0]),'{:e}'.format(xx[-1]), self.ytitle,'{:e}'.format(yy[0]),'{:e}'.format(yy[-1]), 'Nothing',str(0),str(1)]
-            mystr = ', '.join(line)
-            mystr = bytes(mystr + '\n', 'ASCII')
-            outfile.write(mystr)
-            mystr = str(self.pmtx.shape[1]) + ' ' + str(self.pmtx.shape[0]) + ' ' + '1 8\n'
-            mystr = bytes(mystr, 'ASCII')
-            outfile.write(mystr)
-            data = self.pmtx
-            data = np.squeeze(np.asarray(np.ndarray.flatten(data,order='F')))
-            print(len(data))
-            s = struct.pack('d'*len(data), *data)
-            outfile.write(s)
-
-#           Units, Data Value ,Y, 0.000000e+00, 2.001000e+03,Z, 0.000000e+00, 6.010000e+02,Nothing, 0, 1
-#           2001 601 1 8
-
-            #Units, Dataset name, xname, xmin, xmax, yname, ymin, ymax, zname, zmin, zmax
-            #nx ny nz length
-
-            #dB, S21dB, Frequency (Hz), 6.000000e+09, 8.300000e+09, Vgate (V), 3.000000e+01, -3.000000e+01, Nothing, 0, 1
-            #2001 601 1 8
-
-    def loadmtx(self,filename):
-        with open(filename,'rb') as infile:
-            content = infile.readline()
-            content = content.decode('ASCII')
-            if content[:5] == 'Units':
-                content = content.split(',')
-                content = [x.strip() for x in content]
-                self.ztitle0 = content[1]
-                self.xtitle0 = content[2]
-                self.ytitle0 = content[5]
-                xlow = np.float64(content[3])
-                xhigh = np.float64(content[4])
-                ylow = np.float64(content[6])
-                yhigh = np.float64(content[7])
-                content = infile.readline()
-                content = content.decode('ASCII')
-                content = content.split(' ')
-                nx = int(content[0])
-                ny = int(content[1])
-                lb = int(content[3])
-                self.rangex0 = np.linspace(xlow,xhigh,nx)
-                self.rangey0 = np.linspace(ylow,yhigh,ny)
-            else:
-                content = content.decode('ASCII')
-                content = content.split(' ')
-                nx = int(content[0])
-                ny = int(content[1])
-                lb = int(content[3])
-                self.rangex0 = np.linspace(1,nx,nx)
-                self.rangey0 = np.linspace(1,ny,ny)
-            n = nx*ny
-            content = infile.read()
-            if lb == 8:
-                s = struct.unpack('d'*n, content)
-            elif lb == 4:
-                s = struct.unpack('f'*n, content)
-            s = np.asarray(s)
-            s = np.matrix(np.reshape(s,(ny,nx),order='F'))
-            self.mtx = s
-            self.reset()
-'''
