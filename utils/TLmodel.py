@@ -241,8 +241,8 @@ def Zload(omega, params):
         Lj = params['Lj']
         Cj = params['Cj']
         Rj = params['Rj']
-        Zj = (1j * Lj * Rj * omega) / (
-            Rj + 1j * Lj * omega - Cj * Lj * Rj * omega**2.)
+        Zj = (1j * Lj * Rj * omega) / (Rj + 1j * Lj * omega -
+                                       Cj * Lj * Rj * omega**2.)
         Z += Zj
     if 'Cg' in params:
         Cg = params['Cg']
@@ -499,8 +499,9 @@ def Vj(omega, params):
     if 'Lj' in params:
         Zl = Zload(omega, params)
         if 'Cg' in params:
-            Zl0 = 1 / (1j * omega * params['Cg']) * Zl / (
-                1 / (1j * omega * params['Cg']) - Zl)
+            Zl0 = 1 / (1j * omega *
+                       params['Cg']) * Zl / (1 /
+                                             (1j * omega * params['Cg']) - Zl)
             Ij = Vl / Zl0
         else:
             Ij = Vl / Zl

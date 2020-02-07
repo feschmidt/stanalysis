@@ -114,26 +114,24 @@ def autoplot(
         vmin = lims[0]
         vmax = lims[1]
 
-        plt.imshow(
-            mymtx.pmtx,
-            aspect='auto',
-            cmap=cmap,
-            extent=mymtx.getextents(),
-            vmin=vmin,
-            vmax=vmax,
-            **kwargs)
+        plt.imshow(mymtx.pmtx,
+                   aspect='auto',
+                   cmap=cmap,
+                   extent=mymtx.getextents(),
+                   vmin=vmin,
+                   vmax=vmax,
+                   **kwargs)
         cbar = plt.colorbar()
         cbar.set_label(zlab)
     plt.title(os.path.basename(fname) + '\n' + title, fontsize=10)
     plt.xlabel(xlab)
     plt.ylabel(ylab)
-    plt.figtext(
-        0.5,
-        0.05,
-        caption,
-        wrap=True,
-        horizontalalignment='center',
-        fontsize=10)
+    plt.figtext(0.5,
+                0.05,
+                caption,
+                wrap=True,
+                horizontalalignment='center',
+                fontsize=10)
     if figdir:
         plt.savefig(figdir + basename + '.png', dpi=dpi)
     elif save:

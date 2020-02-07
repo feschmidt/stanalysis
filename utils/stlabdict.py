@@ -7,7 +7,7 @@ well as the framearr_to_mtx function.
 
 from collections import OrderedDict
 import numpy as np
-from scipy import ndimage
+from scipy import ndimage, signal
 import pickle
 import struct
 import scipy
@@ -515,6 +515,7 @@ class stlabmtx():
 
         """
         # TODO: implement different filter types
+
         self.pmtx.loc[:, :] = gaussian_filter(self.pmtx,
                                               sigma=[int(y), int(x)])
         self.processlist.append('lowpass {},{}'.format(x, y))
@@ -657,6 +658,7 @@ class stlabmtx():
                                                          cval=np.NaN)
         else:
             mask = np.ones((nx, ny))
+
             mask[int(nx / 2), int(ny / 2)] = 0
             self.pmtx.loc[:, :] = ndimage.generic_filter(self.pmtx,
                                                          np.nanmean,
@@ -1102,6 +1104,7 @@ def yderiv_pd(data, direction=1):
     if direction == -1:
         dy = -1 * dy
     data = data.divide(dy, axis='rows')
+
     return data
 
 
