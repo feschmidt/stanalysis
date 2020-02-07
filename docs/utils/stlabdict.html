@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
+=======
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     <title>stlabdict – Data structures and matrices &#8212; STLabutils  documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -51,11 +62,21 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
+<<<<<<< HEAD
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
       <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
+=======
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     </form>
     </div>
 </div>
@@ -77,6 +98,7 @@ well as the framearr_to_mtx function.</p>
 <dt id="stlabutils.utils.stlabdict.checkEqual1">
 <code class="sig-prename descclassname">stlabutils.utils.stlabdict.</code><code class="sig-name descname">checkEqual1</code><span class="sig-paren">(</span><em class="sig-param">iterator</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#checkEqual1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.checkEqual1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if all elements in iterator are equal or is empty</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>True if iterator empty or has the same value for all elements.  False otherwise.</p>
@@ -85,6 +107,18 @@ well as the framearr_to_mtx function.</p>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if iterator empty or has the same value for all elements.  False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="function">
@@ -95,6 +129,7 @@ well as the framearr_to_mtx function.</p>
 conversion into an stlabmtx that allows spyview like operations and processing.</p>
 <p>If neither ranges or titles are given, some defaults are filled in.  The chosen data column from each data array element will be placed
 as a line in the final matrix sequentially.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -106,6 +141,21 @@ in the measurement file, the output matrix will be transposed to accomodate this
 <li><p><strong>rangey</strong> (<em>rangex</em><em>,</em>) – If provided, they override the xkey and ykey assingnment.  They should contain arrays of the correct length for use
 on the axes.  These ranges will be saved along with the data (can be unevenly spaced).  The ranges are assumed to be the same for all lines.</p></li>
 <li><p><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Titles for the x, y and z axes.  If provided, they override the titles provided in xkey, ykey and key.</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array of dict</em>) – Input array of data dicts.  The dicts are expected to contain a series of arrays of floats with the same length.</li>
+<li><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Index of the appropriate column of each dict for the data axis of the final matrix (data values for each pixel)</li>
+<li><strong>ykey</strong> (<em>xkey</em><em>,</em>) – Columns to use to calculate the desired x and y ranges for the final matrix.  If these are proviced they are also
+used as the x and y titles.  x runs across the matrix columns and y along the rows.  This means that if x is the “slow” variable
+in the measurement file, the output matrix will be transposed to accomodate this.  The ranges are assumed to be the same for all lines.</li>
+<li><strong>rangey</strong> (<em>rangex</em><em>,</em>) – If provided, they override the xkey and ykey assingnment.  They should contain arrays of the correct length for use
+on the axes.  These ranges will be saved along with the data (can be unevenly spaced).  The ranges are assumed to be the same for all lines.</li>
+<li><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Titles for the x, y and z axes.  If provided, they override the titles provided in xkey, ykey and key.</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -126,6 +176,7 @@ conversion into an stlabmtx that allows spyview like operations and processing. 
 but adapted for pandas DataFrame.</p>
 <p>If neither ranges or titles are given, some defaults are filled in.  The chosen data column from each data array element will be placed
 as a line in the final matrix sequentially.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -137,6 +188,21 @@ in the measurement file, the output matrix will be transposed to accomodate this
 <li><p><strong>rangey</strong> (<em>rangex</em><em>,</em>) – If provided, they override the xkey and ykey assingnment.  They should contain arrays of the correct length for use
 on the axes.  These ranges will be saved along with the data (can be unevenly spaced).  The ranges are assumed to be the same for all lines.</p></li>
 <li><p><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Titles for the x, y and z axes.  If provided, they override the titles provided in xkey, ykey and key.</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>array of dict</em>) – Input array of frames.</li>
+<li><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Index of the appropriate column of each frame for the data axis of the final matrix (data values for each pixel)</li>
+<li><strong>ykey</strong> (<em>xkey</em><em>,</em>) – Columns to use to calculate the desired x and y ranges for the final matrix.  If these are proviced they are also
+used as the x and y titles.  x runs across the matrix columns and y along the rows.  This means that if x is the “slow” variable
+in the measurement file, the output matrix will be transposed to accomodate this.  The ranges are assumed to be the same for all lines.</li>
+<li><strong>rangey</strong> (<em>rangex</em><em>,</em>) – If provided, they override the xkey and ykey assingnment.  They should contain arrays of the correct length for use
+on the axes.  These ranges will be saved along with the data (can be unevenly spaced).  The ranges are assumed to be the same for all lines.</li>
+<li><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Titles for the x, y and z axes.  If provided, they override the titles provided in xkey, ykey and key.</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -166,12 +232,24 @@ Can also be indexed by column number.</p>
 <dd><p>Overloaded indexing of the dict</p>
 <p>Reimplements the getting of items from the dict to allow for indexing by column position as well
 as by label</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Desired column index or position.  If a int is given, the method first checks if it is already an
 index.  If it is not, it returns the column given by the index position.</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Desired column index or position.  If a int is given, the method first checks if it is already an
+index.  If it is not, it returns the column given by the index position.</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -188,11 +266,21 @@ index.  If it is not, it returns the column given by the index position.</p>
 <p>A parameter column is typically a column with a constant value for all lines (i.e. power in a vna trace).
 Simply repeats the same value in an array of the same length as the other columns.  Does not work
 if there are no existing columns.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>colname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Column title for the new parameter column</p></li>
 <li><p><strong>colval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Value to fill the parameter column</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>colname</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Column title for the new parameter column</li>
+<li><strong>colval</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Value to fill the parameter column</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -205,6 +293,7 @@ if there are no existing columns.</p>
 <p>Takes a line from the stlabdict given by index.  While getting a column can be done by
 simply taking mystlabdict[myindex], getting a line requires iterating over the dict and
 pulling out the desired line.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>nn</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Line number to be extracted</p>
@@ -217,6 +306,21 @@ name as before but only contains a single float in each).</p>
 <dd class="field-odd"><p><a class="reference internal" href="#stlabutils.utils.stlabdict.stlabdict" title="stlabutils.utils.stlabdict.stlabdict">stlabdict</a></p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nn</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Line number to be extracted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>ret</strong> – New stlabdict with only the desired line (each element is labelled by the same column
+name as before but only contains a single float in each).</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#stlabutils.utils.stlabdict.stlabdict" title="stlabutils.utils.stlabdict.stlabdict">stlabdict</a></td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -237,6 +341,7 @@ name as before but only contains a single float in each).</p>
 <dt id="stlabutils.utils.stlabdict.stlabdict.ncol">
 <code class="sig-name descname">ncol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.ncol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabdict.ncol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of columns</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Number of columnms in stlabdict</p>
@@ -245,6 +350,18 @@ name as before but only contains a single float in each).</p>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of columnms in stlabdict</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -252,6 +369,7 @@ name as before but only contains a single float in each).</p>
 <code class="sig-name descname">nline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.nline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabdict.nline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of lines in dict</p>
 <p>Checks that all columns have the same number of lines</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>Number of lines in first column (should be the same for any column)</p>
@@ -260,6 +378,18 @@ name as before but only contains a single float in each).</p>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Number of lines in first column (should be the same for any column)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)">int</a></td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 </dd></dl>
@@ -272,6 +402,7 @@ name as before but only contains a single float in each).</p>
 methods analogous to those present in spyview.</p>
 <dl class="attribute">
 <dt id="stlabutils.utils.stlabdict.stlabmtx.mtx">
+<<<<<<< HEAD
 <code class="sig-name descname">mtx</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.mtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Original dataframe before any processing.  The dataframe indexes are considered
 the x and y ranges on the final matrix</p>
@@ -280,10 +411,24 @@ the x and y ranges on the final matrix</p>
 <dd class="field-odd"><p>pandas.DataFrame</p>
 </dd>
 </dl>
+=======
+<code class="descname">mtx</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.mtx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Original dataframe before any processing.  The dataframe indexes are considered
+the x and y ranges on the final matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">pandas.DataFrame</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="attribute">
 <dt id="stlabutils.utils.stlabdict.stlabmtx.pmtx">
+<<<<<<< HEAD
 <code class="sig-name descname">pmtx</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.pmtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Processed dataframe (filters applied)</p>
 <dl class="field-list simple">
@@ -291,10 +436,23 @@ the x and y ranges on the final matrix</p>
 <dd class="field-odd"><p>pandas.DataFrame</p>
 </dd>
 </dl>
+=======
+<code class="descname">pmtx</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.pmtx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processed dataframe (filters applied)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">pandas.DataFrame</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="attribute">
 <dt id="stlabutils.utils.stlabdict.stlabmtx.processlist">
+<<<<<<< HEAD
 <code class="sig-name descname">processlist</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.processlist" title="Permalink to this definition">¶</a></dt>
 <dd><p>List strings specifying the applied filters (in order)</p>
 <dl class="field-list simple">
@@ -302,10 +460,23 @@ the x and y ranges on the final matrix</p>
 <dd class="field-odd"><p>array of str</p>
 </dd>
 </dl>
+=======
+<code class="descname">processlist</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.processlist" title="Permalink to this definition">¶</a></dt>
+<dd><p>List strings specifying the applied filters (in order)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body">array of str</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="attribute">
 <dt>
+<<<<<<< HEAD
 <code class="sig-name descname">xtitle, ytitle, ztitle</code></dt>
 <dd><p>Titles for the x,y and z (data) axes</p>
 <dl class="field-list simple">
@@ -313,10 +484,23 @@ the x and y ranges on the final matrix</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
 </dd>
 </dl>
+=======
+<code class="descname">xtitle, ytitle, ztitle</code></dt>
+<dd><p>Titles for the x,y and z (data) axes</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="attribute">
 <dt>
+<<<<<<< HEAD
 <code class="sig-name descname">xtitle0, ytitle0, ztitle0</code></dt>
 <dd><p>Initial Titles for the x,y and z (data) axes (so, in case they are changed, reset can recover them)</p>
 <dl class="field-list simple">
@@ -324,6 +508,18 @@ the x and y ranges on the final matrix</p>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
 </dd>
 </dl>
+=======
+<code class="descname">xtitle0, ytitle0, ztitle0</code></dt>
+<dd><p>Initial Titles for the x,y and z (data) axes (so, in case they are changed, reset can recover them)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Type:</th><td class="field-body"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -331,11 +527,21 @@ the x and y ranges on the final matrix</p>
 <code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">mtx</em>, <em class="sig-param">xtitle='xtitle'</em>, <em class="sig-param">ytitle='ytitle'</em>, <em class="sig-param">ztitle='ztitle'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>stlab mtx initialization</p>
 <p>Takes an input DataFrame and sets up the object</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>mtx</strong> (<em>pandas.DataFrame</em>) – Intup Dataframe</p></li>
 <li><p><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Title for x,y and z axes</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>mtx</strong> (<em>pandas.DataFrame</em>) – Intup Dataframe</li>
+<li><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Title for x,y and z axes</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -353,11 +559,22 @@ the x and y ranges on the final matrix</p>
 <code class="sig-name descname">applyprocessfile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.applyprocessfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.applyprocessfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply all steps in a process list file</p>
 <p>Takes in input file containing a process list and applies them to the data.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Process file name</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Process file name</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -365,11 +582,22 @@ the x and y ranges on the final matrix</p>
 <code class="sig-name descname">applyprocesslist</code><span class="sig-paren">(</span><em class="sig-param">pl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.applyprocesslist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.applyprocesslist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply all steps in array of process strings</p>
 <p>Takes in input list of strings descibing filters to be applied to the data and runs them.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – String describing the desired filter to be applied</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – String describing the desired filter to be applied</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -377,11 +605,22 @@ the x and y ranges on the final matrix</p>
 <code class="sig-name descname">applystep</code><span class="sig-paren">(</span><em class="sig-param">line</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.applystep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.applystep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply step from a process list string</p>
 <p>Takes in input string descibing one filter application and applies it to the data</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – String describing the desired filter to be applied</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – String describing the desired filter to be applied</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -389,6 +628,7 @@ the x and y ranges on the final matrix</p>
 <code class="sig-name descname">crop</code><span class="sig-paren">(</span><em class="sig-param">left=None</em>, <em class="sig-param">right=None</em>, <em class="sig-param">up=None</em>, <em class="sig-param">low=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.crop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.crop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crop filter</p>
 <p>Crops data matrix to the given extents.  Process string <code class="code docutils literal notranslate"><span class="pre">crop</span> <span class="pre">left,right,up,low</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -398,6 +638,19 @@ When given a value, the actual index specified is not included in the crop</p></
 <li><p><strong>up</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – New first row of the cropped array.  If None, is assumed to be the first line of the whole set (no crop)
 When given a value, the actual index specified is not included in the crop</p></li>
 <li><p><strong>low</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – New first row of the cropped array.  If None, is assumed to be the last line of the whole set (no crop)</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>left</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – New first column of cropped array.  If None, is assumed to be the first column of the whole set (no crop)</li>
+<li><strong>right</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – New last column of cropped array.  If None, is assumed to be the last column of the whole set (no crop).
+When given a value, the actual index specified is not included in the crop</li>
+<li><strong>up</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – New first row of the cropped array.  If None, is assumed to be the first line of the whole set (no crop)
+When given a value, the actual index specified is not included in the crop</li>
+<li><strong>low</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – New first row of the cropped array.  If None, is assumed to be the last line of the whole set (no crop)</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -407,6 +660,7 @@ When given a value, the actual index specified is not included in the crop</p></
 <dt id="stlabutils.utils.stlabdict.stlabmtx.delstep">
 <code class="sig-name descname">delstep</code><span class="sig-paren">(</span><em class="sig-param">ii</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.delstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.delstep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a filter from the current process list by index</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>ii</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Index of filter to be removed from applied filters</p>
@@ -421,6 +675,16 @@ When given a value, the actual index specified is not included in the crop</p></
 <p>Removes linear trend from data.
 Process string <code class="code docutils literal notranslate"><span class="pre">detrend`</span></code>.
 This can be useful for phase signals.</p>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ii</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Index of filter to be removed from applied filters</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -428,11 +692,22 @@ This can be useful for phase signals.</p>
 <code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">x=False</em>, <em class="sig-param">y=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.flip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.flip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flip filter</p>
 <p>Reverses x and/or y axis.  Process string <code class="code docutils literal notranslate"><span class="pre">flip</span> <span class="pre">x,y</span></code> (0 is false, 1 is true).</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>y</strong> (<em>x</em><em>,</em>) – If True, x or y is flipped</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>y</strong> (<em>x</em><em>,</em>) – If True, x or y is flipped</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -456,11 +731,21 @@ typically to correctly scale the axes when plotting with matplotlib.pyplot.imsho
 <code class="sig-name descname">insertstep</code><span class="sig-paren">(</span><em class="sig-param">ii</em>, <em class="sig-param">line</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.insertstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.insertstep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inserts new filter into process list</p>
 <p>Adds a new filter at a specific position in the process list</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>ii</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Index for the position of the new filter</p></li>
 <li><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Process string for the new filter</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ii</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Index for the position of the new filter</li>
+<li><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Process string for the new filter</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -470,18 +755,47 @@ typically to correctly scale the axes when plotting with matplotlib.pyplot.imsho
 <dt id="stlabutils.utils.stlabdict.stlabmtx.loadmtx">
 <code class="sig-name descname">loadmtx</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.loadmtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.loadmtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load matrix from an existing Spyview mtx file</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>string</em>) – Name of the mtx file to open</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – Name of the mtx file to open</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.log">
+<code class="descname">log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Natural log filter</p>
+<p>Applies log_e to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">log</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.utils.stlabdict.stlabmtx.log10">
 <code class="sig-name descname">log10</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.log10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.log10" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log10 filter</p>
+<<<<<<< HEAD
 <p>Applies np.log10 to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">log10</span></code></p>
+=======
+<p>Applies log_10 to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">log10</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.logx">
+<code class="descname">logx</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.logx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.logx" title="Permalink to this definition">¶</a></dt>
+<dd><p>Logx filter</p>
+<p>Applies log_n to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">logx</span> <span class="pre">x</span></code></p>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -490,11 +804,52 @@ typically to correctly scale the axes when plotting with matplotlib.pyplot.imsho
 <dd><p>Low Pass filter</p>
 <p>Applies a gaussian filter to the data with given pixel widths.  Other filters are yet to be implemented.
 Process string <code class="code docutils literal notranslate"><span class="pre">lowpass</span> <span class="pre">x,y</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>x</strong><strong>,</strong><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Width of the filter in the x and y direction</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong><strong>,</strong><strong>y</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Width of the filter in the x and y direction</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.nan_greater">
+<code class="descname">nan_greater</code><span class="sig-paren">(</span><em>thres</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.nan_greater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.nan_greater" title="Permalink to this definition">¶</a></dt>
+<dd><p>NaN for values greater than</p>
+<p>Changes all values greater than thres to np.nan. Process string <code class="code docutils literal notranslate"><span class="pre">nan_greater</span> <span class="pre">thres</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thres</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><em>optional</em>) – Threshold value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.nan_smaller">
+<code class="descname">nan_smaller</code><span class="sig-paren">(</span><em>thres</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.nan_smaller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.nan_smaller" title="Permalink to this definition">¶</a></dt>
+<dd><p>NaN for values smaller than</p>
+<p>Changes all values smaller than thres to np.nan. Process string <code class="code docutils literal notranslate"><span class="pre">nan_smaller</span> <span class="pre">thres</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>thres</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><em>optional</em>) – Threshold value</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -502,6 +857,23 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <code class="sig-name descname">neg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.neg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.neg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Negative filter</p>
 <p>Multiplies matrix by -1.  Process string <code class="code docutils literal notranslate"><span class="pre">neg</span></code></p>
+<<<<<<< HEAD
+=======
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.norm_cbc">
+<code class="descname">norm_cbc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.norm_cbc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.norm_cbc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stretch the contrast of each column to full scale</p>
+<p>Each column gets normalized.  Process string <code class="code docutils literal notranslate"><span class="pre">norm_cbc</span></code></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.norm_lbl">
+<code class="descname">norm_lbl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.norm_lbl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.norm_lbl" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stretch the contrast of each line to full scale</p>
+<p>Each line gets normalized.  Process string <code class="code docutils literal notranslate"><span class="pre">norm_lbl</span></code></p>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -509,11 +881,22 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param">x=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Offset filter</p>
 <p>Offsets data values by adding given value.  Process string <code class="code docutils literal notranslate"><span class="pre">offset</span> <span class="pre">x</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><em>optional</em>) – Value to add to all data values</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><em>optional</em>) – Value to add to all data values</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -521,11 +904,22 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <code class="sig-name descname">offset_axes</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">y=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.offset_axes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.offset_axes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Axes offset filter</p>
 <p>Offset axis values.  Process string <code class="code docutils literal notranslate"><span class="pre">offset_axes</span> <span class="pre">x,y</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>y</strong> (<em>x</em><em>,</em>) – Values to add to the axes values of the matrix</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>y</strong> (<em>x</em><em>,</em>) – Values to add to the axes values of the matrix</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -533,11 +927,21 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <code class="sig-name descname">outlier</code><span class="sig-paren">(</span><em class="sig-param">line</em>, <em class="sig-param">vertical=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.outlier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.outlier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outlier filter</p>
 <p>Drop a line or column from the data.  Process string <code class="code docutils literal notranslate"><span class="pre">outlier</span> <span class="pre">line,vertical</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Line or column number to drop</p></li>
 <li><p><strong>vertical</strong> (<em>{1</em><em>,</em><em>0}</em><em>, </em><em>optional</em>) – If 1, drops a column.  If 0, drops a line</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>line</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Line or column number to drop</li>
+<li><strong>vertical</strong> (<em>{1</em><em>,</em><em>0}</em><em>, </em><em>optional</em>) – If 1, drops a column.  If 0, drops a line</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -548,15 +952,41 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <code class="sig-name descname">pixel_avg</code><span class="sig-paren">(</span><em class="sig-param">nx=0</em>, <em class="sig-param">ny=0</em>, <em class="sig-param">center=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.pixel_avg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.pixel_avg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pixel average filter</p>
 <p>Performs pixel averaging on matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">pixel_avg</span> <span class="pre">nx,ny,center</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nx</strong><strong>,</strong><strong>ny</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Width and height of averaging window</p></li>
 <li><p><strong>center</strong> (<em>{0</em><em>,</em><em>1}</em><em>, </em><em>optional</em>) – I don’t know what this does…
 Looks like it omits the center point of each averaging window from the average?</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nx</strong><strong>,</strong><strong>ny</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – Width and height of averaging window</li>
+<li><strong>center</strong> (<em>{0</em><em>,</em><em>1}</em><em>, </em><em>optional</em>) – I don’t know what this does…
+Looks like it omits the center point of each averaging window from the average?</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="stlabutils.utils.stlabdict.stlabmtx.power">
+<code class="descname">power</code><span class="sig-paren">(</span><em>x=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Power filter</p>
+<p>Applies np.power to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">power</span> <span class="pre">x</span></code></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>,</em><em>optional</em>) – </td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -585,11 +1015,22 @@ Looks like it omits the center point of each averaging window from the average?<
 <code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">name='output'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save matrix to file</p>
 <p>Pickels the object and saves it to given file.</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Base filename to be used.  “.mtx.pkl” will be appended to given filename</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Base filename to be used.  “.mtx.pkl” will be appended to given filename</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -597,11 +1038,22 @@ Looks like it omits the center point of each averaging window from the average?<
 <code class="sig-name descname">savemtx</code><span class="sig-paren">(</span><em class="sig-param">filename='./output'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.savemtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.savemtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save to Spyview mtx format</p>
 <p>Saves current processed matrix to a spyview mtx file</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Name of the new mtx file.  “.mtx” will be appended.</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Name of the new mtx file.  “.mtx” will be appended.</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -609,11 +1061,22 @@ Looks like it omits the center point of each averaging window from the average?<
 <code class="sig-name descname">saveprocesslist</code><span class="sig-paren">(</span><em class="sig-param">filename='./process.pl'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.saveprocesslist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.saveprocesslist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save applied filter list</p>
 <p>Saves the applied filters and parameters to a text file (process.pl in the current folder by default)</p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Name of the new file to save the list in.</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Name of the new file to save the list in.</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -621,11 +1084,22 @@ Looks like it omits the center point of each averaging window from the average?<
 <code class="sig-name descname">scale_data</code><span class="sig-paren">(</span><em class="sig-param">factor=1.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.scale_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.scale_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale filter</p>
 <p>Scales all data by given factor.  Process string <code class="code docutils literal notranslate"><span class="pre">scale</span> <span class="pre">x</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><em>optional</em>) – Value to scale the data by</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>factor</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a><em>, </em><em>optional</em>) – Value to scale the data by</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -643,6 +1117,7 @@ Looks like it omits the center point of each averaging window from the average?<
 excluded using the high and low percentile options.  The idea is that all points are sorted in
 increasing order and a percentage from the back and front of the list is rejected for the average
 calculation.  Process string <code class="code docutils literal notranslate"><span class="pre">sub_lbl</span> <span class="pre">lowp,highp,low_limit,high_limit</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -650,6 +1125,17 @@ calculation.  Process string <code class="code docutils literal notranslate"><sp
 <li><p><strong>highp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Percentage of points to be rejected from the averaging on the high side.</p></li>
 <li><p><strong>low_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Absolute value below which points are ignored for the average (and percentile calculations)</p></li>
 <li><p><strong>low_limit</strong> – Absolute value above which points are ignored for the average (and percentile calculations)</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lowp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Percentage of points to be rejected from the averaging on the low side.</li>
+<li><strong>highp</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Percentage of points to be rejected from the averaging on the high side.</li>
+<li><strong>low_limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Absolute value below which points are ignored for the average (and percentile calculations)</li>
+<li><strong>low_limit</strong> – Absolute value above which points are ignored for the average (and percentile calculations)</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -661,11 +1147,21 @@ calculation.  Process string <code class="code docutils literal notranslate"><sp
 <dd><p>Subtract lincut filter</p>
 <p>Selects a line or column and subtracts it from all othe lines or columns in the matrix.
 Process string <code class="code docutils literal notranslate"><span class="pre">sub_linecut</span> <span class="pre">pos,horizontal</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>pos</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Index of line or column to be subtracted</p></li>
 <li><p><strong>horizontal</strong> (<em>{1</em><em>,</em><em>0}</em>) – If 1, a line is subtrcted.  If 0 a column is subtracted</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>pos</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Index of line or column to be subtracted</li>
+<li><strong>horizontal</strong> (<em>{1</em><em>,</em><em>0}</em>) – If 1, a line is subtrcted.  If 0 a column is subtracted</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -676,6 +1172,7 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <code class="sig-name descname">transpose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.transpose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transpose filter</p>
 <p>Transposes the data matrix (and axes).  Process string <code class="code docutils literal notranslate"><span class="pre">transpose</span></code></p>
+<<<<<<< HEAD
 </dd></dl>
 
 <dl class="method">
@@ -685,6 +1182,8 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 <p>Unwraps the phase of data.
 Process string <code class="code docutils literal notranslate"><span class="pre">unwrap`</span></code>.
 This can be useful for phase signals.</p>
+=======
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -697,12 +1196,23 @@ Since the axes are expected to be ordered, this is not an immediate operation an
 <p>If one desires to do this with the x axis instead of the y, the matrix must first be transposed.  After the filter is applied the transpose
 can be undone.</p>
 <p>Process string <code class="code docutils literal notranslate"><span class="pre">vi_to_iv</span> <span class="pre">vmin,vmax,nbins</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vmin</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Lower end of the new y axis</p></li>
 <li><p><strong>vmax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Upper end of the new y axis</p></li>
 <li><p><strong>nbins</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Number of points in the new axis</p></li>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>vmin</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Lower end of the new y axis</li>
+<li><strong>vmax</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.8)"><em>float</em></a>) – Upper end of the new y axis</li>
+<li><strong>nbins</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a>) – Number of points in the new axis</li>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </ul>
 </dd>
 </dl>
@@ -713,11 +1223,22 @@ can be undone.</p>
 <code class="sig-name descname">xderiv</code><span class="sig-paren">(</span><em class="sig-param">direction=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.xderiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.xderiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>X derivative filter</p>
 <p>Apply a derivative along the lines of the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">xderiv</span> <span class="pre">direction</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>direction</strong> (<em>{1</em><em>,</em><em>-1}</em>) – Direction for derivative.  1 by default (normal diff derivative)</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direction</strong> (<em>{1</em><em>,</em><em>-1}</em>) – Direction for derivative.  1 by default (normal diff derivative)</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 <dl class="method">
@@ -725,18 +1246,33 @@ can be undone.</p>
 <code class="sig-name descname">yderiv</code><span class="sig-paren">(</span><em class="sig-param">direction=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.yderiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx.yderiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Y derivative filter</p>
 <p>Apply a derivative along the columns of the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">yderiv</span> <span class="pre">direction</span></code></p>
+<<<<<<< HEAD
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>direction</strong> (<em>{1</em><em>,</em><em>-1}</em>) – Direction for derivative.  1 by default (normal diff derivative)</p>
 </dd>
 </dl>
+=======
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>direction</strong> (<em>{1</em><em>,</em><em>-1}</em>) – Direction for derivative.  1 by default (normal diff derivative)</td>
+</tr>
+</tbody>
+</table>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 </dd></dl>
 
 </dd></dl>
 
 <dl class="attribute">
 <dt id="stlabutils.utils.stlabdict.stlabmtx_pd">
+<<<<<<< HEAD
 <code class="sig-prename descclassname">stlabutils.utils.stlabdict.</code><code class="sig-name descname">stlabmtx_pd</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx_pd" title="Permalink to this definition">¶</a></dt>
+=======
+<code class="descclassname">stlabutils.utils.stlabdict.</code><code class="descname">stlabmtx_pd</code><a class="headerlink" href="#stlabutils.utils.stlabdict.stlabmtx_pd" title="Permalink to this definition">¶</a></dt>
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 <dd><p>alias of <a class="reference internal" href="#stlabutils.utils.stlabdict.stlabmtx" title="stlabutils.utils.stlabdict.stlabmtx"><code class="xref py py-class docutils literal notranslate"><span class="pre">stlabutils.utils.stlabdict.stlabmtx</span></code></a></p>
 </dd></dl>
 
@@ -768,7 +1304,11 @@ can be undone.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
+<<<<<<< HEAD
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+=======
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     </div>
   </body>
 </html>

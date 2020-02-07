@@ -4,7 +4,11 @@
  *
  * Sphinx JavaScript utilities for the full-text search.
  *
+<<<<<<< HEAD
  * :copyright: Copyright 2007-2019 by the Sphinx team, see AUTHORS.
+=======
+ * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -36,10 +40,15 @@ if (!Scorer) {
 
     // query found in title
     title: 15,
+<<<<<<< HEAD
     partialTitle: 7,
     // query found in terms
     term: 5,
     partialTerm: 2
+=======
+    // query found in terms
+    term: 5
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
   };
 }
 
@@ -148,6 +157,10 @@ var Search = {
    */
   query : function(query) {
     var i;
+<<<<<<< HEAD
+=======
+    var stopwords = DOCUMENTATION_OPTIONS.SEARCH_LANGUAGE_STOP_WORDS;
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
 
     // stem the searchterms and add them to the correct list
     var stemmer = new Stemmer();
@@ -269,7 +282,15 @@ var Search = {
             displayNextItem();
           });
         } else if (DOCUMENTATION_OPTIONS.HAS_SOURCE) {
+<<<<<<< HEAD
           $.ajax({url: DOCUMENTATION_OPTIONS.URL_ROOT + item[0] + DOCUMENTATION_OPTIONS.FILE_SUFFIX,
+=======
+          var suffix = DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX;
+          if (suffix === undefined) {
+            suffix = '.txt';
+          }
+          $.ajax({url: DOCUMENTATION_OPTIONS.URL_ROOT + '_sources/' + item[5] + (item[5].slice(-suffix.length) === suffix ? '' : suffix),
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
                   dataType: "text",
                   complete: function(jqxhr, textstatus) {
                     var data = jqxhr.responseText;

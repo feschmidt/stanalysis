@@ -6,3 +6,4 @@ docs/_images/math/
 __pycache__/
 */__pycache__/
 /doc_gen/_build/
+.ipynb_checkpoints/

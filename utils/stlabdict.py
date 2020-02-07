@@ -16,8 +16,6 @@ import pandas as pd
 from scipy.interpolate import interp1d
 
 # TODO: add filter highpass
-# TODO: add filter power
-# TODO: add filter log
 
 
 class stlabdict(OrderedDict):
@@ -301,6 +299,16 @@ def dictarr_to_mtx(data,
     return
 
 
+
+def norm_cbc(data):
+    result = data.copy()
+    for col in data.columns:
+        max_value = data[col].max()
+        min_value = data[col].min()
+        result[col] = (
+            data[col] - min_value) / (max_value - min_value)
+    return result
+
 def sub_lbl(data, lowp=40, highp=40, low_limit=-1e99, high_limit=1e99):
     new_mtx = []
     mtx = data.copy()  # for some reason this makes it faster
@@ -465,19 +473,44 @@ class stlabmtx():
         if x:
             self.pmtx = self.pmtx.iloc[:, ::-1]
         if y:
+<<<<<<< HEAD
             self.pmtx = self.pmtx.iloc[::-1, :]
         self.processlist.append('flip {:d},{:d}'.format(x, y))
 
+=======
+            self.pmtx = self.pmtx.iloc[::-1,:]
+        self.processlist.append('flip {:d},{:d}'.format(x,y))
+    def log(self):
+        """Natural log filter
+
+        Applies log_e to all elements in the matrix.  Process string :code:`log`
+
+        """
+        self.pmtx = np.log(self.pmtx)
+        self.processlist.append('log')
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     def log10(self):
         """Log10 filter
 
-        Applies np.log10 to all elements in the matrix.  Process string :code:`log10`
+        Applies log_10 to all elements in the matrix.  Process string :code:`log10`
 
         """
         self.pmtx = np.log10(self.pmtx)
         self.processlist.append('log10')
 
+<<<<<<< HEAD
     def lowpass(self, x=0, y=0):
+=======
+    def logx(self,x):
+        """Logx filter
+
+        Applies log_n to all elements in the matrix.  Process string :code:`logx x`
+
+        """
+        self.pmtx = np.log(self.pmtx)/np.log(x)
+        self.processlist.append('logx {}'.format(x))
+    def lowpass(self,x=0,y=0):
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
         """Low Pass filter
 
         Applies a gaussian filter to the data with given pixel widths.  Other filters are yet to be implemented.
@@ -490,10 +523,49 @@ class stlabmtx():
 
         """
         # TODO: implement different filter types
+<<<<<<< HEAD
         self.pmtx.loc[:, :] = gaussian_filter(self.pmtx,
                                               sigma=[int(y), int(x)])
         self.processlist.append('lowpass {},{}'.format(x, y))
 
+=======
+        self.pmtx.loc[:,:] = gaussian_filter( self.pmtx, sigma=[int(y),int(x)])
+        self.processlist.append('lowpass {},{}'.format(x,y))
+    def nan_greater(self,thres):
+        """NaN for values greater than
+
+        Changes all values greater than thres to np.nan. Process string :code:`nan_greater thres`.
+
+        Parameters
+        ----------
+        thres: float, optional
+            Threshold value
+        
+        """
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.where(oldvals>thres,np.nan,oldvals)
+        self.pmtx = pd.DataFrame(newvals,index=olddf.index,columns=olddf.columns)
+        self.processlist.append('nan_greater {}'.format(thres))
+
+    def nan_smaller(self, thres):
+        """NaN for values smaller than
+
+        Changes all values smaller than thres to np.nan. Process string :code:`nan_smaller thres`.
+
+        Parameters
+        ----------
+        thres: float, optional
+            Threshold value
+        
+        """
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.where(oldvals < thres, np.nan, oldvals)
+        self.pmtx = pd.DataFrame(
+            newvals, index=olddf.index, columns=olddf.columns)
+        self.processlist.append('nan_smaller {}'.format(thres))
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     def neg(self):
         """Negative filter
 
@@ -503,7 +575,27 @@ class stlabmtx():
         self.pmtx = -self.pmtx
         self.processlist.append('neg')
 
+<<<<<<< HEAD
     def offset(self, x=0):
+=======
+    def norm_cbc(self):
+        """Stretch the contrast of each column to full scale
+
+        Each column gets normalized.  Process string :code:`norm_cbc`
+
+        """
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx)
+        self.processlist.append('norm_cbc')
+    def norm_lbl(self):
+        """Stretch the contrast of each line to full scale
+
+        Each line gets normalized.  Process string :code:`norm_lbl`
+
+        """
+        self.pmtx.loc[:, :] = norm_cbc(self.pmtx.T).T
+        self.processlist.append('norm_lbl')
+    def offset(self,x=0):
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
         """Offset filter
 
         Offsets data values by adding given value.  Process string :code:`offset x`
@@ -545,11 +637,21 @@ class stlabmtx():
             If 1, drops a column.  If 0, drops a line
 
         """
+<<<<<<< HEAD
         axis = 1 - vertical  #swap 1 and 0 since vertical axis is 0 and horizontal is 1
         self.pmtx = self.pmtx.drop(line, axis=axis)
         self.processlist.append('outlier {},{}'.format(line, vertical))
 
     def pixel_avg(self, nx=0, ny=0, center=0):
+=======
+        line=int(line)
+        if vertical==1:
+            self.pmtx = self.pmtx.drop(self.pmtx.columns[line], axis=1)
+        else:
+            self.pmtx = self.pmtx.drop(self.pmtx.index[line], axis=0)
+        self.processlist.append('outlier {},{}'.format(line,vertical))
+    def pixel_avg(self,nx=0,ny=0,center=0):
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
         """Pixel average filter
         
         Performs pixel averaging on matrix.  Process string :code:`pixel_avg nx,ny,center`
@@ -573,6 +675,7 @@ class stlabmtx():
                                                          cval=np.NaN)
         else:
             mask = np.ones((nx, ny))
+<<<<<<< HEAD
             mask[int(nx / 2), int(ny / 2)] = 0
             self.pmtx.loc[:, :] = ndimage.generic_filter(self.pmtx,
                                                          np.nanmean,
@@ -581,6 +684,24 @@ class stlabmtx():
                                                          cval=np.NaN)
         self.processlist.append('pixel_avg {},{},{}'.format(nx, ny, center))
 
+=======
+            mask[int(nx/2), int(ny/2)] = 0
+            self.pmtx.loc[:,:] = ndimage.generic_filter(self.pmtx, np.nanmean, footprint=mask, mode='constant', cval=np.NaN)
+        self.processlist.append('pixel_avg {},{},{}'.format(nx,ny,center))
+
+    def power(self, x=1):
+        """Power filter
+
+        Applies np.power to all elements in the matrix.  Process string :code:`power x`
+
+        Parameters
+        ----------
+        x : float,optional
+
+        """
+        self.pmtx = np.float_power(10,self.pmtx)
+        self.processlist.append('power {}'.format(x))
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     def rotate_ccw(self):
         """Rotate counter-clockwise filter
 
@@ -1002,9 +1123,15 @@ def yderiv_pd(data, direction=1):
     dy = np.diff(data.index)
     data = data.diff(axis=0, periods=direction)
     data = data.dropna(axis=0)
+<<<<<<< HEAD
     if direction == -1:
         dy = -dy
     data = data.divide(dy, axis='rows')
+=======
+    if direction==-1:
+        dy = -1*dy
+    data = data.divide(dy,axis='rows')
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
     return data
 
 

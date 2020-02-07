@@ -4,7 +4,11 @@
  *
  * Sphinx JavaScript utilities for all documentation.
  *
+<<<<<<< HEAD
  * :copyright: Copyright 2007-2019 by the Sphinx team, see AUTHORS.
+=======
+ * :copyright: Copyright 2007-2018 by the Sphinx team, see AUTHORS.
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
  * :license: BSD, see LICENSE for details.
  *
  */
@@ -87,13 +91,23 @@ jQuery.fn.highlightText = function(text, className) {
           node.nextSibling));
         node.nodeValue = val.substr(0, pos);
         if (isInSVG) {
+<<<<<<< HEAD
           var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
           var bbox = node.parentElement.getBBox();
           rect.x.baseVal.value = bbox.x;
+=======
+          var bbox = span.getBBox();
+          var rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+       	  rect.x.baseVal.value = bbox.x;
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
           rect.y.baseVal.value = bbox.y;
           rect.width.baseVal.value = bbox.width;
           rect.height.baseVal.value = bbox.height;
           rect.setAttribute('class', className);
+<<<<<<< HEAD
+=======
+          var parentOfText = node.parentNode.parentNode;
+>>>>>>> 779b50e1beb8a76403e126a56be0be8177d697a8
           addItems.push({
               "parent": node.parentNode,
               "target": rect});
