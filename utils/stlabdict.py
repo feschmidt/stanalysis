@@ -452,7 +452,12 @@ class stlabmtx():
         This can be useful for phase signals.
 
         """
-        self.pmtx = signal.detrend(self.pmtx)
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = signal.detrend(oldvals)
+        self.pmtx = pd.DataFrame(newvals,
+                                 index=olddf.index,
+                                 columns=olddf.columns)
         self.processlist.append('detrend')
 
     def flip(self, x=False, y=False):
@@ -783,7 +788,12 @@ class stlabmtx():
         This can be useful for phase signals.
 
         """
-        self.pmtx = np.unwrap(self.pmtx)
+        oldvals = self.pmtx.values
+        olddf = copy.deepcopy(self.pmtx)
+        newvals = np.unwrap(oldvals)
+        self.pmtx = pd.DataFrame(newvals,
+                                 index=olddf.index,
+                                 columns=olddf.columns)
         self.processlist.append('unwrap')
 
     def vi_to_iv(self, vmin, vmax, nbins):
