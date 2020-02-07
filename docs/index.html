@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Documentation for STLabutils &#8212; STLabutils  documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -11,7 +13,6 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="S11fit – Resonance fitting routines and utilities" href="utils/S11fit.html" /> 
@@ -52,11 +53,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -117,11 +120,11 @@ STLabutils were formerly contained within <code class="code docutils literal not
 <div class="line">│   └── …</div>
 </div>
 <ul class="simple">
-<li><p>The “utils” folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).
-These packages were formely contained within <code class="code docutils literal notranslate"><span class="pre">stlab.utils</span></code>.</p></li>
-<li><p>“examples” contains a collection of basic examples such as loading and plotting example data and Q factor fits.</p></li>
-<li><p>“docs” contains this documentation and “doc_gen” contains the sphynx scripts for generating it.</p></li>
-<li><p>The __init__.py file contains the modules and names imported when running “import stlabutils”.  Note that some modules and functions are renamed for (in?)convenience.</p></li>
+<li>The “utils” folder contains modules for reading and writing files, resonance fitting, data structure management (stlabmtx for example).
+These packages were formely contained within <code class="code docutils literal notranslate"><span class="pre">stlab.utils</span></code>.</li>
+<li>“examples” contains a collection of basic examples such as loading and plotting example data and Q factor fits.</li>
+<li>“docs” contains this documentation and “doc_gen” contains the sphynx scripts for generating it.</li>
+<li>The __init__.py file contains the modules and names imported when running “import stlabutils”.  Note that some modules and functions are renamed for (in?)convenience.</li>
 </ul>
 <p>The imports done when doing <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">stlabutils</span></code> are:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># __all__ = [&quot;metagen&quot;, &quot;readdata&quot;, &quot;S11fit&quot;, &quot;newfile&quot;]</span>
@@ -157,9 +160,9 @@ These packages were formely contained within <code class="code docutils literal 
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
 <ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
 </ul>
 </div>
 <div class="section" id="license">
@@ -190,7 +193,7 @@ These packages were formely contained within <code class="code docutils literal 
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
     </div>
   </body>
 </html>

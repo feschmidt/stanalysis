@@ -1,9 +1,11 @@
 
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Metagen – Spyview metafile generation &#8212; STLabutils  documentation</title>
     <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -11,7 +13,6 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="newfile – New measurement folder creation" href="newfile.html" />
@@ -51,11 +52,13 @@
     </ul>
    </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
+  <h3>Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" />
       <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -87,50 +90,58 @@ how many points are on x and y and how it should label the axis values and title
 a metafile, spyview searches for blank lines to figure out when each line of the matrix ends.</p>
 <dl class="function">
 <dt id="stlabutils.utils.metagen.fromarrays">
-<code class="sig-prename descclassname">stlabutils.utils.metagen.</code><code class="sig-name descname">fromarrays</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">xarray</em>, <em class="sig-param">yarray</em>, <em class="sig-param">zarray=[]</em>, <em class="sig-param">xtitle=''</em>, <em class="sig-param">ytitle=''</em>, <em class="sig-param">ztitle=''</em>, <em class="sig-param">colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromarrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.metagen.fromarrays" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">stlabutils.utils.metagen.</code><code class="descname">fromarrays</code><span class="sig-paren">(</span><em>myfile</em>, <em>xarray</em>, <em>yarray</em>, <em>zarray=[]</em>, <em>xtitle=''</em>, <em>ytitle=''</em>, <em>ztitle=''</em>, <em>colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromarrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.metagen.fromarrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a metafile for a given file using axes arrays as input</p>
 <p>Generates a metafile for the given file taking the endponts of given arrays and their length.
 Column titles are added manually providing a list of titles or by autogenerating from the
 file title line.</p>
 <p>Internally, this function calls <a class="reference internal" href="#stlabutils.utils.metagen.fromlimits" title="stlabutils.utils.metagen.fromlimits"><code class="xref any py py-func docutils literal notranslate"><span class="pre">fromlimits</span></code></a></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>myfile</strong> (<em>file</em><em> or </em><em>string</em>) – Base file for metafile</p></li>
-<li><p><strong>xarray</strong> (<em>array of floats</em>) – Array for x axis limits and number of points</p></li>
-<li><p><strong>yarray</strong> (<em>array of floats</em>) – Array for y axis limits and number of points</p></li>
-<li><p><strong>zarray</strong> (<em>array of floats</em><em> or </em><em>empty list</em><em>, </em><em>optional</em>) – Array for z axis limits and number of points (for data cubes)</p></li>
-<li><p><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Title for x, y, z axis axis</p></li>
-<li><p><strong>colnames</strong> (<em>list of str</em><em>, </em><em>'auto'</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – List of column titles for the given file.  If None, no titles are written in metafile.  If auto
-function reads the first line of the file and uses the obtained titles in the metafile</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>myfile</strong> (<em>file</em><em> or </em><em>string</em>) – Base file for metafile</li>
+<li><strong>xarray</strong> (<em>array of floats</em>) – Array for x axis limits and number of points</li>
+<li><strong>yarray</strong> (<em>array of floats</em>) – Array for y axis limits and number of points</li>
+<li><strong>zarray</strong> (<em>array of floats</em><em> or </em><em>empty list</em><em>, </em><em>optional</em>) – Array for z axis limits and number of points (for data cubes)</li>
+<li><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Title for x, y, z axis axis</li>
+<li><strong>colnames</strong> (<em>list of str</em><em>, </em><em>'auto'</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a><em>, </em><em>optional</em>) – List of column titles for the given file.  If None, no titles are written in metafile.  If auto
+function reads the first line of the file and uses the obtained titles in the metafile</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="function">
 <dt id="stlabutils.utils.metagen.fromlimits">
-<code class="sig-prename descclassname">stlabutils.utils.metagen.</code><code class="sig-name descname">fromlimits</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">Nx</em>, <em class="sig-param">xmin</em>, <em class="sig-param">xmax</em>, <em class="sig-param">Ny</em>, <em class="sig-param">ymin</em>, <em class="sig-param">ymax</em>, <em class="sig-param">Nz=None</em>, <em class="sig-param">zmin=None</em>, <em class="sig-param">zmax=None</em>, <em class="sig-param">xtitle=''</em>, <em class="sig-param">ytitle=''</em>, <em class="sig-param">ztitle=''</em>, <em class="sig-param">colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromlimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.metagen.fromlimits" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">stlabutils.utils.metagen.</code><code class="descname">fromlimits</code><span class="sig-paren">(</span><em>myfile</em>, <em>Nx</em>, <em>xmin</em>, <em>xmax</em>, <em>Ny</em>, <em>ymin</em>, <em>ymax</em>, <em>Nz=None</em>, <em>zmin=None</em>, <em>zmax=None</em>, <em>xtitle=''</em>, <em>ytitle=''</em>, <em>ztitle=''</em>, <em>colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromlimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.metagen.fromlimits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a metafile for the given axis limits and point number</p>
 <p>Generates a metafile for the given file taking the endponts of given arrays and their length.
 Column titles are added manually providing a list of titles or by autogenerating from the
 file title line.</p>
 <p>Internally, this function is called by <a class="reference internal" href="#stlabutils.utils.metagen.fromarrays" title="stlabutils.utils.metagen.fromarrays"><code class="xref any py py-func docutils literal notranslate"><span class="pre">fromarrays</span></code></a>.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>myfile</strong> (<em>file</em><em> or </em><em>string</em>) – Base file for metafile</p></li>
-<li><p><strong>Ny</strong> (<em>Nx</em><em>,</em>) – Number of points in x, y axis</p></li>
-<li><p><strong>Nz</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – Number of points in z axis</p></li>
-<li><p><strong>ymin</strong> (<em>xmin</em><em>,</em>) – Minimum value for x and y axis</p></li>
-<li><p><strong>ymax</strong> (<em>xmax</em><em>,</em>) – Maximum value for x and y axis</p></li>
-<li><p><strong>zmax</strong> (<em>zmin</em><em>,</em>) – Maximum and minimum value for the z axis (for data cubes)</p></li>
-<li><p><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Title for x, y, z axis axis</p></li>
-<li><p><strong>colnames</strong> (<em>list of str</em><em>, </em><em>'auto'</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – List of column titles for the given file.  If None, no titles are written in metafile.  If auto
-function reads the first line of the file and uses the obtained titles in the metafile</p></li>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>myfile</strong> (<em>file</em><em> or </em><em>string</em>) – Base file for metafile</li>
+<li><strong>Ny</strong> (<em>Nx</em><em>,</em>) – Number of points in x, y axis</li>
+<li><strong>Nz</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a><em>, </em><em>optional</em>) – Number of points in z axis</li>
+<li><strong>ymin</strong> (<em>xmin</em><em>,</em>) – Minimum value for x and y axis</li>
+<li><strong>ymax</strong> (<em>xmax</em><em>,</em>) – Maximum value for x and y axis</li>
+<li><strong>zmax</strong> (<em>zmin</em><em>,</em>) – Maximum and minimum value for the z axis (for data cubes)</li>
+<li><strong>ytitle</strong><strong>, </strong><strong>ztitle</strong> (<em>xtitle</em><em>,</em>) – Title for x, y, z axis axis</li>
+<li><strong>colnames</strong> (<em>list of str</em><em>, </em><em>'auto'</em><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.7)"><em>None</em></a><em>, </em><em>optional</em>) – List of column titles for the given file.  If None, no titles are written in metafile.  If auto
+function reads the first line of the file and uses the obtained titles in the metafile</li>
 </ul>
-</dd>
-</dl>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>
@@ -161,7 +172,7 @@ function reads the first line of the file and uses the obtained titles in the me
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.2.
     </div>
   </body>
 </html>
