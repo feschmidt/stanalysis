@@ -1,3 +1,5 @@
+
+
 """Module providing data structures for data collection and analysis
 
 The main features provided in this module are the stlabmtx class and the stlabdict class as
@@ -155,7 +157,7 @@ class stlabdict(OrderedDict):
 
 import copy
 
-#Auxiliary processing functions for stlabmtx
+# Auxiliary processing functions for stlabmtx
 
 
 def checkEqual1(iterator):
@@ -374,7 +376,7 @@ class stlabmtx():
         self.mtx = copy.deepcopy(mtx)
         self.mtx.index.name = str(ytitle)
         self.mtx.columns.name = str(xtitle)
-        print(self.mtx.shape)
+        #print(self.mtx.shape)
         self.processlist = []
         self.pmtx = self.mtx
         self.xtitle = str(xtitle)
@@ -1047,11 +1049,11 @@ class stlabmtx():
 #           Units, Data Value ,Y, 0.000000e+00, 2.001000e+03,Z, 0.000000e+00, 6.010000e+02,Nothing, 0, 1
 #           2001 601 1 8
 
-#Units, Dataset name, xname, xmin, xmax, yname, ymin, ymax, zname, zmin, zmax
-#nx ny nz length
+# Units, Dataset name, xname, xmin, xmax, yname, ymin, ymax, zname, zmin, zmax
+# nx ny nz length
 
-#dB, S21dB, Frequency (Hz), 6.000000e+09, 8.300000e+09, Vgate (V), 3.000000e+01, -3.000000e+01, Nothing, 0, 1
-#2001 601 1 8
+# dB, S21dB, Frequency (Hz), 6.000000e+09, 8.300000e+09, Vgate (V), 3.000000e+01, -3.000000e+01, Nothing, 0, 1
+# 2001 601 1 8
 
     def loadmtx(self, filename):
         """Load matrix from an existing Spyview mtx file
