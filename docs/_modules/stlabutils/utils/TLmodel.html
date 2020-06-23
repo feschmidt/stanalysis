@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>stlabutils.utils.TLmodel &#8212; STLabutils  documentation</title>
+    <title>stlabutils.TLmodel &#8212; STLabutils  documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -48,7 +48,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>Source code for stlabutils.utils.TLmodel</h1><div class="highlight"><pre>
+  <h1>Source code for stlabutils.TLmodel</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Module for the calculation of transmission line impedances</span>
 
 <span class="sd">Most functions require a dictionary with specific elements regarding circuit parameters in it.::</span>
@@ -89,7 +89,7 @@
 <span class="kn">import</span> <span class="nn">copy</span>
 
 
-<div class="viewcode-block" id="S11theo"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.S11theo">[docs]</a><span class="k">def</span> <span class="nf">S11theo</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">kint</span><span class="p">,</span> <span class="n">kext</span><span class="p">):</span>
+<div class="viewcode-block" id="S11theo"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.S11theo">[docs]</a><span class="k">def</span> <span class="nf">S11theo</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">f0</span><span class="p">,</span> <span class="n">kint</span><span class="p">,</span> <span class="n">kext</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Lorentzian absortion function</span>
 
 <span class="sd">    Approximate formula for a Series RLC circuit capacitively</span>
@@ -118,7 +118,7 @@
     <span class="k">return</span> <span class="o">-</span><span class="mf">1.</span> <span class="o">+</span> <span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">kext</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">kext</span> <span class="o">+</span> <span class="n">kint</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span> <span class="o">*</span> <span class="n">df</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="S11"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.S11">[docs]</a><span class="k">def</span> <span class="nf">S11</span><span class="p">(</span><span class="n">Zin</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="S11"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.S11">[docs]</a><span class="k">def</span> <span class="nf">S11</span><span class="p">(</span><span class="n">Zin</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Exact expression of S11 for a given input impedance and parameters</span>
 
 <span class="sd">    Parameters</span>
@@ -139,7 +139,7 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="Zincircuit"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Zincircuit">[docs]</a><span class="k">def</span> <span class="nf">Zincircuit</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Zincircuit"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Zincircuit">[docs]</a><span class="k">def</span> <span class="nf">Zincircuit</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Analytical dalculation of input impedance of a TL resonator with a shunt capacitor</span>
 
 <span class="sd">    Is only valid for a shunt coupler and depends on the definition of :func:`Zload`.</span>
@@ -174,7 +174,7 @@
     <span class="k">return</span> <span class="n">Zin</span></div>
 
 
-<div class="viewcode-block" id="Zincircuit_approx"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Zincircuit_approx">[docs]</a><span class="k">def</span> <span class="nf">Zincircuit_approx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Zincircuit_approx"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Zincircuit_approx">[docs]</a><span class="k">def</span> <span class="nf">Zincircuit_approx</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Lumped equivalent calculation of input impedance of a TL resonator with a shunt capacitor</span>
 
 <span class="sd">    Is only valid for a shunt coupler and assumes the load impedance is :code:`params[&#39;Lg&#39;]`.</span>
@@ -219,7 +219,7 @@
     <span class="k">return</span> <span class="n">Zin</span></div>
 
 
-<div class="viewcode-block" id="ZTL"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.ZTL">[docs]</a><span class="k">def</span> <span class="nf">ZTL</span><span class="p">(</span><span class="n">Z0</span><span class="p">,</span> <span class="n">Zl</span><span class="p">,</span> <span class="n">gammal</span><span class="p">):</span>
+<div class="viewcode-block" id="ZTL"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.ZTL">[docs]</a><span class="k">def</span> <span class="nf">ZTL</span><span class="p">(</span><span class="n">Z0</span><span class="p">,</span> <span class="n">Zl</span><span class="p">,</span> <span class="n">gammal</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Impedance of a general terminated transmission line</span>
 
 <span class="sd">    Calculates the input impedance of a termniated transmission line with a given load impedance</span>
@@ -246,7 +246,7 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="Zcoup"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Zcoup">[docs]</a><span class="k">def</span> <span class="nf">Zcoup</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Zcoup"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Zcoup">[docs]</a><span class="k">def</span> <span class="nf">Zcoup</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Impedance of a general capacitor</span>
 
 <span class="sd">    Here used for the shunt capacitor (coupler) at the start of the TL</span>
@@ -268,7 +268,7 @@
     <span class="k">return</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">C</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Zload"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Zload">[docs]</a><span class="k">def</span> <span class="nf">Zload</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Zload"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Zload">[docs]</a><span class="k">def</span> <span class="nf">Zload</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Impedance of a load at the far end of the TL resonator</span>
 
 <span class="sd">    Currently includes the possiblitity for an RCSJ and a capacitor as load</span>
@@ -302,7 +302,7 @@
     <span class="k">return</span> <span class="n">Z</span></div>
 
 
-<div class="viewcode-block" id="Zparallel"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Zparallel">[docs]</a><span class="k">def</span> <span class="nf">Zparallel</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<div class="viewcode-block" id="Zparallel"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Zparallel">[docs]</a><span class="k">def</span> <span class="nf">Zparallel</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Parallel impedance of a collection of impedances</span>
 
 <span class="sd">    Parameters</span>
@@ -323,7 +323,7 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="Vin"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Vin">[docs]</a><span class="k">def</span> <span class="nf">Vin</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Vin"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Vin">[docs]</a><span class="k">def</span> <span class="nf">Vin</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Voltage phasor at the input</span>
 
 <span class="sd">    If Pin is in params, it is used to calculate the actual amplitudes.</span>
@@ -350,7 +350,7 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="Vx"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Vx">[docs]</a><span class="k">def</span> <span class="nf">Vx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Vx"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Vx">[docs]</a><span class="k">def</span> <span class="nf">Vx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Voltage phasor at a given distance along the TL</span>
 
 <span class="sd">    Distance x counts from the load (at 0) to l (at input)</span>
@@ -383,7 +383,7 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="omega0"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.omega0">[docs]</a><span class="k">def</span> <span class="nf">omega0</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">wws</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1">#Range wws in rad/sec</span>
+<div class="viewcode-block" id="omega0"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.omega0">[docs]</a><span class="k">def</span> <span class="nf">omega0</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">wws</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1">#Range wws in rad/sec</span>
     <span class="sd">&quot;&quot;&quot;Finds the approximate angular resonance frequency from a generic circuit impedance</span>
 
 <span class="sd">    This is an approximation which can then be used to a fitting function as starting value</span>
@@ -429,7 +429,7 @@
 <span class="sd">    &#39;&#39;&#39;</span></div>
 
 
-<div class="viewcode-block" id="f0"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.f0">[docs]</a><span class="k">def</span> <span class="nf">f0</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">ffs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1">#Range ffs in Hz</span>
+<div class="viewcode-block" id="f0"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.f0">[docs]</a><span class="k">def</span> <span class="nf">f0</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">ffs</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>  <span class="c1">#Range ffs in Hz</span>
     <span class="sd">&quot;&quot;&quot;Finds the approximate resonance frequency in Hz from a generic circuit impedance</span>
 
 <span class="sd">    This is an approximation which can then be used to a fitting function as starting value</span>
@@ -455,7 +455,7 @@
     <span class="k">return</span> <span class="n">omega0</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">wws</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span></div>
 
 
-<div class="viewcode-block" id="Zx"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Zx">[docs]</a><span class="k">def</span> <span class="nf">Zx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Zx"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Zx">[docs]</a><span class="k">def</span> <span class="nf">Zx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Impedance at a given distance along the TL</span>
 
 <span class="sd">    Distance x counts from the load (at 0) to l (at input)</span>
@@ -487,7 +487,7 @@
     <span class="k">return</span> <span class="n">result</span></div>
 
 
-<div class="viewcode-block" id="PintoV0"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.PintoV0">[docs]</a><span class="k">def</span> <span class="nf">PintoV0</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="PintoV0"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.PintoV0">[docs]</a><span class="k">def</span> <span class="nf">PintoV0</span><span class="p">(</span><span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Conversion from power to voltage</span>
 
 <span class="sd">    Parameters</span>
@@ -505,7 +505,7 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;Z0p&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="n">Plin</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Ix"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Ix">[docs]</a><span class="k">def</span> <span class="nf">Ix</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Ix"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Ix">[docs]</a><span class="k">def</span> <span class="nf">Ix</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Current phasor at a given distance along the TL</span>
 
 <span class="sd">    Distance x counts from the load (at 0) to l (at input)</span>
@@ -528,7 +528,7 @@
     <span class="k">return</span> <span class="n">Vx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span> <span class="o">/</span> <span class="n">Zx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="Vj"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Vj">[docs]</a><span class="k">def</span> <span class="nf">Vj</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Vj"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Vj">[docs]</a><span class="k">def</span> <span class="nf">Vj</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Voltage at the far end of the TL across a Josephson junction (RCSJ)</span>
 <span class="sd">    </span>
 <span class="sd">    If there is a Lj and Cg in params, returns the voltage accross the junction (complex).  Else, just the load voltage</span>
@@ -562,7 +562,7 @@
         <span class="k">return</span> <span class="n">Vl</span></div>
 
 
-<div class="viewcode-block" id="Ij"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.Ij">[docs]</a><span class="k">def</span> <span class="nf">Ij</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="Ij"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.Ij">[docs]</a><span class="k">def</span> <span class="nf">Ij</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Total current going out the far end of the TL</span>
 
 <span class="sd">    Parameters</span>
@@ -584,7 +584,7 @@
     <span class="k">return</span> <span class="n">Il</span></div>
 
 
-<div class="viewcode-block" id="alpha"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.alpha">[docs]</a><span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="alpha"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.alpha">[docs]</a><span class="k">def</span> <span class="nf">alpha</span><span class="p">(</span><span class="n">omega</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Attenuation constant of a TL</span>
 
 <span class="sd">    Parameters</span>
@@ -603,7 +603,7 @@
     <span class="k">return</span> <span class="n">params</span><span class="p">[</span><span class="s1">&#39;alpha&#39;</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="FindParFromRes"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.utils.TLmodel.FindParFromRes">[docs]</a><span class="k">def</span> <span class="nf">FindParFromRes</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">par</span><span class="o">=</span><span class="s1">&#39;Lj&#39;</span><span class="p">,</span> <span class="n">wws</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<div class="viewcode-block" id="FindParFromRes"><a class="viewcode-back" href="../../../utils/TLmodel.html#stlabutils.TLmodel.FindParFromRes">[docs]</a><span class="k">def</span> <span class="nf">FindParFromRes</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="n">w0</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">par</span><span class="o">=</span><span class="s1">&#39;Lj&#39;</span><span class="p">,</span> <span class="n">wws</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Function to find value of a parameter to match a given resonance frequency</span>
 
 <span class="sd">    Finds approximate value of par to have an angular resonance frequency of w0.</span>

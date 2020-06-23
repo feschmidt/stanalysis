@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>stlabutils.utils.S11fit &#8212; STLabutils  documentation</title>
+    <title>stlabutils.S11fit &#8212; STLabutils  documentation</title>
     <link rel="stylesheet" href="../../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
@@ -48,7 +48,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <h1>Source code for stlabutils.utils.S11fit</h1><div class="highlight"><pre>
+  <h1>Source code for stlabutils.S11fit</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Module for fitting resonance line shapes to different circuit models</span>
 
 <span class="sd">This module contains the functions necessary to fit some general Lorentzian to</span>
@@ -65,7 +65,7 @@
 <span class="n">pi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
 
 
-<div class="viewcode-block" id="newparams"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.newparams">[docs]</a><span class="k">def</span> <span class="nf">newparams</span><span class="p">(</span><span class="n">f0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Qint</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Qext</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ap</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bp</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<div class="viewcode-block" id="newparams"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.newparams">[docs]</a><span class="k">def</span> <span class="nf">newparams</span><span class="p">(</span><span class="n">f0</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">Qint</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">Qext</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">theta</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ap</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bp</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Makes new Parameters object compatible with fitting routine</span>
 
 <span class="sd">    A new lmfit.Parameters object is created using the given values.  Default</span>
@@ -120,7 +120,7 @@
     <span class="k">return</span> <span class="n">params</span></div>
 
 
-<div class="viewcode-block" id="realimag"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.realimag">[docs]</a><span class="k">def</span> <span class="nf">realimag</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="viewcode-block" id="realimag"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.realimag">[docs]</a><span class="k">def</span> <span class="nf">realimag</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Makes alternating real and imaginary part array from complex array</span>
 
 <span class="sd">    Takes an array-like object of complex number elements and generates a</span>
@@ -143,7 +143,7 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="n">x</span><span class="o">.</span><span class="n">real</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">array</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span></div>
 
 
-<div class="viewcode-block" id="un_realimag"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.un_realimag">[docs]</a><span class="k">def</span> <span class="nf">un_realimag</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="viewcode-block" id="un_realimag"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.un_realimag">[docs]</a><span class="k">def</span> <span class="nf">un_realimag</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Makes complex array from alternating real and imaginary part array</span>
 
 <span class="sd">    Performs the reverse operation to realimag</span>
@@ -166,7 +166,7 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">z</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="phaseunwrap"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.phaseunwrap">[docs]</a><span class="k">def</span> <span class="nf">phaseunwrap</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
+<div class="viewcode-block" id="phaseunwrap"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.phaseunwrap">[docs]</a><span class="k">def</span> <span class="nf">phaseunwrap</span><span class="p">(</span><span class="n">array</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Removes a global phase slope from a complex array</span>
 
 <span class="sd">    Unwraps the phase of a sequence of complex numbers and subtracts the average</span>
@@ -192,7 +192,7 @@
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="getwidth_phase"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.getwidth_phase">[docs]</a><span class="k">def</span> <span class="nf">getwidth_phase</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
+<div class="viewcode-block" id="getwidth_phase"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.getwidth_phase">[docs]</a><span class="k">def</span> <span class="nf">getwidth_phase</span><span class="p">(</span><span class="n">i0</span><span class="p">,</span> <span class="n">vec</span><span class="p">,</span> <span class="n">margin</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Finds indices for peak width around given maximum position</span>
 
 <span class="sd">    Auxiliary function for fit.  Given the complex array &quot;vec&quot; assuming &quot;i0&quot;</span>
@@ -238,7 +238,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">i1</span><span class="p">,</span> <span class="n">i2</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="trim"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.trim">[docs]</a><span class="k">def</span> <span class="nf">trim</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">imin</span><span class="p">,</span> <span class="n">imax</span><span class="p">):</span>
+<div class="viewcode-block" id="trim"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.trim">[docs]</a><span class="k">def</span> <span class="nf">trim</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">imin</span><span class="p">,</span> <span class="n">imax</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Removes range from imin to imax from vectors x,y</span>
 
 <span class="sd">    Given two (possibly complex) arrays and indices corresponding to a lower and upper edge,</span>
@@ -283,7 +283,7 @@
     <span class="k">return</span> <span class="p">(</span><span class="n">xnew</span><span class="p">,</span> <span class="n">ynew</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="S11back"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.S11back">[docs]</a><span class="k">def</span> <span class="nf">S11back</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
+<div class="viewcode-block" id="S11back"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.S11back">[docs]</a><span class="k">def</span> <span class="nf">S11back</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Function for background model.</span>
 
 <span class="sd">    Returns the background model values for a given set of parameters and</span>
@@ -348,7 +348,7 @@
     <span class="k">return</span> <span class="n">realimag</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="S11theo"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.S11theo">[docs]</a><span class="k">def</span> <span class="nf">S11theo</span><span class="p">(</span><span class="n">frec</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">ftype</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>  <span class="c1"># Equation</span>
+<div class="viewcode-block" id="S11theo"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.S11theo">[docs]</a><span class="k">def</span> <span class="nf">S11theo</span><span class="p">(</span><span class="n">frec</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">ftype</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>  <span class="c1"># Equation</span>
     <span class="sd">&quot;&quot;&quot;Theoretical response functions of cavities with no background</span>
 
 <span class="sd">    Returns the theory values of cavity response functions for a given set of</span>
@@ -431,7 +431,7 @@
     <span class="k">return</span> <span class="n">realimag</span><span class="p">(</span><span class="n">residual</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="S11func"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.S11func">[docs]</a><span class="k">def</span> <span class="nf">S11func</span><span class="p">(</span><span class="n">frec</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">ftype</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="S11func"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.S11func">[docs]</a><span class="k">def</span> <span class="nf">S11func</span><span class="p">(</span><span class="n">frec</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">ftype</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Function for total response from background model and resonator response</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -442,7 +442,7 @@
     <span class="k">return</span> <span class="n">model</span></div>
 
 
-<div class="viewcode-block" id="S11fit"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.utils.S11fit.S11fit">[docs]</a><span class="k">def</span> <span class="nf">S11fit</span><span class="p">(</span><span class="n">frec</span><span class="p">,</span>
+<div class="viewcode-block" id="S11fit"><a class="viewcode-back" href="../../../utils/S11fit.html#stlabutils.S11fit.S11fit">[docs]</a><span class="k">def</span> <span class="nf">S11fit</span><span class="p">(</span><span class="n">frec</span><span class="p">,</span>
            <span class="n">S11</span><span class="p">,</span>
            <span class="n">ftype</span><span class="o">=</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
            <span class="n">fitbackground</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>

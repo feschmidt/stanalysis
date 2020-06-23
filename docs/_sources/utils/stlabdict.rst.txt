@@ -1,7 +1,7 @@
 stlabdict -- Data structures and matrices
 =========================================
 
-.. automodule:: stlabutils.utils.stlabdict
+.. automodule:: stlabutils.stlabdict
   :special-members:
   :members:
   :exclude-members: __weakref__

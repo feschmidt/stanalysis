@@ -1,6 +1,6 @@
 Autoplot -- Quick plots for measurement reference
 =================================================
 
-.. automodule:: stlabutils.utils.autoplotter
+.. automodule:: stlabutils.autoplotter
   :members:
 

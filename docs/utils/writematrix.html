@@ -68,8 +68,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-stlabutils.utils.writematrix">
-<span id="writematrix-data-file-writing-methods"></span><h1>writematrix – Data file writing methods<a class="headerlink" href="#module-stlabutils.utils.writematrix" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-stlabutils.writematrix">
+<span id="writematrix-data-file-writing-methods"></span><h1>writematrix – Data file writing methods<a class="headerlink" href="#module-stlabutils.writematrix" title="Permalink to this headline">¶</a></h1>
 <p>Module with data writing function definitions</p>
 <p>This module includes several functions used in writing data to files in a
 well defined way.  While you are free to write data to a file in any way you want,
@@ -77,8 +77,8 @@ it is preferable to try to keep a lab wide standard by using these methods.</p>
 <p>The module was written early on and could probably do with some cleanup…  Specifically
 old style format strings as well as redundant methods no longer required.</p>
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.params_to_str">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">params_to_str</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#params_to_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.params_to_str" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.params_to_str">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">params_to_str</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#params_to_str"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.params_to_str" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts fit parameter values to a single line string</p>
 <p>Takes a lmfit.Parameters object and converts its parameter values to a single line string.</p>
 <dl class="field-list simple">
@@ -99,8 +99,8 @@ old style format strings as well as redundant methods no longer required.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.savedict">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">savedict</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">mydict</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#savedict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.savedict" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.savedict">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">savedict</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">mydict</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#savedict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.savedict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a data dictionary to a file as a matrix block</p>
 <p>Writes a given dictionary where each element is a list of numbers, i.e., each element in
 the dict is though of as a column.  Expects all columns to be the same length.
@@ -124,11 +124,11 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.savedictarray">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">savedictarray</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">mydictarray</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#savedictarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.savedictarray" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.savedictarray">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">savedictarray</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">mydictarray</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#savedictarray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.savedictarray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes an array of data dictionaries to a file</p>
 <p>Intended for writing a list of dictionaries containing the data columns as elements to a file.
-Essentially just repeats <a class="reference internal" href="#stlabutils.utils.writematrix.savedict" title="stlabutils.utils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a> on every element of the list making sure to include the
+Essentially just repeats <a class="reference internal" href="#stlabutils.writematrix.savedict" title="stlabutils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a> on every element of the list making sure to include the
 title line (derived from the first dictionarly key values) if the file is new.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -145,10 +145,10 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.saveframe">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">saveframe</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">myframe</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#saveframe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.saveframe" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.saveframe">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">saveframe</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">myframe</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#saveframe"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.saveframe" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a pandas Dataframe to a file as a matrix block</p>
-<p>Writes a given pandas.DataFrame to a file.  Is analogous to <a class="reference internal" href="#stlabutils.utils.writematrix.savedict" title="stlabutils.utils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a>
+<p>Writes a given pandas.DataFrame to a file.  Is analogous to <a class="reference internal" href="#stlabutils.writematrix.savedict" title="stlabutils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a>
 Also, if the file is empty (no writes have been yet performed on it), it will use the
 dataframe column indexes to write the title line.</p>
 <p>Internally this function converts just writes the matrix using <code class="xref py py-func docutils literal notranslate"><span class="pre">stlab.utils.writematrix.savetxt()</span></code></p>
@@ -168,10 +168,10 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.saveframearray">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">saveframearray</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">myframearray</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#saveframearray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.saveframearray" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.saveframearray">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">saveframearray</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">myframearray</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#saveframearray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.saveframearray" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes an array of pandas DataFrame to a file</p>
-<p>Analogous to <a class="reference internal" href="#stlabutils.utils.writematrix.savedictarray" title="stlabutils.utils.writematrix.savedictarray"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedictarray</span></code></a> but using pd.Dataframe instead of dicts.  Expects a list of
+<p>Analogous to <a class="reference internal" href="#stlabutils.writematrix.savedictarray" title="stlabutils.writematrix.savedictarray"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedictarray</span></code></a> but using pd.Dataframe instead of dicts.  Expects a list of
 pd.DataFrames to be written to the file.  Also handles writing the title line if the file is
 new.</p>
 <dl class="field-list simple">
@@ -189,13 +189,13 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.savetxt">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">savetxt</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">mat</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#savetxt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.savetxt" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.savetxt">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">savetxt</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">mat</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em>, <em class="sig-param">blocksep='\n'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#savetxt"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.savetxt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a matrix to a given file</p>
 <p>Writes a matrix to a file with a given format specifier and a delimiter.  Adds a block
 separator at the end.  This is very similar to np.savetxt.  However, since python3
 np.savetxt requires the file to be open in binary write mode.</p>
-<p>This function is used internally by both <a class="reference internal" href="#stlabutils.utils.writematrix.savedict" title="stlabutils.utils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a> and <a class="reference internal" href="#stlabutils.utils.writematrix.saveframe" title="stlabutils.utils.writematrix.saveframe"><code class="xref any py py-func docutils literal notranslate"><span class="pre">saveframe</span></code></a></p>
+<p>This function is used internally by both <a class="reference internal" href="#stlabutils.writematrix.savedict" title="stlabutils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a> and <a class="reference internal" href="#stlabutils.writematrix.saveframe" title="stlabutils.writematrix.saveframe"><code class="xref any py py-func docutils literal notranslate"><span class="pre">saveframe</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -211,8 +211,8 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.writeline">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">writeline</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">line</em>, <em class="sig-param">f='.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.writeline" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.writeline">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">writeline</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">line</em>, <em class="sig-param">f='.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writeline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.writeline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes a list of numbers as a single line to a file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -227,8 +227,8 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.writeparams">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">writeparams</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">params</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writeparams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.writeparams" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.writeparams">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">writeparams</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">params</em>, <em class="sig-param">f='%.10e'</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writeparams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.writeparams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes fit parameter values to file</p>
 <p>Intended for writing fit parameter values given a lmfit.Parameters object to a file.</p>
 <dl class="field-list simple">
@@ -243,8 +243,8 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.writeparnames">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">writeparnames</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">params</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writeparnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.writeparnames" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.writeparnames">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">writeparnames</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">params</em>, <em class="sig-param">delim='</em>, <em class="sig-param">'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writeparnames"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.writeparnames" title="Permalink to this definition">¶</a></dt>
 <dd><p>Writes fit parameter names to file</p>
 <p>Intended for writing fit parameter names given a lmfit.Parameters object to a file.</p>
 <dl class="field-list simple">
@@ -259,11 +259,11 @@ separate blocks of data.</p></li>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.writematrix.writetitle">
-<code class="sig-prename descclassname">stlabutils.utils.writematrix.</code><code class="sig-name descname">writetitle</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">vv</em>, <em class="sig-param">delim</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writetitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.writematrix.writetitle" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.writematrix.writetitle">
+<code class="sig-prename descclassname">stlabutils.writematrix.</code><code class="sig-name descname">writetitle</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">vv</em>, <em class="sig-param">delim</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/writematrix.html#writetitle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.writematrix.writetitle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a list of strings writes the file title line</p>
 <p>Does not do anything if the file already has contents.  Includes a ‘#’ as first character for
-gnuplot.  Is used by <a class="reference internal" href="#stlabutils.utils.writematrix.savedict" title="stlabutils.utils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a> and <a class="reference internal" href="#stlabutils.utils.writematrix.saveframe" title="stlabutils.utils.writematrix.saveframe"><code class="xref any py py-func docutils literal notranslate"><span class="pre">saveframe</span></code></a>.</p>
+gnuplot.  Is used by <a class="reference internal" href="#stlabutils.writematrix.savedict" title="stlabutils.writematrix.savedict"><code class="xref any py py-func docutils literal notranslate"><span class="pre">savedict</span></code></a> and <a class="reference internal" href="#stlabutils.writematrix.saveframe" title="stlabutils.writematrix.saveframe"><code class="xref any py py-func docutils literal notranslate"><span class="pre">saveframe</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
