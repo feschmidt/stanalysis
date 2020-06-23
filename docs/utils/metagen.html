@@ -68,8 +68,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-stlabutils.utils.metagen">
-<span id="metagen-spyview-metafile-generation"></span><h1>Metagen – Spyview metafile generation<a class="headerlink" href="#module-stlabutils.utils.metagen" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-stlabutils.metagen">
+<span id="metagen-spyview-metafile-generation"></span><h1>Metagen – Spyview metafile generation<a class="headerlink" href="#module-stlabutils.metagen" title="Permalink to this headline">¶</a></h1>
 <p>Module for generation of spyview metafiles</p>
 <p>Spyview typically requires an additional metafile to correctly label the axes and labels
 of a dataset.  The meta file structure is detailed at
@@ -86,13 +86,13 @@ to display in the final color plot.  The metafile tells spyview how this reshapi
 how many points are on x and y and how it should label the axis values and titles.  When importing without
 a metafile, spyview searches for blank lines to figure out when each line of the matrix ends.</p>
 <dl class="function">
-<dt id="stlabutils.utils.metagen.fromarrays">
-<code class="sig-prename descclassname">stlabutils.utils.metagen.</code><code class="sig-name descname">fromarrays</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">xarray</em>, <em class="sig-param">yarray</em>, <em class="sig-param">zarray=[]</em>, <em class="sig-param">xtitle=''</em>, <em class="sig-param">ytitle=''</em>, <em class="sig-param">ztitle=''</em>, <em class="sig-param">colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromarrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.metagen.fromarrays" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.metagen.fromarrays">
+<code class="sig-prename descclassname">stlabutils.metagen.</code><code class="sig-name descname">fromarrays</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">xarray</em>, <em class="sig-param">yarray</em>, <em class="sig-param">zarray=[]</em>, <em class="sig-param">xtitle=''</em>, <em class="sig-param">ytitle=''</em>, <em class="sig-param">ztitle=''</em>, <em class="sig-param">colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromarrays"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.metagen.fromarrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a metafile for a given file using axes arrays as input</p>
 <p>Generates a metafile for the given file taking the endponts of given arrays and their length.
 Column titles are added manually providing a list of titles or by autogenerating from the
 file title line.</p>
-<p>Internally, this function calls <a class="reference internal" href="#stlabutils.utils.metagen.fromlimits" title="stlabutils.utils.metagen.fromlimits"><code class="xref any py py-func docutils literal notranslate"><span class="pre">fromlimits</span></code></a></p>
+<p>Internally, this function calls <a class="reference internal" href="#stlabutils.metagen.fromlimits" title="stlabutils.metagen.fromlimits"><code class="xref any py py-func docutils literal notranslate"><span class="pre">fromlimits</span></code></a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -109,13 +109,13 @@ function reads the first line of the file and uses the obtained titles in the me
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.metagen.fromlimits">
-<code class="sig-prename descclassname">stlabutils.utils.metagen.</code><code class="sig-name descname">fromlimits</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">Nx</em>, <em class="sig-param">xmin</em>, <em class="sig-param">xmax</em>, <em class="sig-param">Ny</em>, <em class="sig-param">ymin</em>, <em class="sig-param">ymax</em>, <em class="sig-param">Nz=None</em>, <em class="sig-param">zmin=None</em>, <em class="sig-param">zmax=None</em>, <em class="sig-param">xtitle=''</em>, <em class="sig-param">ytitle=''</em>, <em class="sig-param">ztitle=''</em>, <em class="sig-param">colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromlimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.metagen.fromlimits" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.metagen.fromlimits">
+<code class="sig-prename descclassname">stlabutils.metagen.</code><code class="sig-name descname">fromlimits</code><span class="sig-paren">(</span><em class="sig-param">myfile</em>, <em class="sig-param">Nx</em>, <em class="sig-param">xmin</em>, <em class="sig-param">xmax</em>, <em class="sig-param">Ny</em>, <em class="sig-param">ymin</em>, <em class="sig-param">ymax</em>, <em class="sig-param">Nz=None</em>, <em class="sig-param">zmin=None</em>, <em class="sig-param">zmax=None</em>, <em class="sig-param">xtitle=''</em>, <em class="sig-param">ytitle=''</em>, <em class="sig-param">ztitle=''</em>, <em class="sig-param">colnames=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/metagen.html#fromlimits"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.metagen.fromlimits" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a metafile for the given axis limits and point number</p>
 <p>Generates a metafile for the given file taking the endponts of given arrays and their length.
 Column titles are added manually providing a list of titles or by autogenerating from the
 file title line.</p>
-<p>Internally, this function is called by <a class="reference internal" href="#stlabutils.utils.metagen.fromarrays" title="stlabutils.utils.metagen.fromarrays"><code class="xref any py py-func docutils literal notranslate"><span class="pre">fromarrays</span></code></a>.</p>
+<p>Internally, this function is called by <a class="reference internal" href="#stlabutils.metagen.fromarrays" title="stlabutils.metagen.fromarrays"><code class="xref any py py-func docutils literal notranslate"><span class="pre">fromarrays</span></code></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">

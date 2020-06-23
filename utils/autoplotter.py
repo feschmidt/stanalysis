@@ -73,7 +73,7 @@ def autoplot(
         dpi for matplotlib savefig function
     pl : list of str, optional
         If provided, is an stlabutilsmtx process list (in case processing is required on a 2d color plot).
-        See :class:`stlabutilsmtx <stlabutils.utils.stlabdict.stlabmtx>` for details
+        See :class:`stlabutilsmtx <stlabutils.stlabdict.stlabmtx>` for details
     cmap : str
         Matplotlib colormap string for 2D plots. By default 'RdBu_r'.
         See https://matplotlib.org/tutorials/colors/colormaps.html for details

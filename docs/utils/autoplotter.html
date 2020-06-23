@@ -68,13 +68,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-stlabutils.utils.autoplotter">
-<span id="autoplot-quick-plots-for-measurement-reference"></span><h1>Autoplot – Quick plots for measurement reference<a class="headerlink" href="#module-stlabutils.utils.autoplotter" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-stlabutils.autoplotter">
+<span id="autoplot-quick-plots-for-measurement-reference"></span><h1>Autoplot – Quick plots for measurement reference<a class="headerlink" href="#module-stlabutils.autoplotter" title="Permalink to this headline">¶</a></h1>
 <p>Autoplotting measurements</p>
 <p>Function definition for simple plotting routine to be run at end of mesurement</p>
 <dl class="function">
-<dt id="stlabutils.utils.autoplotter.autoplot">
-<code class="sig-prename descclassname">stlabutils.utils.autoplotter.</code><code class="sig-name descname">autoplot</code><span class="sig-paren">(</span><em class="sig-param">datafile</em>, <em class="sig-param">xlab</em>, <em class="sig-param">ylab</em>, <em class="sig-param">zlab=None</em>, <em class="sig-param">title='YOU SHOULD ADD A TITLE'</em>, <em class="sig-param">caption='YOU SHOULD ADD A COMMENT'</em>, <em class="sig-param">show=False</em>, <em class="sig-param">dpi=400</em>, <em class="sig-param">pl=None</em>, <em class="sig-param">cmap='RdBu_r'</em>, <em class="sig-param">wbval=(0.1</em>, <em class="sig-param">0.1)</em>, <em class="sig-param">figdir=None</em>, <em class="sig-param">save=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/autoplotter.html#autoplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.autoplotter.autoplot" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.autoplotter.autoplot">
+<code class="sig-prename descclassname">stlabutils.autoplotter.</code><code class="sig-name descname">autoplot</code><span class="sig-paren">(</span><em class="sig-param">datafile</em>, <em class="sig-param">xlab</em>, <em class="sig-param">ylab</em>, <em class="sig-param">zlab=None</em>, <em class="sig-param">title='YOU SHOULD ADD A TITLE'</em>, <em class="sig-param">caption='YOU SHOULD ADD A COMMENT'</em>, <em class="sig-param">show=False</em>, <em class="sig-param">dpi=400</em>, <em class="sig-param">pl=None</em>, <em class="sig-param">cmap='RdBu_r'</em>, <em class="sig-param">wbval=(0.1</em>, <em class="sig-param">0.1)</em>, <em class="sig-param">figdir=None</em>, <em class="sig-param">save=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/autoplotter.html#autoplot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.autoplotter.autoplot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Autoplot function</p>
 <p>Takes a data file handle (still open or recently closed) or a filename and plots the requested
 columns).  Saves figure as a png alongside the original data file with the same name.
@@ -94,7 +94,7 @@ a color plot is returned</p></li>
 <li><p><strong>show</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><em>bool</em></a><em>, </em><em>optional</em>) – Show the plot on screen (blocks execution until closed)</p></li>
 <li><p><strong>dpi</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><em>int</em></a><em>, </em><em>optional</em>) – dpi for matplotlib savefig function</p></li>
 <li><p><strong>pl</strong> (<em>list of str</em><em>, </em><em>optional</em>) – If provided, is an stlabutilsmtx process list (in case processing is required on a 2d color plot).
-See <a class="reference internal" href="stlabdict.html#stlabutils.utils.stlabdict.stlabmtx" title="stlabutils.utils.stlabdict.stlabmtx"><code class="xref py py-class docutils literal notranslate"><span class="pre">stlabutilsmtx</span></code></a> for details</p></li>
+See <a class="reference internal" href="stlabdict.html#stlabutils.stlabdict.stlabmtx" title="stlabutils.stlabdict.stlabmtx"><code class="xref py py-class docutils literal notranslate"><span class="pre">stlabutilsmtx</span></code></a> for details</p></li>
 <li><p><strong>cmap</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Matplotlib colormap string for 2D plots. By default ‘RdBu_r’.
 See <a class="reference external" href="https://matplotlib.org/tutorials/colors/colormaps.html">https://matplotlib.org/tutorials/colors/colormaps.html</a> for details</p></li>
 <li><p><strong>figdir</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – Figure directory for the final plot</p></li>

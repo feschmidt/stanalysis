@@ -1,5 +1,5 @@
 TLmodel -- Model for transmission line resonator
 ================================================
 
-.. automodule:: stlabutils.utils.TLmodel
+.. automodule:: stlabutils.TLmodel
   :members:

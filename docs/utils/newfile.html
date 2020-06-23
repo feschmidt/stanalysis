@@ -68,15 +68,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-stlabutils.utils.newfile">
-<span id="newfile-new-measurement-folder-creation"></span><h1>newfile – New measurement folder creation<a class="headerlink" href="#module-stlabutils.utils.newfile" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-stlabutils.newfile">
+<span id="newfile-new-measurement-folder-creation"></span><h1>newfile – New measurement folder creation<a class="headerlink" href="#module-stlabutils.newfile" title="Permalink to this headline">¶</a></h1>
 <p>Method for opening a new file for writing</p>
 <p>This module contains a single method used for creating a new datafile.  This method
 handles timestamping the measurement folder, keeping track of the index of the measurement
 (if desired) and makes backup copies of the previously run scripts for reference.</p>
 <dl class="function">
-<dt id="stlabutils.utils.newfile.newfile">
-<code class="sig-prename descclassname">stlabutils.utils.newfile.</code><code class="sig-name descname">newfile</code><span class="sig-paren">(</span><em class="sig-param">prefix</em>, <em class="sig-param">idstring</em>, <em class="sig-param">colnames=None</em>, <em class="sig-param">mypath='./'</em>, <em class="sig-param">usedate=True</em>, <em class="sig-param">usefolder=True</em>, <em class="sig-param">autoindex=False</em>, <em class="sig-param">return_folder_name=False</em>, <em class="sig-param">git_id=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/newfile.html#newfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.newfile.newfile" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.newfile.newfile">
+<code class="sig-prename descclassname">stlabutils.newfile.</code><code class="sig-name descname">newfile</code><span class="sig-paren">(</span><em class="sig-param">prefix</em>, <em class="sig-param">idstring</em>, <em class="sig-param">colnames=None</em>, <em class="sig-param">mypath='./'</em>, <em class="sig-param">usedate=True</em>, <em class="sig-param">usefolder=True</em>, <em class="sig-param">autoindex=False</em>, <em class="sig-param">return_folder_name=False</em>, <em class="sig-param">git_id=True</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/newfile.html#newfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.newfile.newfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a new file for storing data.</p>
 <p>By default will create a folder (at the location of the running script) with a new file open for writing
 and a copy of the script the function was called from.  The naming scheme for the folder is <code class="code docutils literal notranslate"><span class="pre">&lt;prefix&gt;_yy_mm_dd_HH.MM.SS_&lt;idstring&gt;</span></code>.

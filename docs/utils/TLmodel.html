@@ -76,8 +76,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="module-stlabutils.utils.TLmodel">
-<span id="tlmodel-model-for-transmission-line-resonator"></span><h1>TLmodel – Model for transmission line resonator<a class="headerlink" href="#module-stlabutils.utils.TLmodel" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="module-stlabutils.TLmodel">
+<span id="tlmodel-model-for-transmission-line-resonator"></span><h1>TLmodel – Model for transmission line resonator<a class="headerlink" href="#module-stlabutils.TLmodel" title="Permalink to this headline">¶</a></h1>
 <p>Module for the calculation of transmission line impedances</p>
 <p>Most functions require a dictionary with specific elements regarding circuit parameters in it.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">=</span> <span class="p">{</span>
@@ -106,8 +106,8 @@ At the far end, the TL resonator can be loaded by a RCSJ-type junction with an e
 <div class="section" id="functions">
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.FindParFromRes">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">FindParFromRes</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">w0</em>, <em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">par='Lj'</em>, <em class="sig-param">wws=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#FindParFromRes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.FindParFromRes" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.FindParFromRes">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">FindParFromRes</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">w0</em>, <em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">par='Lj'</em>, <em class="sig-param">wws=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#FindParFromRes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.FindParFromRes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function to find value of a parameter to match a given resonance frequency</p>
 <p>Finds approximate value of par to have an angular resonance frequency of w0.
 a,b is the bracketing interval.
@@ -137,8 +137,8 @@ the final fit such that the resonance frequency will start close to this value
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Ij">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Ij</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Ij"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Ij" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Ij">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Ij</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Ij"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Ij" title="Permalink to this definition">¶</a></dt>
 <dd><p>Total current going out the far end of the TL</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -157,8 +157,8 @@ the final fit such that the resonance frequency will start close to this value
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Ix">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Ix</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Ix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Ix" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Ix">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Ix</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Ix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Ix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Current phasor at a given distance along the TL</p>
 <p>Distance x counts from the load (at 0) to l (at input)</p>
 <dl class="field-list simple">
@@ -179,8 +179,8 @@ the final fit such that the resonance frequency will start close to this value
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.PintoV0">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">PintoV0</code><span class="sig-paren">(</span><em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#PintoV0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.PintoV0" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.PintoV0">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">PintoV0</code><span class="sig-paren">(</span><em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#PintoV0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.PintoV0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Conversion from power to voltage</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -196,8 +196,8 @@ the final fit such that the resonance frequency will start close to this value
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.S11">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">S11</code><span class="sig-paren">(</span><em class="sig-param">Zin</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#S11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.S11" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.S11">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">S11</code><span class="sig-paren">(</span><em class="sig-param">Zin</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#S11"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.S11" title="Permalink to this definition">¶</a></dt>
 <dd><p>Exact expression of S11 for a given input impedance and parameters</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -216,8 +216,8 @@ the final fit such that the resonance frequency will start close to this value
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.S11theo">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">S11theo</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">f0</em>, <em class="sig-param">kint</em>, <em class="sig-param">kext</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#S11theo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.S11theo" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.S11theo">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">S11theo</code><span class="sig-paren">(</span><em class="sig-param">f</em>, <em class="sig-param">f0</em>, <em class="sig-param">kint</em>, <em class="sig-param">kext</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#S11theo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.S11theo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lorentzian absortion function</p>
 <p>Approximate formula for a Series RLC circuit capacitively
 coupled on one side to a transmission line. The frequencies can
@@ -242,8 +242,8 @@ same type.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Vin">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Vin</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Vin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Vin" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Vin">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Vin</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Vin"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Vin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Voltage phasor at the input</p>
 <p>If Pin is in params, it is used to calculate the actual amplitudes.
 If not, we assume an amplitude of 1V for the incoming wave.</p>
@@ -264,8 +264,8 @@ If not, we assume an amplitude of 1V for the incoming wave.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Vj">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Vj</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Vj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Vj" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Vj">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Vj</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Vj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Vj" title="Permalink to this definition">¶</a></dt>
 <dd><p>Voltage at the far end of the TL across a Josephson junction (RCSJ)</p>
 <p>If there is a Lj and Cg in params, returns the voltage accross the junction (complex).  Else, just the load voltage</p>
 <dl class="field-list simple">
@@ -285,8 +285,8 @@ If not, we assume an amplitude of 1V for the incoming wave.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Vx">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Vx</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Vx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Vx" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Vx">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Vx</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Vx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Vx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Voltage phasor at a given distance along the TL</p>
 <p>Distance x counts from the load (at 0) to l (at input)</p>
 <dl class="field-list simple">
@@ -307,8 +307,8 @@ If not, we assume an amplitude of 1V for the incoming wave.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.ZTL">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">ZTL</code><span class="sig-paren">(</span><em class="sig-param">Z0</em>, <em class="sig-param">Zl</em>, <em class="sig-param">gammal</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#ZTL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.ZTL" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.ZTL">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">ZTL</code><span class="sig-paren">(</span><em class="sig-param">Z0</em>, <em class="sig-param">Zl</em>, <em class="sig-param">gammal</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#ZTL"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.ZTL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Impedance of a general terminated transmission line</p>
 <p>Calculates the input impedance of a termniated transmission line with a given load impedance</p>
 <div class="math">
@@ -331,8 +331,8 @@ If not, we assume an amplitude of 1V for the incoming wave.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Zcoup">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Zcoup</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zcoup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Zcoup" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Zcoup">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Zcoup</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zcoup"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Zcoup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Impedance of a general capacitor</p>
 <p>Here used for the shunt capacitor (coupler) at the start of the TL</p>
 <dl class="field-list simple">
@@ -352,11 +352,11 @@ If not, we assume an amplitude of 1V for the incoming wave.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Zincircuit">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Zincircuit</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zincircuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Zincircuit" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Zincircuit">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Zincircuit</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zincircuit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Zincircuit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Analytical dalculation of input impedance of a TL resonator with a shunt capacitor</p>
-<p>Is only valid for a shunt coupler and depends on the definition of <a class="reference internal" href="#stlabutils.utils.TLmodel.Zload" title="stlabutils.utils.TLmodel.Zload"><code class="xref py py-func docutils literal notranslate"><span class="pre">Zload()</span></code></a>.
-<a class="reference internal" href="#stlabutils.utils.TLmodel.Zload" title="stlabutils.utils.TLmodel.Zload"><code class="xref py py-func docutils literal notranslate"><span class="pre">Zload()</span></code></a> is the impedance of the load on the far end of the TL resonator (opposite the coupler).
+<p>Is only valid for a shunt coupler and depends on the definition of <a class="reference internal" href="#stlabutils.TLmodel.Zload" title="stlabutils.TLmodel.Zload"><code class="xref py py-func docutils literal notranslate"><span class="pre">Zload()</span></code></a>.
+<a class="reference internal" href="#stlabutils.TLmodel.Zload" title="stlabutils.TLmodel.Zload"><code class="xref py py-func docutils literal notranslate"><span class="pre">Zload()</span></code></a> is the impedance of the load on the far end of the TL resonator (opposite the coupler).
 Examples can be an open/short/junction end of the transmission line resonator.
 This is an analytical calculation using transmission line formulas (from Pozar).
 There are no lumped element approximations or equivalents involved.</p>
@@ -377,8 +377,8 @@ There are no lumped element approximations or equivalents involved.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Zincircuit_approx">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Zincircuit_approx</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zincircuit_approx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Zincircuit_approx" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Zincircuit_approx">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Zincircuit_approx</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zincircuit_approx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Zincircuit_approx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lumped equivalent calculation of input impedance of a TL resonator with a shunt capacitor</p>
 <p>Is only valid for a shunt coupler and assumes the load impedance is <code class="code docutils literal notranslate"><span class="pre">params['Lg']</span></code>.
 This is a lumped equivalent calculation of the TL resonator with either an open or a short end.</p>
@@ -399,8 +399,8 @@ This is a lumped equivalent calculation of the TL resonator with either an open 
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Zload">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Zload</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Zload" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Zload">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Zload</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zload"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Zload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Impedance of a load at the far end of the TL resonator</p>
 <p>Currently includes the possiblitity for an RCSJ and a capacitor as load</p>
 <dl class="field-list simple">
@@ -420,8 +420,8 @@ This is a lumped equivalent calculation of the TL resonator with either an open 
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Zparallel">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Zparallel</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zparallel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Zparallel" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Zparallel">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Zparallel</code><span class="sig-paren">(</span><em class="sig-param">*args</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zparallel"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Zparallel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parallel impedance of a collection of impedances</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -437,8 +437,8 @@ This is a lumped equivalent calculation of the TL resonator with either an open 
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.Zx">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">Zx</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.Zx" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.Zx">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">Zx</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#Zx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.Zx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Impedance at a given distance along the TL</p>
 <p>Distance x counts from the load (at 0) to l (at input)</p>
 <dl class="field-list simple">
@@ -459,8 +459,8 @@ This is a lumped equivalent calculation of the TL resonator with either an open 
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.alpha">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">alpha</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#alpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.alpha" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.alpha">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">alpha</code><span class="sig-paren">(</span><em class="sig-param">omega</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#alpha"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.alpha" title="Permalink to this definition">¶</a></dt>
 <dd><p>Attenuation constant of a TL</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -479,8 +479,8 @@ This is a lumped equivalent calculation of the TL resonator with either an open 
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.f0">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">f0</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">ffs=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#f0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.f0" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.f0">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">f0</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">ffs=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#f0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.f0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the approximate resonance frequency in Hz from a generic circuit impedance</p>
 <p>This is an approximation which can then be used to a fitting function as starting value</p>
 <dl class="field-list simple">
@@ -500,8 +500,8 @@ This is a lumped equivalent calculation of the TL resonator with either an open 
 </dd></dl>
 
 <dl class="function">
-<dt id="stlabutils.utils.TLmodel.omega0">
-<code class="sig-prename descclassname">stlabutils.utils.TLmodel.</code><code class="sig-name descname">omega0</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">wws=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#omega0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.utils.TLmodel.omega0" title="Permalink to this definition">¶</a></dt>
+<dt id="stlabutils.TLmodel.omega0">
+<code class="sig-prename descclassname">stlabutils.TLmodel.</code><code class="sig-name descname">omega0</code><span class="sig-paren">(</span><em class="sig-param">params</em>, <em class="sig-param">wws=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/TLmodel.html#omega0"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.TLmodel.omega0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds the approximate angular resonance frequency from a generic circuit impedance</p>
 <p>This is an approximation which can then be used to a fitting function as starting value</p>
 <dl class="field-list simple">
