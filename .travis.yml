@@ -6,7 +6,7 @@ services:
 install: 
  - pip install -r requirements.txt
  # This is for running the tests
- - pip install pytest pytest-cov codecov
+ - pip install pytest #pytest-cov codecov
 
 script: 
   # run tests TODO: add code coverage information
