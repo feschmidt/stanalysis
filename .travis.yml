@@ -12,8 +12,8 @@ install:
  - pip install pytest pytest-cov codecov
 
 script: 
-  # run tests
-  - pytest --cov=src
-  - codecov
+  # run tests TODO: add code coverage information
+  - pytest #--cov=src
+  # - codecov
 
   # TODO: test pip pip installation
