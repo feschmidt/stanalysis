@@ -13,4 +13,6 @@ script:
   - pytest #--cov=src
   # - codecov
 
-  # TODO: test pip pip installation
+  # test pip installation
+  - pip install .
+  - python -c "import stlabutils"
