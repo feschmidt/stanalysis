@@ -48,3 +48,7 @@ Restarting the jupter notebook server in a shell where this environment variable
 Same as for macOS (both are UNIX based).
 
 For detailed instructions on setting the python path variable on different platforms, see [this stack exchange post](https://stackoverflow.com/questions/3402168/permanently-add-a-directory-to-pythonpath).
+
+# Development
+
+[![Build Status](https://travis-ci.com/steelelab-delft/stlabutils.svg?branch=master)](https://travis-ci.com/steelelab-delft/stlabutils)
