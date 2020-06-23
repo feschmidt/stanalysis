@@ -1,0 +1,16 @@
+language: python
+
+services:
+  - xvfb
+
+install: 
+ - pip install -r requirements.txt
+ # This is for running the tests
+ - pip install pytest #pytest-cov codecov
+
+script: 
+  # run tests TODO: add code coverage information
+  - pytest #--cov=src
+  # - codecov
+
+  # TODO: test pip pip installation
