@@ -7,19 +7,17 @@
 
 Utilities for analysis scripts developed in the [SteeleLab at TU Delft](http://steelelab.tudelft.nl).
 
-Due to regular changes of the code (stanalysis is work in progress), it is recommended to git clone this repository to your local computer. See instructions below.
+Documentation can be found [here](https://steelelab-delft.github.io/stlabutils/index.html).
 
-Example data can be found in `examples/data`:
+## Easy (pip) installation
 
-- `M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat` is a microwave reflection measurement using a vector network analyzer, published in [Schmidt and Jenkins _et al._, _Nature Communications_ **9**, 4069 (2018)](https://www.nature.com/articles/s41467-018-06595-2)
+Open a command prompt and run ```pip install git+git://github.com/steelelab-delft/stlabutils.git```
 
-## Requirements
-
-see [`requirements.txt`](https://github.com/steelelab-delft/stlabutils/blob/master/requirements.txt)
-
-## Installation instructions
+## Using stlabutils from the cloned repository (recommended)
 
 Clone the repository to your computer using, for example, the GitHub desktop client or git bash.
+
+Install the requirements by opening a command prompt in the repository and running ```pip install -r requirements.txt```
 
 Then add the directory you cloned it to (or any upper folder in the folder tree it is stored in) to your PYTHONPATH, using one of the following methods.
 
