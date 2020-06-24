@@ -77,7 +77,7 @@ stlab as “stlab.S11fit”.  All other functions in this module are there to
 supplement this fitting function or are not generally used.</p>
 <dl class="function">
 <dt id="stlabutils.S11fit.S11back">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11back</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#S11back"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11back" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11back</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">params</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#S11back"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11back" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function for background model.</p>
 <p>Returns the background model values for a given set of parameters and
 frequency values.  Uses parameter object from lmfit.  The background model
@@ -104,7 +104,7 @@ is given by</p>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.S11fit">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11fit</code><span class="sig-paren">(</span><em class="sig-param">frec</em>, <em class="sig-param">S11</em>, <em class="sig-param">ftype='A'</em>, <em class="sig-param">fitbackground=True</em>, <em class="sig-param">trimwidth=5.0</em>, <em class="sig-param">doplots=False</em>, <em class="sig-param">margin=51</em>, <em class="sig-param">oldpars=None</em>, <em class="sig-param">refitback=True</em>, <em class="sig-param">reusefitpars=False</em>, <em class="sig-param">fitwidth=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#S11fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11fit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11fit</code><span class="sig-paren">(</span><em class="sig-param">frec</em>, <em class="sig-param">S11</em>, <em class="sig-param">ftype='A'</em>, <em class="sig-param">fitbackground=True</em>, <em class="sig-param">trimwidth=5.0</em>, <em class="sig-param">doplots=False</em>, <em class="sig-param">margin=51</em>, <em class="sig-param">oldpars=None</em>, <em class="sig-param">refitback=True</em>, <em class="sig-param">reusefitpars=False</em>, <em class="sig-param">fitwidth=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#S11fit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11fit" title="Permalink to this definition">¶</a></dt>
 <dd><p><strong>MAIN FIT ROUTINE</strong></p>
 <p>Fits complex data S11 vs frecuency to one of 4 models adjusting for a multiplicative complex background
 It fits the data in three steps.  Firstly it fits the background signal removing a certain window around the detected peak position.
@@ -143,13 +143,13 @@ model parameters once more starting from the previously fitted values.  The fit 
 
 <dl class="function">
 <dt id="stlabutils.S11fit.S11func">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11func</code><span class="sig-paren">(</span><em class="sig-param">frec</em>, <em class="sig-param">params</em>, <em class="sig-param">ftype='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#S11func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11func" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11func</code><span class="sig-paren">(</span><em class="sig-param">frec</em>, <em class="sig-param">params</em>, <em class="sig-param">ftype='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#S11func"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11func" title="Permalink to this definition">¶</a></dt>
 <dd><p>Function for total response from background model and resonator response</p>
 </dd></dl>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.S11theo">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11theo</code><span class="sig-paren">(</span><em class="sig-param">frec</em>, <em class="sig-param">params</em>, <em class="sig-param">ftype='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#S11theo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11theo" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">S11theo</code><span class="sig-paren">(</span><em class="sig-param">frec</em>, <em class="sig-param">params</em>, <em class="sig-param">ftype='A'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#S11theo"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.S11theo" title="Permalink to this definition">¶</a></dt>
 <dd><p>Theoretical response functions of cavities with no background</p>
 <p>Returns the theory values of cavity response functions for a given set of
 parameters for different cavity models.</p>
@@ -183,7 +183,7 @@ selected with this parameter.</p>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.getwidth_phase">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">getwidth_phase</code><span class="sig-paren">(</span><em class="sig-param">i0</em>, <em class="sig-param">vec</em>, <em class="sig-param">margin</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#getwidth_phase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.getwidth_phase" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">getwidth_phase</code><span class="sig-paren">(</span><em class="sig-param">i0</em>, <em class="sig-param">vec</em>, <em class="sig-param">margin</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#getwidth_phase"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.getwidth_phase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Finds indices for peak width around given maximum position</p>
 <p>Auxiliary function for fit.  Given the complex array “vec” assuming “i0”
 is the resonance index, this function finds resonance peak width from the
@@ -209,7 +209,7 @@ Should be an odd number</p></li>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.newparams">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">newparams</code><span class="sig-paren">(</span><em class="sig-param">f0=1</em>, <em class="sig-param">Qint=100</em>, <em class="sig-param">Qext=200</em>, <em class="sig-param">theta=0</em>, <em class="sig-param">a=1</em>, <em class="sig-param">b=0</em>, <em class="sig-param">c=0</em>, <em class="sig-param">ap=0</em>, <em class="sig-param">bp=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#newparams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.newparams" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">newparams</code><span class="sig-paren">(</span><em class="sig-param">f0=1</em>, <em class="sig-param">Qint=100</em>, <em class="sig-param">Qext=200</em>, <em class="sig-param">theta=0</em>, <em class="sig-param">a=1</em>, <em class="sig-param">b=0</em>, <em class="sig-param">c=0</em>, <em class="sig-param">ap=0</em>, <em class="sig-param">bp=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#newparams"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.newparams" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes new Parameters object compatible with fitting routine</p>
 <p>A new lmfit.Parameters object is created using the given values.  Default
 values are filled in for ommited parameters.  The fit model is:</p>
@@ -242,7 +242,7 @@ close to 0 for good fits.</p></li>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.phaseunwrap">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">phaseunwrap</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#phaseunwrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.phaseunwrap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">phaseunwrap</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#phaseunwrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.phaseunwrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a global phase slope from a complex array</p>
 <p>Unwraps the phase of a sequence of complex numbers and subtracts the average
 slope of the phase (desloped phase).</p>
@@ -262,7 +262,7 @@ slope)</p>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.realimag">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">realimag</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#realimag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.realimag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">realimag</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#realimag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.realimag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes alternating real and imaginary part array from complex array</p>
 <p>Takes an array-like object of complex number elements and generates a
 1-D array aleternating the real and imaginary part of each element of the
@@ -284,7 +284,7 @@ original array</p>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.trim">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">trim</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">imin</em>, <em class="sig-param">imax</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#trim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.trim" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">trim</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">imin</em>, <em class="sig-param">imax</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#trim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.trim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes range from imin to imax from vectors x,y</p>
 <p>Given two (possibly complex) arrays and indices corresponding to a lower and upper edge,
 this function removes the index range between these edges from both input
@@ -307,7 +307,7 @@ arrays</p>
 
 <dl class="function">
 <dt id="stlabutils.S11fit.un_realimag">
-<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">un_realimag</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/S11fit.html#un_realimag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.un_realimag" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.S11fit.</code><code class="sig-name descname">un_realimag</code><span class="sig-paren">(</span><em class="sig-param">array</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/S11fit.html#un_realimag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.S11fit.un_realimag" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes complex array from alternating real and imaginary part array</p>
 <p>Performs the reverse operation to realimag</p>
 <dl class="field-list simple">
@@ -352,7 +352,7 @@ original array as the real and imaginary parts</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
     </div>
   </body>
 </html>

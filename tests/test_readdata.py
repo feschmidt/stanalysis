@@ -2,6 +2,7 @@ import sys
 from os.path import join, dirname
 sys.path.insert(0,dirname(dirname(dirname(__file__))))
 
+
 import unittest
 import stlabutils
 
@@ -10,7 +11,7 @@ class TestReaddata(unittest.TestCase):
     def test_readdata_file(self):
         # Do some stuff (with stlabutils)
         mydata = stlabutils.readdata.readdat(
-            'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat'
+            join(dirname(dirname(__file__)),'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat')
         )
         expected_result = [
             'Frequency (Hz)', 'S21re ()', 'S21im ()', 'S21dB (dB)',
@@ -22,7 +23,7 @@ class TestReaddata(unittest.TestCase):
     def test_readdata_shape(self):
         # Do some stuff (with stlabutils)
         mydata = stlabutils.readdata.readdat(
-            'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat'
+            join(dirname(dirname(__file__)),'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat')
         )
         expected_result = (1001, 8)
         self.assertEqual(

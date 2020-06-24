@@ -10,7 +10,7 @@ import numpy as np
 class TestS11fit(unittest.TestCase):
     def test_S11fit_f0(self):
         mydata = stlabutils.readdata.readdat(
-            'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat'
+            join(dirname(dirname(__file__)),'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat')
         )
         # Convert S parameter data from Re,Im to complex array
         z = mydata[-1]['S21re ()'] + 1j * mydata[-1]['S21im ()']
@@ -27,7 +27,7 @@ class TestS11fit(unittest.TestCase):
 
     def test_S11fit_deviation(self):
         mydata = stlabutils.readdata.readdat(
-            'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat'
+            join(dirname(dirname(__file__)),'examples/data/M59_2017_06_26_16.58.40_RF_vs_power_m60dbmatt_2amp_ref_sample.dat')
         )
         # Convert S parameter data from Re,Im to complex array
         z = mydata[-1]['S21re ()'] + 1j * mydata[-1]['S21im ()']

@@ -124,33 +124,34 @@ These packages were formely contained within <code class="code docutils literal 
 <li><p>The __init__.py file contains the modules and names imported when running “import stlabutils”.  Note that some modules and functions are renamed for (in?)convenience.</p></li>
 </ul>
 <p>The imports done when doing <code class="code docutils literal notranslate"><span class="pre">import</span> <span class="pre">stlabutils</span></code> are:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># __all__ = [&quot;metagen&quot;, &quot;readdata&quot;, &quot;S11fit&quot;, &quot;newfile&quot;]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;stlabutils&#39;</span>
+<span class="c1"># __all__ = [&quot;metagen&quot;, &quot;readdata&quot;, &quot;S11fit&quot;, &quot;newfile&quot;]</span>
 
 <span class="c1"># Loads utils with shorter names</span>
 <span class="c1"># from stlabutils.X.Y import Z becomes stlabutils.Z</span>
 
 <span class="c1"># File creation, callable as stlabutils.newfile(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.newfile</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.newfile</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Metagen creation, callable as stlabutils.metagen.fromlimits(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.metagen</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.metagen</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># File reading, callable as stlabutils.readdata.readQUCS(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.readdata</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.readdata</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># File writing, callable as stlabutils.savetxt(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.writematrix</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.writematrix</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="kn">from</span> <span class="nn">stlabutils.stlabdict</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.stlabdict</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Fitting routines, callable as stlabutils.S11fit(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.S11fit</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.S11fit</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># Autoplotter, callable as stlabutils.autoplot(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.autoplotter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.autoplotter</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="c1"># git id, callable as stlabutils.get_gitid(...)</span>
-<span class="kn">from</span> <span class="nn">stlabutils.getgitid</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.getgitid</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -190,7 +191,7 @@ These packages were formely contained within <code class="code docutils literal 
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
     </div>
   </body>
 </html>

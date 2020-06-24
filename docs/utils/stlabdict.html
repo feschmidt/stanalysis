@@ -75,7 +75,7 @@
 well as the framearr_to_mtx function.</p>
 <dl class="function">
 <dt id="stlabutils.stlabdict.checkEqual1">
-<code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">checkEqual1</code><span class="sig-paren">(</span><em class="sig-param">iterator</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#checkEqual1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.checkEqual1" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">checkEqual1</code><span class="sig-paren">(</span><em class="sig-param">iterator</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#checkEqual1"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.checkEqual1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Check if all elements in iterator are equal or is empty</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -89,7 +89,7 @@ well as the framearr_to_mtx function.</p>
 
 <dl class="function">
 <dt id="stlabutils.stlabdict.dictarr_to_mtx">
-<code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">dictarr_to_mtx</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">rangex=None</em>, <em class="sig-param">rangey=None</em>, <em class="sig-param">xkey=None</em>, <em class="sig-param">ykey=None</em>, <em class="sig-param">xtitle=None</em>, <em class="sig-param">ytitle=None</em>, <em class="sig-param">ztitle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#dictarr_to_mtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.dictarr_to_mtx" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">dictarr_to_mtx</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">rangex=None</em>, <em class="sig-param">rangey=None</em>, <em class="sig-param">xkey=None</em>, <em class="sig-param">ykey=None</em>, <em class="sig-param">xtitle=None</em>, <em class="sig-param">ytitle=None</em>, <em class="sig-param">ztitle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#dictarr_to_mtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.dictarr_to_mtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts an array of dicts (or stlabdicts) to an stlabmtx object</p>
 <p>Takes an array of dict-like (dict, OrderedDict, stlabdict), typically from a measurement file, and selects the appropriate columns for
 conversion into an stlabmtx that allows spyview like operations and processing.</p>
@@ -119,7 +119,7 @@ on the axes.  These ranges will be saved along with the data (can be unevenly sp
 
 <dl class="function">
 <dt id="stlabutils.stlabdict.framearr_to_mtx">
-<code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">framearr_to_mtx</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">rangex=None</em>, <em class="sig-param">rangey=None</em>, <em class="sig-param">xkey=None</em>, <em class="sig-param">ykey=None</em>, <em class="sig-param">xtitle=None</em>, <em class="sig-param">ytitle=None</em>, <em class="sig-param">ztitle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#framearr_to_mtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.framearr_to_mtx" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">framearr_to_mtx</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">key</em>, <em class="sig-param">rangex=None</em>, <em class="sig-param">rangey=None</em>, <em class="sig-param">xkey=None</em>, <em class="sig-param">ykey=None</em>, <em class="sig-param">xtitle=None</em>, <em class="sig-param">ytitle=None</em>, <em class="sig-param">ztitle=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#framearr_to_mtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.framearr_to_mtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts an array of pandas DataFrame to an stlabmtx object</p>
 <p>Takes an array of pandas.DataFrame, typically from a measurement file, and selects the appropriate columns for
 conversion into an stlabmtx that allows spyview like operations and processing.  Is essentially the same as <a class="reference internal" href="#stlabutils.stlabdict.dictarr_to_mtx" title="stlabutils.stlabdict.dictarr_to_mtx"><code class="xref any py py-func docutils literal notranslate"><span class="pre">dictarr_to_mtx</span></code></a>
@@ -150,7 +150,7 @@ on the axes.  These ranges will be saved along with the data (can be unevenly sp
 
 <dl class="class">
 <dt id="stlabutils.stlabdict.stlabdict">
-<em class="property">class </em><code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">stlabdict</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">stlabdict</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Class to hold a data table with multiple lines and columns</p>
 <p>This class is DEPRECATED in favor of pandas DataFrame.  They serve the same
 function as an stlabdict but have much more functionality (and documentation…).</p>
@@ -162,7 +162,7 @@ of numbers (to more explicitly keep track or what each column contains).
 Can also be indexed by column number.</p>
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.__getitem__">
-<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.__getitem__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.__getitem__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.__getitem__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Overloaded indexing of the dict</p>
 <p>Reimplements the getting of items from the dict to allow for indexing by column position as well
 as by label</p>
@@ -176,14 +176,14 @@ index.  If it is not, it returns the column given by the index position.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Init method for stlabdict</p>
 <p>Simply calls the ordered_dict constructor</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.addparcolumn">
-<code class="sig-name descname">addparcolumn</code><span class="sig-paren">(</span><em class="sig-param">colname</em>, <em class="sig-param">colval</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.addparcolumn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.addparcolumn" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">addparcolumn</code><span class="sig-paren">(</span><em class="sig-param">colname</em>, <em class="sig-param">colval</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.addparcolumn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.addparcolumn" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a parameter column</p>
 <p>A parameter column is typically a column with a constant value for all lines (i.e. power in a vna trace).
 Simply repeats the same value in an array of the same length as the other columns.  Does not work
@@ -200,7 +200,7 @@ if there are no existing columns.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.line">
-<code class="sig-name descname">line</code><span class="sig-paren">(</span><em class="sig-param">nn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.line" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">line</code><span class="sig-paren">(</span><em class="sig-param">nn</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.line"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.line" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a line from the table</p>
 <p>Takes a line from the stlabdict given by index.  While getting a column can be done by
 simply taking mystlabdict[myindex], getting a line requires iterating over the dict and
@@ -221,7 +221,7 @@ name as before but only contains a single float in each).</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.matrix">
-<code class="sig-name descname">matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.matrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.matrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Converts entire table into a numpy matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -235,7 +235,7 @@ name as before but only contains a single float in each).</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.ncol">
-<code class="sig-name descname">ncol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.ncol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.ncol" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">ncol</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.ncol"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.ncol" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of columns</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -249,7 +249,7 @@ name as before but only contains a single float in each).</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabdict.nline">
-<code class="sig-name descname">nline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabdict.nline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.nline" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabdict.nline"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabdict.nline" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the number of lines in dict</p>
 <p>Checks that all columns have the same number of lines</p>
 <dl class="field-list simple">
@@ -266,7 +266,7 @@ name as before but only contains a single float in each).</p>
 
 <dl class="class">
 <dt id="stlabutils.stlabdict.stlabmtx">
-<em class="property">class </em><code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">stlabmtx</code><span class="sig-paren">(</span><em class="sig-param">mtx</em>, <em class="sig-param">xtitle='xtitle'</em>, <em class="sig-param">ytitle='ytitle'</em>, <em class="sig-param">ztitle='ztitle'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">stlabutils.stlabdict.</code><code class="sig-name descname">stlabmtx</code><span class="sig-paren">(</span><em class="sig-param">mtx</em>, <em class="sig-param">xtitle='xtitle'</em>, <em class="sig-param">ytitle='ytitle'</em>, <em class="sig-param">ztitle='ztitle'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>stlabmtx class for spyview-like operations</p>
 <p>This class implements a matrix in the form of a pandas DataFrame and contains
 methods analogous to those present in spyview.</p>
@@ -328,7 +328,7 @@ the x and y ranges on the final matrix</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">mtx</em>, <em class="sig-param">xtitle='xtitle'</em>, <em class="sig-param">ytitle='ytitle'</em>, <em class="sig-param">ztitle='ztitle'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.__init__" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">mtx</em>, <em class="sig-param">xtitle='xtitle'</em>, <em class="sig-param">ytitle='ytitle'</em>, <em class="sig-param">ztitle='ztitle'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>stlab mtx initialization</p>
 <p>Takes an input DataFrame and sets up the object</p>
 <dl class="field-list simple">
@@ -343,14 +343,14 @@ the x and y ranges on the final matrix</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.absolute">
-<code class="sig-name descname">absolute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.absolute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.absolute" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">absolute</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.absolute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.absolute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Absolute value filter</p>
 <p>Applies np.abs to all elements of the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">abs</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.applyprocessfile">
-<code class="sig-name descname">applyprocessfile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.applyprocessfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.applyprocessfile" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">applyprocessfile</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.applyprocessfile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.applyprocessfile" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply all steps in a process list file</p>
 <p>Takes in input file containing a process list and applies them to the data.</p>
 <dl class="field-list simple">
@@ -362,7 +362,7 @@ the x and y ranges on the final matrix</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.applyprocesslist">
-<code class="sig-name descname">applyprocesslist</code><span class="sig-paren">(</span><em class="sig-param">pl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.applyprocesslist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.applyprocesslist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">applyprocesslist</code><span class="sig-paren">(</span><em class="sig-param">pl</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.applyprocesslist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.applyprocesslist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply all steps in array of process strings</p>
 <p>Takes in input list of strings descibing filters to be applied to the data and runs them.</p>
 <dl class="field-list simple">
@@ -374,7 +374,7 @@ the x and y ranges on the final matrix</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.applystep">
-<code class="sig-name descname">applystep</code><span class="sig-paren">(</span><em class="sig-param">line</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.applystep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.applystep" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">applystep</code><span class="sig-paren">(</span><em class="sig-param">line</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.applystep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.applystep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply step from a process list string</p>
 <p>Takes in input string descibing one filter application and applies it to the data</p>
 <dl class="field-list simple">
@@ -386,7 +386,7 @@ the x and y ranges on the final matrix</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.crop">
-<code class="sig-name descname">crop</code><span class="sig-paren">(</span><em class="sig-param">left=None</em>, <em class="sig-param">right=None</em>, <em class="sig-param">up=None</em>, <em class="sig-param">low=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.crop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.crop" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">crop</code><span class="sig-paren">(</span><em class="sig-param">left=None</em>, <em class="sig-param">right=None</em>, <em class="sig-param">up=None</em>, <em class="sig-param">low=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.crop"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.crop" title="Permalink to this definition">¶</a></dt>
 <dd><p>Crop filter</p>
 <p>Crops data matrix to the given extents.  Process string <code class="code docutils literal notranslate"><span class="pre">crop</span> <span class="pre">left,right,up,low</span></code></p>
 <dl class="field-list simple">
@@ -405,7 +405,7 @@ When given a value, the actual index specified is not included in the crop</p></
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.delstep">
-<code class="sig-name descname">delstep</code><span class="sig-paren">(</span><em class="sig-param">ii</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.delstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.delstep" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">delstep</code><span class="sig-paren">(</span><em class="sig-param">ii</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.delstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.delstep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a filter from the current process list by index</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -416,7 +416,7 @@ When given a value, the actual index specified is not included in the crop</p></
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.detrend">
-<code class="sig-name descname">detrend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.detrend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.detrend" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">detrend</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.detrend"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.detrend" title="Permalink to this definition">¶</a></dt>
 <dd><p>Detrend filter</p>
 <p>Removes linear trend from data.
 Process string <code class="code docutils literal notranslate"><span class="pre">detrend`</span></code>.
@@ -425,7 +425,7 @@ This can be useful for phase signals.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.flip">
-<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">x=False</em>, <em class="sig-param">y=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.flip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.flip" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">flip</code><span class="sig-paren">(</span><em class="sig-param">x=False</em>, <em class="sig-param">y=False</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.flip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.flip" title="Permalink to this definition">¶</a></dt>
 <dd><p>Flip filter</p>
 <p>Reverses x and/or y axis.  Process string <code class="code docutils literal notranslate"><span class="pre">flip</span> <span class="pre">x,y</span></code> (0 is false, 1 is true).</p>
 <dl class="field-list simple">
@@ -437,7 +437,7 @@ This can be useful for phase signals.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.getextents">
-<code class="sig-name descname">getextents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.getextents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.getextents" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">getextents</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.getextents"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.getextents" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the extents of the matrix</p>
 <p>Returns a tuple containing (xmin, xmax, ymin, ymax) from the axis ranges,
 typically to correctly scale the axes when plotting with matplotlib.pyplot.imshow</p>
@@ -453,7 +453,7 @@ typically to correctly scale the axes when plotting with matplotlib.pyplot.imsho
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.insertstep">
-<code class="sig-name descname">insertstep</code><span class="sig-paren">(</span><em class="sig-param">ii</em>, <em class="sig-param">line</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.insertstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.insertstep" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">insertstep</code><span class="sig-paren">(</span><em class="sig-param">ii</em>, <em class="sig-param">line</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.insertstep"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.insertstep" title="Permalink to this definition">¶</a></dt>
 <dd><p>Inserts new filter into process list</p>
 <p>Adds a new filter at a specific position in the process list</p>
 <dl class="field-list simple">
@@ -468,7 +468,7 @@ typically to correctly scale the axes when plotting with matplotlib.pyplot.imsho
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.loadmtx">
-<code class="sig-name descname">loadmtx</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.loadmtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.loadmtx" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">loadmtx</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.loadmtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.loadmtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load matrix from an existing Spyview mtx file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -479,28 +479,28 @@ typically to correctly scale the axes when plotting with matplotlib.pyplot.imsho
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.log">
-<code class="sig-name descname">log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.log" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">log</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.log"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.log" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural log filter</p>
 <p>Applies log_e to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">log</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.log10">
-<code class="sig-name descname">log10</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.log10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.log10" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">log10</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.log10"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.log10" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log10 filter</p>
 <p>Applies log_10 to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">log10</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.logx">
-<code class="sig-name descname">logx</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.logx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.logx" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">logx</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.logx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.logx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logx filter</p>
 <p>Applies log_n to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">logx</span> <span class="pre">x</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.lowpass">
-<code class="sig-name descname">lowpass</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">y=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.lowpass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.lowpass" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">lowpass</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">y=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.lowpass"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.lowpass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Low Pass filter</p>
 <p>Applies a gaussian filter to the data with given pixel widths.  Other filters are yet to be implemented.
 Process string <code class="code docutils literal notranslate"><span class="pre">lowpass</span> <span class="pre">x,y</span></code></p>
@@ -513,7 +513,7 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.nan_greater">
-<code class="sig-name descname">nan_greater</code><span class="sig-paren">(</span><em class="sig-param">thres</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.nan_greater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.nan_greater" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nan_greater</code><span class="sig-paren">(</span><em class="sig-param">thres</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.nan_greater"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.nan_greater" title="Permalink to this definition">¶</a></dt>
 <dd><p>NaN for values greater than</p>
 <p>Changes all values greater than thres to np.nan. Process string <code class="code docutils literal notranslate"><span class="pre">nan_greater</span> <span class="pre">thres</span></code>.</p>
 <dl class="field-list simple">
@@ -525,7 +525,7 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.nan_smaller">
-<code class="sig-name descname">nan_smaller</code><span class="sig-paren">(</span><em class="sig-param">thres</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.nan_smaller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.nan_smaller" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">nan_smaller</code><span class="sig-paren">(</span><em class="sig-param">thres</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.nan_smaller"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.nan_smaller" title="Permalink to this definition">¶</a></dt>
 <dd><p>NaN for values smaller than</p>
 <p>Changes all values smaller than thres to np.nan. Process string <code class="code docutils literal notranslate"><span class="pre">nan_smaller</span> <span class="pre">thres</span></code>.</p>
 <dl class="field-list simple">
@@ -537,28 +537,28 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.neg">
-<code class="sig-name descname">neg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.neg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.neg" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">neg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.neg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.neg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Negative filter</p>
 <p>Multiplies matrix by -1.  Process string <code class="code docutils literal notranslate"><span class="pre">neg</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.norm_cbc">
-<code class="sig-name descname">norm_cbc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.norm_cbc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.norm_cbc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">norm_cbc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.norm_cbc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.norm_cbc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stretch the contrast of each column to full scale</p>
 <p>Each column gets normalized.  Process string <code class="code docutils literal notranslate"><span class="pre">norm_cbc</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.norm_lbl">
-<code class="sig-name descname">norm_lbl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.norm_lbl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.norm_lbl" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">norm_lbl</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.norm_lbl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.norm_lbl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stretch the contrast of each line to full scale</p>
 <p>Each line gets normalized.  Process string <code class="code docutils literal notranslate"><span class="pre">norm_lbl</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.offset">
-<code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param">x=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.offset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">offset</code><span class="sig-paren">(</span><em class="sig-param">x=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.offset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.offset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Offset filter</p>
 <p>Offsets data values by adding given value.  Process string <code class="code docutils literal notranslate"><span class="pre">offset</span> <span class="pre">x</span></code></p>
 <dl class="field-list simple">
@@ -570,7 +570,7 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.offset_axes">
-<code class="sig-name descname">offset_axes</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">y=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.offset_axes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.offset_axes" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">offset_axes</code><span class="sig-paren">(</span><em class="sig-param">x=0</em>, <em class="sig-param">y=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.offset_axes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.offset_axes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Axes offset filter</p>
 <p>Offset axis values.  Process string <code class="code docutils literal notranslate"><span class="pre">offset_axes</span> <span class="pre">x,y</span></code></p>
 <dl class="field-list simple">
@@ -582,7 +582,7 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.outlier">
-<code class="sig-name descname">outlier</code><span class="sig-paren">(</span><em class="sig-param">line</em>, <em class="sig-param">vertical=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.outlier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.outlier" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">outlier</code><span class="sig-paren">(</span><em class="sig-param">line</em>, <em class="sig-param">vertical=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.outlier"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.outlier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Outlier filter</p>
 <p>Drop a line or column from the data.  Process string <code class="code docutils literal notranslate"><span class="pre">outlier</span> <span class="pre">line,vertical</span></code></p>
 <dl class="field-list simple">
@@ -597,7 +597,7 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.pixel_avg">
-<code class="sig-name descname">pixel_avg</code><span class="sig-paren">(</span><em class="sig-param">nx=0</em>, <em class="sig-param">ny=0</em>, <em class="sig-param">center=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.pixel_avg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.pixel_avg" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pixel_avg</code><span class="sig-paren">(</span><em class="sig-param">nx=0</em>, <em class="sig-param">ny=0</em>, <em class="sig-param">center=0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.pixel_avg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.pixel_avg" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pixel average filter</p>
 <p>Performs pixel averaging on matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">pixel_avg</span> <span class="pre">nx,ny,center</span></code></p>
 <dl class="field-list simple">
@@ -613,7 +613,7 @@ Looks like it omits the center point of each averaging window from the average?<
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.power">
-<code class="sig-name descname">power</code><span class="sig-paren">(</span><em class="sig-param">x=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.power" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">power</code><span class="sig-paren">(</span><em class="sig-param">x=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.power"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.power" title="Permalink to this definition">¶</a></dt>
 <dd><p>Power filter</p>
 <p>Applies np.power to all elements in the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">power</span> <span class="pre">x</span></code></p>
 <dl class="field-list simple">
@@ -625,28 +625,28 @@ Looks like it omits the center point of each averaging window from the average?<
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.reset">
-<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.reset" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.reset"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.reset" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset filters</p>
 <p>Resets all filters and returns matrix to its initial state</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.rotate_ccw">
-<code class="sig-name descname">rotate_ccw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.rotate_ccw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.rotate_ccw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rotate_ccw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.rotate_ccw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.rotate_ccw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotate counter-clockwise filter</p>
 <p>Rotates matrix and axes counter-clockwise.  Process string <code class="code docutils literal notranslate"><span class="pre">rotate_ccw</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.rotate_cw">
-<code class="sig-name descname">rotate_cw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.rotate_cw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.rotate_cw" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">rotate_cw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.rotate_cw"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.rotate_cw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rotate clockwise filter</p>
 <p>Rotates matrix and axes clockwise.  Process string <code class="code docutils literal notranslate"><span class="pre">rotate_cw</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.save">
-<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">name='output'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">name='output'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.save"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save matrix to file</p>
 <p>Pickels the object and saves it to given file.</p>
 <dl class="field-list simple">
@@ -658,7 +658,7 @@ Looks like it omits the center point of each averaging window from the average?<
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.savemtx">
-<code class="sig-name descname">savemtx</code><span class="sig-paren">(</span><em class="sig-param">filename='./output'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.savemtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.savemtx" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">savemtx</code><span class="sig-paren">(</span><em class="sig-param">filename='./output'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.savemtx"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.savemtx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save to Spyview mtx format</p>
 <p>Saves current processed matrix to a spyview mtx file</p>
 <dl class="field-list simple">
@@ -670,7 +670,7 @@ Looks like it omits the center point of each averaging window from the average?<
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.saveprocesslist">
-<code class="sig-name descname">saveprocesslist</code><span class="sig-paren">(</span><em class="sig-param">filename='./process.pl'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.saveprocesslist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.saveprocesslist" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">saveprocesslist</code><span class="sig-paren">(</span><em class="sig-param">filename='./process.pl'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.saveprocesslist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.saveprocesslist" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save applied filter list</p>
 <p>Saves the applied filters and parameters to a text file (process.pl in the current folder by default)</p>
 <dl class="field-list simple">
@@ -682,7 +682,7 @@ Looks like it omits the center point of each averaging window from the average?<
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.scale_data">
-<code class="sig-name descname">scale_data</code><span class="sig-paren">(</span><em class="sig-param">factor=1.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.scale_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.scale_data" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">scale_data</code><span class="sig-paren">(</span><em class="sig-param">factor=1.0</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.scale_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.scale_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Scale filter</p>
 <p>Scales all data by given factor.  Process string <code class="code docutils literal notranslate"><span class="pre">scale</span> <span class="pre">x</span></code></p>
 <dl class="field-list simple">
@@ -694,14 +694,14 @@ Looks like it omits the center point of each averaging window from the average?<
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.sub_cbc">
-<code class="sig-name descname">sub_cbc</code><span class="sig-paren">(</span><em class="sig-param">lowp=40</em>, <em class="sig-param">highp=40</em>, <em class="sig-param">low_limit=-1e+99</em>, <em class="sig-param">high_limit=1e+99</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.sub_cbc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.sub_cbc" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sub_cbc</code><span class="sig-paren">(</span><em class="sig-param">lowp=40</em>, <em class="sig-param">highp=40</em>, <em class="sig-param">low_limit=-1e+99</em>, <em class="sig-param">high_limit=1e+99</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.sub_cbc"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.sub_cbc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subtract column by column filter</p>
 <p>Same as <a class="reference internal" href="#stlabutils.stlabdict.stlabmtx.sub_lbl" title="stlabutils.stlabdict.stlabmtx.sub_lbl"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">sub_lbl</span></code></a> but done on a column by column basis.  Process string <code class="code docutils literal notranslate"><span class="pre">sub_cbc</span> <span class="pre">lowp,highp,low_limit,high_limit</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.sub_lbl">
-<code class="sig-name descname">sub_lbl</code><span class="sig-paren">(</span><em class="sig-param">lowp=40</em>, <em class="sig-param">highp=40</em>, <em class="sig-param">low_limit=-1e+99</em>, <em class="sig-param">high_limit=1e+99</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.sub_lbl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.sub_lbl" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sub_lbl</code><span class="sig-paren">(</span><em class="sig-param">lowp=40</em>, <em class="sig-param">highp=40</em>, <em class="sig-param">low_limit=-1e+99</em>, <em class="sig-param">high_limit=1e+99</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.sub_lbl"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.sub_lbl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Substract line by line filter</p>
 <p>The average value of each line is substracted from the data.  Parts of each line cut can be
 excluded using the high and low percentile options.  The idea is that all points are sorted in
@@ -721,7 +721,7 @@ calculation.  Process string <code class="code docutils literal notranslate"><sp
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.sub_linecut">
-<code class="sig-name descname">sub_linecut</code><span class="sig-paren">(</span><em class="sig-param">pos</em>, <em class="sig-param">horizontal=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.sub_linecut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.sub_linecut" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">sub_linecut</code><span class="sig-paren">(</span><em class="sig-param">pos</em>, <em class="sig-param">horizontal=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.sub_linecut"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.sub_linecut" title="Permalink to this definition">¶</a></dt>
 <dd><p>Subtract lincut filter</p>
 <p>Selects a line or column and subtracts it from all othe lines or columns in the matrix.
 Process string <code class="code docutils literal notranslate"><span class="pre">sub_linecut</span> <span class="pre">pos,horizontal</span></code></p>
@@ -737,14 +737,14 @@ Process string <code class="code docutils literal notranslate"><span class="pre"
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.transpose">
-<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.transpose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.transpose" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">transpose</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.transpose"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.transpose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transpose filter</p>
 <p>Transposes the data matrix (and axes).  Process string <code class="code docutils literal notranslate"><span class="pre">transpose</span></code></p>
 </dd></dl>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.unwrap">
-<code class="sig-name descname">unwrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.unwrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.unwrap" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">unwrap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.unwrap"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.unwrap" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unwrap filter</p>
 <p>Unwraps the phase of data.
 Process string <code class="code docutils literal notranslate"><span class="pre">unwrap`</span></code>.
@@ -753,7 +753,7 @@ This can be useful for phase signals.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.vi_to_iv">
-<code class="sig-name descname">vi_to_iv</code><span class="sig-paren">(</span><em class="sig-param">vmin</em>, <em class="sig-param">vmax</em>, <em class="sig-param">nbins</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.vi_to_iv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.vi_to_iv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">vi_to_iv</code><span class="sig-paren">(</span><em class="sig-param">vmin</em>, <em class="sig-param">vmax</em>, <em class="sig-param">nbins</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.vi_to_iv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.vi_to_iv" title="Permalink to this definition">¶</a></dt>
 <dd><p>vi to iv filter</p>
 <p>Reverses the data axis with the y axis of the matrix.  For example, if the data contains the voltage and the axis the current
 this filter replaces the voltage data with the corresponding current data and the axis with the voltage (I think…).
@@ -774,7 +774,7 @@ can be undone.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.xderiv">
-<code class="sig-name descname">xderiv</code><span class="sig-paren">(</span><em class="sig-param">direction=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.xderiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.xderiv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">xderiv</code><span class="sig-paren">(</span><em class="sig-param">direction=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.xderiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.xderiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>X derivative filter</p>
 <p>Apply a derivative along the lines of the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">xderiv</span> <span class="pre">direction</span></code></p>
 <dl class="field-list simple">
@@ -786,7 +786,7 @@ can be undone.</p>
 
 <dl class="method">
 <dt id="stlabutils.stlabdict.stlabmtx.yderiv">
-<code class="sig-name descname">yderiv</code><span class="sig-paren">(</span><em class="sig-param">direction=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/utils/stlabdict.html#stlabmtx.yderiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.yderiv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">yderiv</code><span class="sig-paren">(</span><em class="sig-param">direction=1</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/stlabutils/stlabdict.html#stlabmtx.yderiv"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#stlabutils.stlabdict.stlabmtx.yderiv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Y derivative filter</p>
 <p>Apply a derivative along the columns of the matrix.  Process string <code class="code docutils literal notranslate"><span class="pre">yderiv</span> <span class="pre">direction</span></code></p>
 <dl class="field-list simple">
@@ -832,7 +832,7 @@ can be undone.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2019, GNU GPLv3.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.3.1.
     </div>
   </body>
 </html>

@@ -4,7 +4,7 @@ with open('requirements.txt') as f:
 
 setuptools.setup(
     name="stlabutils",
-    package_dir={'stlabutils': 'utils'},
+    package_dir={'stlabutils': ''},
     packages= ['stlabutils'],
     install_requires = reqs
 )
